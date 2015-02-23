@@ -39,7 +39,7 @@ StartupNotify=false
 Como por ejemplo para sublime test :
   
 ```
-Desktop Entry]
+[Desktop Entry]
 Name=Sublime
 GenericName=Sublime
 Comment=Editor

@@ -7,9 +7,6 @@
         <section id="main"><%- body %></section>
         <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
           <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-            <!-- ads start -->
-              <%- partial('_partial/google-ads') %>
-            <!-- ads fin -->
         <% } %>
       </div>
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
