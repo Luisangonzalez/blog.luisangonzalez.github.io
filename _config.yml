@@ -85,11 +85,11 @@ exclude_generator:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repo: https://github.com/Luisangonzalez/Luisangonzalez.github.io.git
   branch: master
 
-#backup plugin https://github.com/coneycode/hexo-git-backup   
+#backup plugin https://github.com/coneycode/hexo-git-backup
 
 backup:
     type: git
@@ -102,4 +102,3 @@ feed:
   type: atom
   path: atom.xml
   limit: 20
-  
