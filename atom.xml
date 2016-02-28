@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luisangonzalez.es/"/>
-  <updated>2016-02-28T10:53:23.558Z</updated>
+  <updated>2016-02-28T11:22:19.302Z</updated>
   <id>http://luisangonzalez.es/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalar Cordova Android en Ubuntu 14.04</title>
+    <link href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/"/>
+    <id>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</id>
+    <published>2016-02-11T00:29:00.000Z</published>
+    <updated>2016-02-28T11:22:19.302Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Guia-sencilla-para-instalar-cordova&quot;&gt;&lt;a href=&quot;#Guia-sencilla-para-instalar-cordova&quot; class=&quot;headerlink&quot; title=&quot;Guia sencilla para instalar cordova&quot;&gt;&lt;/a&gt;Guia sencilla para instalar cordova&lt;/h2&gt;&lt;p&gt;Como indican en la web de &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;apache cordova&lt;/a&gt; o traves del gestor de paquetes &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt; siguiendo las instrucciones que indican:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-add-repository ppa:cordova-ubuntu/ppa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install cordova-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cordova&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Y para Ubuntu instalando los paquetes:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Guia-sencilla-para-instalar-cordova&quot;&gt;&lt;a href=&quot;#Guia-sencilla-para-instalar-cordova&quot; class=&quot;headerlink&quot; title=&quot;Guia sencilla para ins
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+      <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="npmjs" scheme="http://luisangonzalez.es/tags/npmjs/"/>
+    
+  </entry>
   
   <entry>
     <title>Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3</title>
@@ -238,9 +268,9 @@
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
     
-      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
-    
       <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
     
   </entry>
   
