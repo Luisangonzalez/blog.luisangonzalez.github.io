@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: npmjs | LuisanGonzalez</title>
+  <title>Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://luisangonzalez.es/tags/npmjs/index.html">
+  <meta name="description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap">
+<meta property="og:url" content="http://luisangonzalez.es/2016/02/28/add-device-android/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
-<meta property="og:description">
+<meta property="og:description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
+<meta property="og:updated_time" content="2016-02-28T17:08:26.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LuisanGonzalez">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap">
+<meta name="twitter:description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -93,14 +94,16 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-instalar-cordova-android-en-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" class="article-date">
-  <time datetime="2016-02-11T00:29:00.000Z" itemprop="datePublished">Feb 11 2016</time>
+    <a href="/2016/02/28/add-device-android/" class="article-date">
+  <time datetime="2016-02-28T16:59:23.000Z" itemprop="datePublished">Feb 28 2016</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -108,8 +111,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/11/instalar-cordova-android-en-ubuntu/">Instalar Cordova Android en Ubuntu 14.04</a>
+    <h1 class="article-title" itemprop="name">
+      Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap
     </h1>
   
 
@@ -117,29 +120,59 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Guia-sencilla-para-instalar-cordova"><a href="#Guia-sencilla-para-instalar-cordova" class="headerlink" title="Guia sencilla para instalar cordova"></a>Guia sencilla para instalar cordova</h2><p>Como indican en la web de <a href="https://www.npmjs.com/package/cordova" target="_blank" rel="external">apache cordova</a> o traves del gestor de paquetes <a href="https://www.npmjs.com/package/cordova" target="_blank" rel="external">npm</a> siguiendo las instrucciones que indican:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-add-repository ppa:cordova-ubuntu/ppa</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install cordova-cli</span><br><span class="line">npm install -g cordova</span><br></pre></td></tr></table></figure>
-<p>Y para Ubuntu instalando los paquetes:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev</span><br></pre></td></tr></table></figure>
+        <p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
+<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
+<ul>
+<li><p>Intalar MTPS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</span><br><span class="line">sudo apt-get install mtpfs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir el id :</p>
+</li>
+</ul>
+<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$lsusb</span><br><span class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</span><br><span class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</span><br><span class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+</li>
+<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
+</li>
+</ul>
+<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
+<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/" data-id="cil6sxkev000959ug24mfy7wf" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/02/28/add-device-android/" data-id="cil6t0r9u00006eug4s78g9kr" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cordova/">Cordova</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npmjs/">npmjs</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova-phonegap/">cordova/phonegap</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Instalar Cordova Android en Ubuntu 14.04</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -263,11 +296,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
+  var disqus_url = 'http://luisangonzalez.es/2016/02/28/add-device-android/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

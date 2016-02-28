@@ -95,6 +95,69 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/28/add-device-android/" class="article-date">
+  <time datetime="2016-02-28T16:59:23.000Z" itemprop="datePublished">Feb 28 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
+<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
+<ul>
+<li><p>Intalar MTPS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</span><br><span class="line">sudo apt-get install mtpfs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir el id :</p>
+</li>
+</ul>
+<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$lsusb</span><br><span class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</span><br><span class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</span><br><span class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+</li>
+<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
+</li>
+</ul>
+<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
+<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://luisangonzalez.es/2016/02/28/add-device-android/" data-id="cil6t0r9u00006eug4s78g9kr" class="article-share-link">Share</a>
+      
+        <a href="http://luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova-phonegap/">cordova/phonegap</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-instalar-cordova-android-en-ubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" class="article-date">
@@ -125,7 +188,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/" data-id="cil6gwd030008ogugxu8j469d" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/" data-id="cil6sxkev000959ug24mfy7wf" class="article-share-link">Share</a>
       
         <a href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -190,7 +253,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cil6gwczt0001ogugvd6v7t31" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cil6sxkem000259ugefk66wwk" class="article-share-link">Share</a>
       
         <a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,7 +313,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" data-id="cil6gwd010006ogug1isrfogt" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" data-id="cil6sxkev000759ug23q2g5t2" class="article-share-link">Share</a>
       
         <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -375,7 +438,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="cil6gwczw0002oguggnzgswog" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="cil6sxkes000659ug7lno3wrc" class="article-share-link">Share</a>
       
         <a href="http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -430,7 +493,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="cil6gwd000005ogugqmzfbo55" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="cil6sxkeo000359ugpwxxx937" class="article-share-link">Share</a>
       
         <a href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -454,7 +517,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -464,7 +527,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-text/">    Sublime_text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova/">Cordova</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-text/">Sublime_text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npmjs/">npmjs</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-text/">    Sublime_text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/">Blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova/">Cordova</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-text/">Sublime_text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cordova-phonegap/">cordova/phonegap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npmjs/">npmjs</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -474,7 +537,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Sublime-text/" style="font-size: 10px;">    Sublime_text</a> <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Cordova/" style="font-size: 10px;">Cordova</a> <a href="/tags/Hexo-io/" style="font-size: 20px;">Hexo.io</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Sublime-text/" style="font-size: 10px;">Sublime_text</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/npmjs/" style="font-size: 10px;">npmjs</a>
+      <a href="/tags/Sublime-text/" style="font-size: 10px;">    Sublime_text</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Cordova/" style="font-size: 10px;">Cordova</a> <a href="/tags/Hexo-io/" style="font-size: 20px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Sublime-text/" style="font-size: 10px;">Sublime_text</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a> <a href="/tags/cordova-phonegap/" style="font-size: 10px;">cordova/phonegap</a> <a href="/tags/npmjs/" style="font-size: 10px;">npmjs</a>
     </div>
   </div>
 
@@ -484,7 +547,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -495,6 +558,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</a>
+          </li>
         
           <li>
             <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/">Instalar Cordova Android en Ubuntu 14.04</a>
@@ -510,10 +577,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2015/02/23/Esquema-basico-de-Markdown/">Esquema básico de Markdown</a>
-          </li>
-        
-          <li>
-            <a href="/2015/02/23/Primer-post-con-hexo-io/">Primer post con hexo.io</a>
           </li>
         
       </ul>
