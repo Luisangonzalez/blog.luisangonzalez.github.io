@@ -7,6 +7,7 @@ tags:
 categories: []
 date: 2016-02-11 01:29:00
 ---
+
 ## Guia sencilla para instalar cordova
 
 Como indican en la web de [apache cordova](https://www.npmjs.com/package/cordova) o traves del gestor de paquetes [npm](https://www.npmjs.com/package/cordova) siguiendo las instrucciones que indican:
