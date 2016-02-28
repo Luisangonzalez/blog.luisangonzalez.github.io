@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LuisanGonzalez</title>
+  <subtitle>Developer</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://luisangonzalez.es/"/>
+  <updated>2016-02-28T10:53:23.558Z</updated>
+  <id>http://luisangonzalez.es/</id>
+  
+  <author>
+    <name>Luisangonzalez</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3</title>
+    <link href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/"/>
+    <id>http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/</id>
+    <published>2015-02-23T23:03:00.000Z</published>
+    <updated>2016-02-28T10:53:23.558Z</updated>
+    
+    <content type="html">&lt;p&gt;Buenas,&lt;/p&gt;
+&lt;p&gt;Utilizo Ubuntu 14.04 Gnome &lt;a href=&quot;http://ubuntugnome.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ubuntugnome.org/&lt;/a&gt; y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : &lt;a href=&quot;http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/&quot;&gt;http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Al buscarlo en el buscador no aparece, para este caso debemos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crear un archivo en en : &lt;code&gt;/usr/share/applications/&lt;/code&gt; como por ejemplo con nano o vi :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ cd /usr/share/applications/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo nano sublime-text-2.desktop&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Que el archivo contenga :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[Desktop Entry]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Name= NOMBRE DEL PROGRAMA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GenericName=DESCRIPCION DEL PROGRAMA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Comment=COMENTARIO DEL PROGRAMA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Terminal=false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Type=Application&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Icon= RUTAN DEL ICONO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;StartupNotify=false&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Como por ejemplo para sublime test :&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[Desktop Entry]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Name=Sublime&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;GenericName=Sublime&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Comment=Editor&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Exec=/home/luisan/Sublime2/sublime_text&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Terminal=false&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Type=Application&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Y nada espero que os sirva ;) .&lt;/p&gt;
+&lt;p&gt;Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;~/Sublime2/sublime_text&lt;/code&gt; en vez de &lt;code&gt;/home/luisan/Sublime2/sublime_text&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas,&lt;/p&gt;
+&lt;p&gt;Utilizo Ubuntu 14.04 Gnome &lt;a href=&quot;http://ubuntugnome.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ubuntugnome.org/&lt;/a&gt; y 
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/categories/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
+    
+    
+      <category term="    Sublime_text" scheme="http://luisangonzalez.es/tags/Sublime-text/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 2 en Ubuntu 14.04</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</id>
+    <published>2015-02-23T22:51:00.000Z</published>
+    <updated>2016-02-28T10:53:23.558Z</updated>
+    
+    <content type="html">&lt;p&gt;Muy buenas ;)&lt;/p&gt;
+&lt;p&gt;Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Descargar de su web &lt;a href=&quot;http://www.sublimetext.com/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sublimetext.com/2&lt;/a&gt; en 64bit en mi caso y (Ubuntu 14.04).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Una vez descargado descomprmir y dar permisos totales :&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo chmod -R 777 ./Sublime2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Doble click en sublime_text o ejecutarlo :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ ./Sublime2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Una vez descargado para no tener que ir cada vez que quiera ejecutarlo a la carpeta lo añado al path de mi equipo añadiendo las siguientes lineas a .bashrc ( se encuentra en la carpeta home oculto)&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export SUBLIME_HOME=~/Sublime2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$&amp;#123;PATH&amp;#125;:$SUBLIME_HOME&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Indicar que yo he descargado Sublime Text 2 en mi directorio home ~/ y que he renombrado la carpeta a Sublime2 para no tener problemas con los espacios.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Muy buenas ;)&lt;/p&gt;
+&lt;p&gt;Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Descargar de su web &lt;a href=&quot;http://www.subl
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/categories/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
+    
+    
+      <category term="Sublime_text" scheme="http://luisangonzalez.es/tags/Sublime-text/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Esquema básico de Markdown</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/</id>
+    <published>2015-02-22T23:41:00.000Z</published>
+    <updated>2016-02-28T10:53:23.558Z</updated>
+    
+    <content type="html">&lt;p&gt;Buenas, aquí un esquema de uso básico de Markdown. Para más información vean la &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;especificación oficial de su creador John Gruber&lt;/a&gt; o el &lt;a href=&quot;https://help.github.com/articles/github-flavored-markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ejemplo de Github&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&quot;Voy-a-mostrar-primero-el-codigo-markdown-y-posteriormente-el-resultado&quot;&gt;&lt;a href=&quot;#Voy-a-mostrar-primero-el-codigo-markdown-y-posteriormente-el-resultado&quot; class=&quot;headerlink&quot; title=&quot;Voy a mostrar primero el código markdown y posteriormente el resultado.&quot;&gt;&lt;/a&gt;Voy a mostrar primero el código markdown y posteriormente el resultado.&lt;/h4&gt;&lt;h2 id=&quot;Texto-basico&quot;&gt;&lt;a href=&quot;#Texto-basico&quot; class=&quot;headerlink&quot; title=&quot;Texto básico :&quot;&gt;&lt;/a&gt;Texto básico :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown&quot;&gt;&lt;a href=&quot;#Codigo-markdown&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Cursiva:  *italic* y  así tambien  _italic_ , en  negrita **bold**  y también __bold__ , resaltar  texto : `important` text. signo de porcentaje : % y `%`&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Paragrafo con nota de pie (builtin parser only). [^note-id]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Insertar `[ TOC ]` sin espacions genera una tabla de contenidos (builtin parsers only)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado&quot;&gt;&lt;a href=&quot;#Resultado&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;p&gt;Cursiva:  &lt;em&gt;italic&lt;/em&gt; y  así tambien  &lt;em&gt;italic&lt;/em&gt; , en  negrita &lt;strong&gt;bold&lt;/strong&gt;  y también &lt;strong&gt;bold&lt;/strong&gt; , resaltar  texto : &lt;code&gt;important&lt;/code&gt; text. signo de porcentaje : % y &lt;code&gt;%&lt;/code&gt;&lt;br&gt;Paragrafo con nota de pie (builtin parser only). [^note-id]&lt;br&gt;Insertar &lt;code&gt;[ TOC ]&lt;/code&gt; sin espacions genera una tabla de contenidos (builtin parsers only)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;Indentacion&quot;&gt;&lt;a href=&quot;#Indentacion&quot; class=&quot;headerlink&quot; title=&quot;Indentación :&quot;&gt;&lt;/a&gt;Indentación :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-1&quot;&gt;&lt;a href=&quot;#Codigo-markdown-1&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; Aquí texto indentado&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt; aún mas indentado&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-1&quot;&gt;&lt;a href=&quot;#Resultado-1&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;Aquí texto indentado&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;aún mas indentado&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Titulo-cabeceras&quot;&gt;&lt;a href=&quot;#Titulo-cabeceras&quot; class=&quot;headerlink&quot; title=&quot;Titulo cabeceras :&quot;&gt;&lt;/a&gt;Titulo cabeceras :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-2&quot;&gt;&lt;a href=&quot;#Codigo-markdown-2&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# El más grande (h1)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;## Mediano (h2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;### Pequeño (h3)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#### más pequeno (hX)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;##### y más pequeño (hX)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;###### y más pequeño.. (hX)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-2&quot;&gt;&lt;a href=&quot;#Resultado-2&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;h1 id=&quot;El-mas-grande-h1&quot;&gt;&lt;a href=&quot;#El-mas-grande-h1&quot; class=&quot;headerlink&quot; title=&quot;El más grande (h1)&quot;&gt;&lt;/a&gt;El más grande (h1)&lt;/h1&gt;&lt;h2 id=&quot;Mediano-h2&quot;&gt;&lt;a href=&quot;#Mediano-h2&quot; class=&quot;headerlink&quot; title=&quot;Mediano (h2)&quot;&gt;&lt;/a&gt;Mediano (h2)&lt;/h2&gt;&lt;h3 id=&quot;Pequeno-h3&quot;&gt;&lt;a href=&quot;#Pequeno-h3&quot; class=&quot;headerlink&quot; title=&quot;Pequeño (h3)&quot;&gt;&lt;/a&gt;Pequeño (h3)&lt;/h3&gt;&lt;h4 id=&quot;mas-pequeno-hX&quot;&gt;&lt;a href=&quot;#mas-pequeno-hX&quot; class=&quot;headerlink&quot; title=&quot;más pequeno (hX)&quot;&gt;&lt;/a&gt;más pequeno (hX)&lt;/h4&gt;&lt;h5 id=&quot;y-mas-pequeno-hX&quot;&gt;&lt;a href=&quot;#y-mas-pequeno-hX&quot; class=&quot;headerlink&quot; title=&quot;y más pequeño (hX)&quot;&gt;&lt;/a&gt;y más pequeño (hX)&lt;/h5&gt;&lt;h6 id=&quot;y-mas-pequeno-hX-1&quot;&gt;&lt;a href=&quot;#y-mas-pequeno-hX-1&quot; class=&quot;headerlink&quot; title=&quot;y más pequeño.. (hX)&quot;&gt;&lt;/a&gt;y más pequeño.. (hX)&lt;/h6&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;Listas&quot;&gt;&lt;a href=&quot;#Listas&quot; class=&quot;headerlink&quot; title=&quot;Listas :&quot;&gt;&lt;/a&gt;Listas :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-3&quot;&gt;&lt;a href=&quot;#Codigo-markdown-3&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- Los puntos/guinoes puedne ser con :  `-`, `+`, or `*`&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Punto uno&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Punto dos &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - sub item 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - sub item 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Con texto indentado dentro&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Punto de la lista 3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;+ Punto de la lista 4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;* Punto de la lista 5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. Punto ordenado uno&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. Punto ordenado dos&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...  y así sucesivamente&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-3&quot;&gt;&lt;a href=&quot;#Resultado-3&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;Los puntos/guinoes puedne ser con :  &lt;code&gt;-&lt;/code&gt;, &lt;code&gt;+&lt;/code&gt;, or &lt;code&gt;*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Punto uno&lt;/li&gt;
+&lt;li&gt;Punto dos &lt;ul&gt;
+&lt;li&gt;sub item 1&lt;/li&gt;
+&lt;li&gt;sub item 2&lt;br&gt;Con texto indentado dentro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Punto de la lista 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Punto de la lista 4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Punto de la lista 5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Punto ordenado uno&lt;/li&gt;
+&lt;li&gt;Punto ordenado dos&lt;br&gt;…  y así sucesivamente&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;Links&quot;&gt;&lt;a href=&quot;#Links&quot; class=&quot;headerlink&quot; title=&quot;Links :&quot;&gt;&lt;/a&gt;Links :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-4&quot;&gt;&lt;a href=&quot;#Codigo-markdown-4&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Esto es un ejemplo  [de link a mi blog](http://luisangonzalez.es/).&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-4&quot;&gt;&lt;a href=&quot;#Resultado-4&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;p&gt;Esto es un ejemplo  &lt;a href=&quot;http://luisangonzalez.es/&quot;&gt;de link a mi blog&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;Imagenes&quot;&gt;&lt;a href=&quot;#Imagenes&quot; class=&quot;headerlink&quot; title=&quot;Imágenes :&quot;&gt;&lt;/a&gt;Imágenes :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-5&quot;&gt;&lt;a href=&quot;#Codigo-markdown-5&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Un simple imagen :&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;![Fenix logo](http://luisangonzalez.es/img/fenix.jpg &amp;quot;Fenix logo&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-5&quot;&gt;&lt;a href=&quot;#Resultado-5&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;p&gt;&lt;img src=&quot;http://luisangonzalez.es/img/fenix.jpg&quot; alt=&quot;Fenix logo&quot; title=&quot;Fenix logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;Codigo&quot;&gt;&lt;a href=&quot;#Codigo&quot; class=&quot;headerlink&quot; title=&quot;Código :&quot;&gt;&lt;/a&gt;Código :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-6&quot;&gt;&lt;a href=&quot;#Codigo-markdown-6&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Es sencillo mostrar código en markdown.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Puede hacerse  `highlight` para algunas palabras.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Y bloques de código :&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;int cinco = 5;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;En hexo en la línea del principio 3 x ` y 3 x ` al final&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&amp;gt;&lt;br&gt;&amp;gt;&lt;/p&gt;
+&lt;h5 id=&quot;Resultado-6&quot;&gt;&lt;a href=&quot;#Resultado-6&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;p&gt;Es sencillo mostrar código en markdown.&lt;br&gt;Puede hacerse  &lt;code&gt;highlight&lt;/code&gt; para algunas palabras.&lt;br&gt;Y bloques de código :&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Ojo en la línea del principio 3 x ` &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;document.location = &amp;apos;http://lmgtfy.com/?q=markdown+cheat+sheet&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; y 3 x ` al final &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;h2 id=&quot;Tablas&quot;&gt;&lt;a href=&quot;#Tablas&quot; class=&quot;headerlink&quot; title=&quot;Tablas :&quot;&gt;&lt;/a&gt;Tablas :&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h5 id=&quot;Codigo-markdown-7&quot;&gt;&lt;a href=&quot;#Codigo-markdown-7&quot; class=&quot;headerlink&quot; title=&quot;Código markdown:&quot;&gt;&lt;/a&gt;Código markdown:&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;| Año  | Mínima temperatura | Máxima temperatura |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;| ---- | ------------------ | -------------------|&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;| 1900 | -10 				|				  25 |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;| 1910 | -15 				|                 30 |&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;| 1920 | -10 				|			      32 |&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h5 id=&quot;Resultado-7&quot;&gt;&lt;a href=&quot;#Resultado-7&quot; class=&quot;headerlink&quot; title=&quot;Resultado:&quot;&gt;&lt;/a&gt;Resultado:&lt;/h5&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Año&lt;/th&gt;
+&lt;th&gt;Mínima temperatura&lt;/th&gt;
+&lt;th&gt;Máxima temperatura&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1900&lt;/td&gt;
+&lt;td&gt;-10&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1910&lt;/td&gt;
+&lt;td&gt;-15&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;1920&lt;/td&gt;
+&lt;td&gt;-10&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas, aquí un esquema de uso básico de Markdown. Para más información vean la &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; ta
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+      <category term="Markdown" scheme="http://luisangonzalez.es/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Primer post con hexo.io</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/</id>
+    <published>2015-02-22T23:03:00.000Z</published>
+    <updated>2016-02-28T10:53:23.558Z</updated>
+    
+    <content type="html">&lt;p&gt;Después de un largo tiempo sin utilizar el blog que comenze con &lt;a href=&quot;http://octopress.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octopress&lt;/a&gt; he decidido continuar escribiendo pero esta vez utilizando &lt;a href=&quot;http://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt;, los motivos del cambio son :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;By by Ruby, no tengo nada contra Ruby pero me parece un coñazo todo el tema de las gemas, RVM, Bundle, rake install, rake… y me siento más comodo utilizando JavaScript.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Después de utilizar Octopress que me ha parecido estupendo prefiero utilizar hexo.io que usa Node.js el cual estoy conociendo cada vez más y quiero profundizar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Como indican en hexo.io —&amp;gt; A fast, simple &amp;amp; powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd blog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Saludos ;)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Después de un largo tiempo sin utilizar el blog que comenze con &lt;a href=&quot;http://octopress.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octopress&lt;
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+  </entry>
+  
+</feed>
