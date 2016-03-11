@@ -52,11 +52,11 @@
       <category term="Android" scheme="http://luisangonzalez.es/categories/Android/"/>
     
     
-      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+      <category term="Linux" scheme="http://luisangonzalez.es/tags/Linux/"/>
     
       <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
     
-      <category term="Linux" scheme="http://luisangonzalez.es/tags/Linux/"/>
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
     
       <category term="cordova/phonegap" scheme="http://luisangonzalez.es/tags/cordova-phonegap/"/>
     
@@ -82,11 +82,11 @@
     </summary>
     
     
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
       <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
     
       <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
-    
-      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
     
       <category term="npmjs" scheme="http://luisangonzalez.es/tags/npmjs/"/>
     
@@ -315,9 +315,9 @@
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
     
-      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
-    
       <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
     
   </entry>
   
