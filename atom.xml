@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luisangonzalez.es/"/>
-  <updated>2016-02-28T17:08:26.282Z</updated>
+  <updated>2016-03-13T18:02:33.593Z</updated>
   <id>http://luisangonzalez.es/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Conectar placa arduino (bq zum) por Bluetooth en Android</title>
+    <link href="http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/"/>
+    <id>http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/</id>
+    <published>2016-03-13T17:05:08.000Z</published>
+    <updated>2016-03-13T18:02:33.593Z</updated>
+    
+    <content type="html">&lt;p&gt;Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.&lt;/p&gt;
+&lt;p&gt;Cuando vamos a desarrollar una aplicación que hace uso de elementos nativos de la plataforma, es decir no solo es una capa de presentación web si no que utilizamos elementos físicos como el giroscopio, wifi o bluetooth en la mayoría de los casos nos vemos obligados de utilizar &lt;a href=&quot;https://cordova.apache.org/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;plugins de cordova/phonegap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En este caso vamos a utilizar &lt;a href=&quot;https://www.npmjs.com/package/cordova-plugin-bluetooth-serial&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cordova-plugin-bluetooth-serial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;La aplicación de ejemplo consiste en conectar nuestro móvil con una placa Arduino que dispone de modulo de Bluetooth, en este caso &lt;a href=&quot;http://www.bq.com/es/placa-zum-core&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bq zum&lt;/a&gt; pero se puede utilizar cualquier otra añadiendo el modulo de Bluetooth.&lt;/p&gt;
+&lt;p&gt;Para ello:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En la placa Arduino conectaremos un LED en el pin 13.&lt;/li&gt;
+&lt;li&gt;Cargamos el &lt;a href=&quot;https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;programa&lt;/a&gt; en la placa.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;El código de la App lo tenemos dispone en el repo de &lt;a href=&quot;https://github.com/Luisangonzalez/cordova-bluetooth-serial&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Nos descagamos el código o hacemos git clone:&lt;br&gt;&lt;code&gt;git clone git@github.com:Luisangonzalez/cordova-bluetooth-serial.git&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Accedemos al directorio: &lt;code&gt;cd cordova-bluetooth-serial&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Asumiendo que tenemos &lt;a href=&quot;http://developer.android.com/sdk/installing/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;instalado el SDK de Android&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Con &lt;a href=&quot;http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/&quot;&gt;cordova instalado y configurado&lt;/a&gt; compilamos la APP:&lt;ul&gt;
+&lt;li&gt;Añadimos la plataforma android: &lt;code&gt;$ cordova platform add android&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Instalamos el plugin bluetooth: &lt;code&gt;$ cordova plugin add cordova-plugin-bluetooth-serial&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;compilamos la app: &lt;code&gt;$ cordova run&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si observamos el &lt;a href=&quot;https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;código Arduino&lt;/a&gt; que hemos subido a la placa consiste en estar leyendo constantemente y en el caso de leer “b” encender el led y en caso “c” apagar el led.&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (bluetooth_0.available() &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        bluetooth_0.println(&lt;span class=&quot;string&quot;&gt;&quot;Avaliable&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        read = bluetooth_0.readString();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (read == &lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt; || ledon) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            bluetooth_0.print(&lt;span class=&quot;string&quot;&gt;&quot;ON&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            digitalWrite(led_0, HIGH);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ledon = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (read == &lt;span class=&quot;string&quot;&gt;&quot;c&quot;&lt;/span&gt; || !ledon) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            bluetooth_0.print(&lt;span class=&quot;string&quot;&gt;&quot;OFF&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            digitalWrite(led_0, LOW);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ledon = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;En el caso del código de cordova observamos en &lt;a href=&quot;https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/js/index.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www/js/index.js&lt;/a&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Al comienzo del archivo en comentarios incluimos las funciones globales como LED13ON y LED13OFF que posterimente indicamos:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/*&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;global cordova, console, $, bluetoothSerial,refreshButton, deviceList, disconnectButton, connectionScreen, messageDiv, led13ButtonON,led13ButtonOFF&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A parte de las funciones para conectar y emparejar las propias que hemos realizado para enviar “b” para encender el LED:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LED13ON: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  bluetoothSerial.write(&lt;span class=&quot;string&quot;&gt;&quot;b&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;y “c para apagarlo”:&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;LED13OFF: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  bluetoothSerial.write(&lt;span class=&quot;string&quot;&gt;&quot;c&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;En el caso de &lt;a href=&quot;https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;www/index.html&lt;/a&gt;:&lt;br&gt;para hacer uso de las funciones de index.js simplemente añadimos al id de los botones el nombre de las funciones:&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;topcoat-button--large&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;led13ButtonON&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;LED 13 ON&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;topcoat-button--large&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;led13ButtonOFF&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;LED 13 OFF&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Para cualquier enviar comentarios para que os pueda ayudar si me es posible, espero que os haya gustado ;).&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en
+    
+    </summary>
+    
+      <category term="cordova/phonegap" scheme="http://luisangonzalez.es/categories/cordova-phonegap/"/>
+    
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+      <category term="cordova/phonegap" scheme="http://luisangonzalez.es/tags/cordova-phonegap/"/>
+    
+      <category term="Arduino" scheme="http://luisangonzalez.es/tags/Arduino/"/>
+    
+      <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
+    
+      <category term="phonegap" scheme="http://luisangonzalez.es/tags/phonegap/"/>
+    
+  </entry>
   
   <entry>
     <title>Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</title>
