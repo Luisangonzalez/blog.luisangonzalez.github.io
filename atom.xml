@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luisangonzalez.es/"/>
-  <updated>2016-03-13T18:02:33.593Z</updated>
+  <updated>2016-03-13T18:27:20.837Z</updated>
   <id>http://luisangonzalez.es/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Escribir nuevo post en hexo.io</title>
+    <link href="http://luisangonzalez.es/2016/03/13/write-new-post/"/>
+    <id>http://luisangonzalez.es/2016/03/13/write-new-post/</id>
+    <published>2016-03-13T18:19:29.000Z</published>
+    <updated>2016-03-13T18:27:20.837Z</updated>
+    
+    <content type="html">&lt;p&gt;Para escribir una nueva entrada en &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt; la forma más rápida es:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En la carpeta raiz del blog hexo.io:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new nombre_post&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;em&gt;Se debe de tener en cuenta no incluir espacios en el nombre, para ello utilizar nombre_post y automaticamente lo transforma en nombre-post&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Una vez ejecutado &lt;code&gt;hexo new nombre_post&lt;/code&gt; se crea un archivo &lt;code&gt;nombre_post.md&lt;/code&gt; en la carpeta &lt;code&gt;/source/_post/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Podemos ver la nueva entrada en blanco lanzando el server: &lt;code&gt;hexo server&lt;/code&gt; e ir modificando el archivo &lt;code&gt;nombre_post.md&lt;/code&gt; de nuestra nueva entrada.&lt;/p&gt;
+&lt;p&gt;En mi caso utilizo &lt;a href=&quot;https://atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;atom.io&lt;/a&gt; con el plugin &lt;a href=&quot;https://atom.io/packages/markdown-preview&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown_preview&lt;/a&gt; que permite ver en tiempo real como va quedando el markdown de nuestra entrada.&lt;/p&gt;
+&lt;p&gt;Cuando ya tenemos nuestra entrada terminada, simplemente generar y desplegar en nuestro bloq:&lt;br&gt; &lt;code&gt;hexo generate --deploy&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Para escribir una nueva entrada en &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt; la forma más rápida es:&lt;/p&gt;
+&lt;ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
+    
+  </entry>
   
   <entry>
     <title>Conectar placa arduino (bq zum) por Bluetooth en Android</title>

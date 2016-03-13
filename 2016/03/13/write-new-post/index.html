@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap | LuisanGonzalez</title>
+  <title>Escribir nuevo post en hexo.io | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
+  <meta name="description" content="Para escribir una nueva entrada en hexo.io la forma más rápida es:
+
+En la carpeta raiz del blog hexo.io:
+
+1$ hexo new nombre_post
+Se debe de tener en cuenta no incluir espacios en el nombre, para ello">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap">
-<meta property="og:url" content="http://luisangonzalez.es/2016/02/28/add-device-android/index.html">
+<meta property="og:title" content="Escribir nuevo post en hexo.io">
+<meta property="og:url" content="http://luisangonzalez.es/2016/03/13/write-new-post/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
-<meta property="og:description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
-<meta property="og:updated_time" content="2016-02-28T17:08:26.282Z">
+<meta property="og:description" content="Para escribir una nueva entrada en hexo.io la forma más rápida es:
+
+En la carpeta raiz del blog hexo.io:
+
+1$ hexo new nombre_post
+Se debe de tener en cuenta no incluir espacios en el nombre, para ello">
+<meta property="og:updated_time" content="2016-03-13T18:27:20.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap">
-<meta name="twitter:description" content="Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplica">
+<meta name="twitter:title" content="Escribir nuevo post en hexo.io">
+<meta name="twitter:description" content="Para escribir una nueva entrada en hexo.io la forma más rápida es:
+
+En la carpeta raiz del blog hexo.io:
+
+1$ hexo new nombre_post
+Se debe de tener en cuenta no incluir espacios en el nombre, para ello">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -87,14 +102,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-write-new-post" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/28/add-device-android/" class="article-date">
-  <time datetime="2016-02-28T16:59:23.000Z" itemprop="datePublished">Feb 28 2016</time>
+    <a href="/2016/03/13/write-new-post/" class="article-date">
+  <time datetime="2016-03-13T18:19:29.000Z" itemprop="datePublished">Mar 13 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
   </div>
 
   </div>
@@ -105,7 +120,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap
+      Escribir nuevo post en hexo.io
     </h1>
   
 
@@ -113,35 +128,26 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
-<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
+        <p>Para escribir una nueva entrada en <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a> la forma más rápida es:</p>
 <ul>
-<li><p>Intalar MTPS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</span><br><span class="line">sudo apt-get install mtpfs</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Añadir el id :</p>
-</li>
+<li>En la carpeta raiz del blog hexo.io:</li>
 </ul>
-<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$lsusb</span><br><span class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</span><br><span class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</span><br><span class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
-</li>
-<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
-</li>
-</ul>
-<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
-<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new nombre_post</span><br></pre></td></tr></table></figure>
+<p><em>Se debe de tener en cuenta no incluir espacios en el nombre, para ello utilizar nombre_post y automaticamente lo transforma en nombre-post</em></p>
+<p>Una vez ejecutado <code>hexo new nombre_post</code> se crea un archivo <code>nombre_post.md</code> en la carpeta <code>/source/_post/</code></p>
+<p>Podemos ver la nueva entrada en blanco lanzando el server: <code>hexo server</code> e ir modificando el archivo <code>nombre_post.md</code> de nuestra nueva entrada.</p>
+<p>En mi caso utilizo <a href="https://atom.io/" target="_blank" rel="external">atom.io</a> con el plugin <a href="https://atom.io/packages/markdown-preview" target="_blank" rel="external">markdown_preview</a> que permite ver en tiempo real como va quedando el markdown de nuestra entrada.</p>
+<p>Cuando ya tenemos nuestra entrada terminada, simplemente generar y desplegar en nuestro bloq:<br> <code>hexo generate --deploy</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/02/28/add-device-android/" data-id="cilqw1nke0009i5ugegd6awmr" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/03/13/write-new-post/" data-id="cilqw1nkk000gi5ugjdgn5hak" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/03/13/write-new-post/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cordova-phonegap/">cordova/phonegap</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
 
     </footer>
   </div>
@@ -149,19 +155,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/03/13/arduino-bluetooth-android/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Conectar placa arduino (bq zum) por Bluetooth en Android
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/13/arduino-bluetooth-android/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Instalar Cordova Android en Ubuntu 14.04</div>
+      <div class="article-nav-title">Conectar placa arduino (bq zum) por Bluetooth en Android</div>
     </a>
   
 </nav>
@@ -305,7 +302,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
-  var disqus_url = 'http://luisangonzalez.es/2016/02/28/add-device-android/';
+  var disqus_url = 'http://luisangonzalez.es/2016/03/13/write-new-post/';
   
   (function(){
     var dsq = document.createElement('script');
