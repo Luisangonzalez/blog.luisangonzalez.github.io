@@ -3,7 +3,7 @@ tags:
   - Android
   - Cordova
   - Ubuntu
-  - npmjs
+  - npm
 categories: []
 date: 2016-02-11 01:29:00
 ---
