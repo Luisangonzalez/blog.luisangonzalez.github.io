@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luisangonzalez.es/"/>
-  <updated>2016-03-13T18:27:20.837Z</updated>
+  <updated>2016-03-19T01:17:11.537Z</updated>
   <id>http://luisangonzalez.es/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Instalar node + npm sin sudo</title>
+    <link href="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/"/>
+    <id>http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/</id>
+    <published>2016-03-19T01:03:02.000Z</published>
+    <updated>2016-03-19T01:17:11.537Z</updated>
+    
+    <content type="html">&lt;p&gt;Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, &lt;strong&gt;OjO esto es peligroso&lt;/strong&gt;, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Para ello debemos tener instalado build essentials (g++ c++ make)&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install build-essential&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&amp;gt;  &lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nodejs.org&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta &lt;code&gt;~/.local&lt;/code&gt; creare la carpeta node.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; ~/.local&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ mkdir node&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ tar xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components=1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas &lt;a href=&quot;http://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;export PATH=$HOME/.local/node/bin:$PATH&#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;export PATH=$HOME/.local/node:$PATH&#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ node -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;v4.2.3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Por último si queremos podemos actulizar npm :&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g npm&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Fuente original, traducida y modificada: &lt;a href=&quot;http://corejs.docs.bqws.io/setup/#ubuntu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://corejs.docs.bqws.io/setup/#ubuntu&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que qu
+    
+    </summary>
+    
+      <category term="node" scheme="http://luisangonzalez.es/categories/node/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="node" scheme="http://luisangonzalez.es/tags/node/"/>
+    
+      <category term="npm" scheme="http://luisangonzalez.es/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>Escribir nuevo post en hexo.io</title>
@@ -44,9 +90,9 @@
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
     
-      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
-    
       <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
     
   </entry>
   
@@ -107,9 +153,9 @@
     
       <category term="cordova/phonegap" scheme="http://luisangonzalez.es/tags/cordova-phonegap/"/>
     
-      <category term="Arduino" scheme="http://luisangonzalez.es/tags/Arduino/"/>
-    
       <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
+    
+      <category term="Arduino" scheme="http://luisangonzalez.es/tags/Arduino/"/>
     
       <category term="phonegap" scheme="http://luisangonzalez.es/tags/phonegap/"/>
     
@@ -167,7 +213,7 @@
     <link href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/"/>
     <id>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</id>
     <published>2016-02-11T00:29:00.000Z</published>
-    <updated>2016-02-28T11:22:19.302Z</updated>
+    <updated>2016-03-19T01:13:55.173Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Guia-sencilla-para-instalar-cordova&quot;&gt;&lt;a href=&quot;#Guia-sencilla-para-instalar-cordova&quot; class=&quot;headerlink&quot; title=&quot;Guia sencilla para instalar cordova&quot;&gt;&lt;/a&gt;Guia sencilla para instalar cordova&lt;/h2&gt;&lt;p&gt;Como indican en la web de &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;apache cordova&lt;/a&gt; o traves del gestor de paquetes &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt; siguiendo las instrucciones que indican:&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-add-repository ppa:cordova-ubuntu/ppa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install cordova-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cordova&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -188,7 +234,7 @@
     
       <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
     
-      <category term="npmjs" scheme="http://luisangonzalez.es/tags/npmjs/"/>
+      <category term="npm" scheme="http://luisangonzalez.es/tags/npm/"/>
     
   </entry>
   
@@ -415,9 +461,9 @@
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
     
-      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
-    
       <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
     
   </entry>
   

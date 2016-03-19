@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Blog | LuisanGonzalez</title>
+  <title>Tag: node | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://luisangonzalez.es/tags/Blog/index.html">
+<meta property="og:url" content="http://luisangonzalez.es/tags/node/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -88,14 +88,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-write-new-post" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejs-sin-sudo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/13/write-new-post/" class="article-date">
-  <time datetime="2016-03-13T18:19:29.000Z" itemprop="datePublished">Mar 13 2016</time>
+    <a href="/2016/03/19/nodejs-sin-sudo/" class="article-date">
+  <time datetime="2016-03-19T01:03:02.000Z" itemprop="datePublished">Mar 19 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
+    <a class="article-category-link" href="/categories/node/">node</a>
   </div>
 
   </div>
@@ -106,7 +106,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/13/write-new-post/">Escribir nuevo post en hexo.io</a>
+      <a class="article-title" href="/2016/03/19/nodejs-sin-sudo/">Instalar node + npm sin sudo</a>
     </h1>
   
 
@@ -114,81 +114,36 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Para escribir una nueva entrada en <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a> la forma más rápida es:</p>
-<ul>
-<li>En la carpeta raiz del blog hexo.io:</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new nombre_post</span><br></pre></td></tr></table></figure>
-<p><em>Se debe de tener en cuenta no incluir espacios en el nombre, para ello utilizar nombre_post y automaticamente lo transforma en nombre-post</em></p>
-<p>Una vez ejecutado <code>hexo new nombre_post</code> se crea un archivo <code>nombre_post.md</code> en la carpeta <code>/source/_post/</code></p>
-<p>Podemos ver la nueva entrada en blanco lanzando el server: <code>hexo server</code> e ir modificando el archivo <code>nombre_post.md</code> de nuestra nueva entrada.</p>
-<p>En mi caso utilizo <a href="https://atom.io/" target="_blank" rel="external">atom.io</a> con el plugin <a href="https://atom.io/packages/markdown-preview" target="_blank" rel="external">markdown_preview</a> que permite ver en tiempo real como va quedando el markdown de nuestra entrada.</p>
-<p>Cuando ya tenemos nuestra entrada terminada, simplemente generar y desplegar en nuestro bloq:<br> <code>hexo generate --deploy</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/03/13/write-new-post/" data-id="cilyfksi8000jn2uggnoapm3u" class="article-share-link">Share</a>
-      
-        <a href="http://luisangonzalez.es/2016/03/13/write-new-post/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Primer-post-con-hexo-io" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/23/Primer-post-con-hexo-io/" class="article-date">
-  <time datetime="2015-02-22T23:03:00.000Z" itemprop="datePublished">Feb 23 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/23/Primer-post-con-hexo-io/">Primer post con hexo.io</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Después de un largo tiempo sin utilizar el blog que comenze con <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a> he decidido continuar escribiendo pero esta vez utilizando <a href="http://hexo.io" target="_blank" rel="external">hexo.io</a>, los motivos del cambio son :</p>
+        <p>Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, <strong>OjO esto es peligroso</strong>, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).</p>
 <ol>
-<li><p>By by Ruby, no tengo nada contra Ruby pero me parece un coñazo todo el tema de las gemas, RVM, Bundle, rake install, rake… y me siento más comodo utilizando JavaScript.</p>
+<li><p>Para ello debemos tener instalado build essentials (g++ c++ make)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Después de utilizar Octopress que me ha parecido estupendo prefiero utilizar hexo.io que usa Node.js el cual estoy conociendo cada vez más y quiero profundizar.</p>
+<li><p>Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&gt;  <a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs.org</a></p>
 </li>
-<li><p>Como indican en hexo.io —&gt; A fast, simple &amp; powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :</p>
+<li><p>Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta <code>~/.local</code> creare la carpeta node.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.local</span><br><span class="line">$ mkdir node</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components=1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas <a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node/bin:$PATH'</span> &gt;&gt; ~/.zshrc</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node:$PATH'</span> &gt;&gt; ~/.zshrc</span><br><span class="line">$ <span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>Saludos ;)</p>
+<p>Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v4.2.3</span><br></pre></td></tr></table></figure></p>
+<p>Por último si queremos podemos actulizar npm :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npm</span><br></pre></td></tr></table></figure></p>
+<p>Fuente original, traducida y modificada: <a href="http://corejs.docs.bqws.io/setup/#ubuntu" target="_blank" rel="external">http://corejs.docs.bqws.io/setup/#ubuntu</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="cilyfksho0001n2ugigqrym1q" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/" data-id="cilyfksi0000an2ugqy4vm2zi" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
 
     </footer>
   </div>

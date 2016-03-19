@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/</loc>
+    
+    <lastmod>2016-03-19T01:17:11.537Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</loc>
+    
+    <lastmod>2016-03-19T01:13:55.173Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luisangonzalez.es/2016/03/13/write-new-post/</loc>
     
     <lastmod>2016-03-13T18:27:20.837Z</lastmod>
@@ -23,9 +37,9 @@
   </url>
   
   <url>
-    <loc>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</loc>
+    <loc>http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/</loc>
     
-    <lastmod>2016-02-28T11:22:19.302Z</lastmod>
+    <lastmod>2016-02-28T10:53:23.558Z</lastmod>
     
   </url>
   
@@ -38,13 +52,6 @@
   
   <url>
     <loc>http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/</loc>
-    
-    <lastmod>2016-02-28T10:53:23.558Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/</loc>
     
     <lastmod>2016-02-28T10:53:23.558Z</lastmod>
     
