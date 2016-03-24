@@ -1,11 +1,11 @@
 title: Instalar node + npm sin sudo
 date: 2016-03-19 02:03:02
 tags:
-- node
+- Node.js
 - Ubuntu
-- npm
 categories:
-  - node
+- Configuración de entorno
+- Node.js
 ---
 
 Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, **OjO esto es peligroso**, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).

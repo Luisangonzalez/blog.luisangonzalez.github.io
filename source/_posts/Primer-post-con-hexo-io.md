@@ -1,6 +1,5 @@
 title: Primer post con hexo.io
 tags:
-  - Blog
   - Hexo.io
 categories:
   - Hexo.io
@@ -14,8 +13,8 @@ Después de un largo tiempo sin utilizar el blog que comenze con [Octopress](htt
  2. Después de utilizar Octopress que me ha parecido estupendo prefiero utilizar hexo.io que usa Node.js el cual estoy conociendo cada vez más y quiero profundizar.
 
  3. Como indican en hexo.io —> A fast, simple & powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :
- 
- 
+
+
 ```
  $ npm install hexo -g
  $ hexo init blog

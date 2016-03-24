@@ -1,6 +1,5 @@
 title: Escribir nuevo post en hexo.io
 tags:
-  - Blog
   - Hexo.io
 categories:
   - Hexo.io

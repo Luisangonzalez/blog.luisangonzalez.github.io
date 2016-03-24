@@ -2,12 +2,10 @@ title: Conectar placa arduino (bq zum) por Bluetooth en Android
 date: 2016-03-13 18:05:08
 tags:
 - Android
-- cordova/phonegap
+- Cordova/Phonegap
 - Arduino
-- Cordova
-- phonegap
 categories:
-  - cordova/phonegap
+  - Cordova/Phonegap
 ---
 
 Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.

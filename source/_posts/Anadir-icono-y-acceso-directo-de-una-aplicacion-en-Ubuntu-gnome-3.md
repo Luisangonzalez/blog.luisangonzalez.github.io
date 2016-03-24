@@ -1,9 +1,10 @@
 title: Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3
 tags:
-  - "    Sublime_text"
+- Linux
+- Ubuntu
 categories:
-  - Linux
-  - Ubuntu
+- Linux
+- Ubuntu
 date: 2015-02-24 00:03:00
 ---
 Buenas,
@@ -14,14 +15,14 @@ Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sub
 
 * Al buscarlo en el buscador no aparece, para este caso debemos:
   * Crear un archivo en en : `/usr/share/applications/` como por ejemplo con nano o vi :
-  
+
 ```
 $ cd /usr/share/applications/
 $ sudo nano sublime-text-2.desktop
 ```
 
 * Que el archivo contenga :
-  
+
 ```
 [Desktop Entry]
 Name= NOMBRE DEL PROGRAMA
@@ -33,11 +34,11 @@ Type=Application
 Icon= RUTAN DEL ICONO
 Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;
 StartupNotify=false
-  
+
 ```
 
 Como por ejemplo para sublime test :
-  
+
 ```
 [Desktop Entry]
 Name=Sublime

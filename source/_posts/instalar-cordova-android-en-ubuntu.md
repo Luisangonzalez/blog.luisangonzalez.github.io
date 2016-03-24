@@ -1,10 +1,11 @@
 title: Instalar Cordova Android en Ubuntu 14.04
 tags:
   - Android
-  - Cordova
+  - Cordova/Phonegap
   - Ubuntu
-  - npm
-categories: []
+categories:
+- Configuración de entorno
+- Cordova/Phonegap
 date: 2016-02-11 01:29:00
 ---
 
@@ -27,4 +28,3 @@ Y para Ubuntu instalando los paquetes:
 sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev
 
 ```
-

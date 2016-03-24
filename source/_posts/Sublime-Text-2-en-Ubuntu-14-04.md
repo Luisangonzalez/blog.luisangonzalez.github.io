@@ -1,6 +1,6 @@
 title: Sublime Text 2 en Ubuntu 14.04
 tags:
-  - Sublime_text
+  - Sublime Text
 categories:
   - Linux
   - Ubuntu

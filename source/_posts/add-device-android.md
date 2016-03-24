@@ -1,9 +1,9 @@
-title: Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap
+title: Añadir dispositivo para depurar e instalar apps con Android Studio o Cordova/Phonegap
 tags:
 - Linux
 - Ubuntu
 - Android
-- cordova/phonegap
+- Cordova/Phonegap
 categories:
 - Android
 date: 2016-02-28 17:59:23
