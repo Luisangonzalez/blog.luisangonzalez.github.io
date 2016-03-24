@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Linux | LuisanGonzalez</title>
+  <title>Category: Cordova/Phonegap | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://luisangonzalez.es/tags/Linux/index.html">
+<meta property="og:url" content="http://luisangonzalez.es/categories/Cordova-Phonegap/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -88,14 +88,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-arduino-bluetooth-android" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/28/add-device-android/" class="article-date">
-  <time datetime="2016-02-28T16:59:23.000Z" itemprop="datePublished">Feb 28 2016</time>
+    <a href="/2016/03/13/arduino-bluetooth-android/" class="article-date">
+  <time datetime="2016-03-13T17:05:08.000Z" itemprop="datePublished">Mar 13 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a>
   </div>
 
   </div>
@@ -106,7 +106,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o Cordova/Phonegap</a>
+      <a class="article-title" href="/2016/03/13/arduino-bluetooth-android/">Conectar placa arduino (bq zum) por Bluetooth en Android</a>
     </h1>
   
 
@@ -114,100 +114,51 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
-<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
+        <p>Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.</p>
+<p>Cuando vamos a desarrollar una aplicación que hace uso de elementos nativos de la plataforma, es decir no solo es una capa de presentación web si no que utilizamos elementos físicos como el giroscopio, wifi o bluetooth en la mayoría de los casos nos vemos obligados de utilizar <a href="https://cordova.apache.org/plugins/" target="_blank" rel="external">plugins de cordova/phonegap</a>.</p>
+<p>En este caso vamos a utilizar <a href="https://www.npmjs.com/package/cordova-plugin-bluetooth-serial" target="_blank" rel="external">cordova-plugin-bluetooth-serial</a>.</p>
+<p>La aplicación de ejemplo consiste en conectar nuestro móvil con una placa Arduino que dispone de modulo de Bluetooth, en este caso <a href="http://www.bq.com/es/placa-zum-core" target="_blank" rel="external">bq zum</a> pero se puede utilizar cualquier otra añadiendo el modulo de Bluetooth.</p>
+<p>Para ello:</p>
 <ul>
-<li><p>Intalar MTPS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</span><br><span class="line">sudo apt-get install mtpfs</span><br></pre></td></tr></table></figure>
+<li>En la placa Arduino conectaremos un LED en el pin 13.</li>
+<li>Cargamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">programa</a> en la placa.</li>
+<li><p>El código de la App lo tenemos dispone en el repo de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial" target="_blank" rel="external">github</a>.</p>
 </li>
-<li><p>Añadir el id :</p>
+<li><p>Nos descagamos el código o hacemos git clone:<br><code>git clone git@github.com:Luisangonzalez/cordova-bluetooth-serial.git</code></p>
+</li>
+<li>Accedemos al directorio: <code>cd cordova-bluetooth-serial</code></li>
+<li>Asumiendo que tenemos <a href="http://developer.android.com/sdk/installing/index.html" target="_blank" rel="external">instalado el SDK de Android</a>.</li>
+<li>Con <a href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/">cordova instalado y configurado</a> compilamos la APP:<ul>
+<li>Añadimos la plataforma android: <code>$ cordova platform add android</code></li>
+<li>Instalamos el plugin bluetooth: <code>$ cordova plugin add cordova-plugin-bluetooth-serial</code></li>
+<li>compilamos la app: <code>$ cordova run</code></li>
+</ul>
 </li>
 </ul>
-<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$lsusb</span><br><span class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</span><br><span class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</span><br><span class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br></pre></td></tr></table></figure>
+<p>Si observamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">código Arduino</a> que hemos subido a la placa consiste en estar leyendo constantemente y en el caso de leer “b” encender el led y en caso “c” apagar el led.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (bluetooth_0.available() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        bluetooth_0.println(<span class="string">"Avaliable"</span>);</span><br><span class="line">        read = bluetooth_0.readString();</span><br><span class="line">        <span class="keyword">if</span> (read == <span class="string">"b"</span> || ledon) &#123;</span><br><span class="line">            bluetooth_0.print(<span class="string">"ON"</span>);</span><br><span class="line">            digitalWrite(led_0, HIGH);</span><br><span class="line">            ledon = <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (read == <span class="string">"c"</span> || !ledon) &#123;</span><br><span class="line">            bluetooth_0.print(<span class="string">"OFF"</span>);</span><br><span class="line">            digitalWrite(led_0, LOW);</span><br><span class="line">            ledon = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>En el caso del código de cordova observamos en <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/js/index.js" target="_blank" rel="external">www/js/index.js</a> :</p>
 <ul>
-<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+<li><p>Al comienzo del archivo en comentarios incluimos las funciones globales como LED13ON y LED13OFF que posterimente indicamos:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span><br><span class="line">global cordova, console, $, bluetoothSerial,refreshButton, deviceList, disconnectButton, connectionScreen, messageDiv, led13ButtonON,led13ButtonOFF</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
+<li><p>A parte de las funciones para conectar y emparejar las propias que hemos realizado para enviar “b” para encender el LED:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LED13ON: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bluetoothSerial.write(<span class="string">"b"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
-<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
+<p>y “c para apagarlo”:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LED13OFF: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  bluetoothSerial.write(<span class="string">"c"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>En el caso de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/index.html" target="_blank" rel="external">www/index.html</a>:<br>para hacer uso de las funciones de index.js simplemente añadimos al id de los botones el nombre de las funciones:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonON"</span>&gt;</span>LED 13 ON<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonOFF"</span>&gt;</span>LED 13 OFF<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Para cualquier enviar comentarios para que os pueda ayudar si me es posible, espero que os haya gustado ;).</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/02/28/add-device-android/" data-id="cim66fdv80009eiugrpctdb7h" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/" data-id="cim66fdvb000deiug3bqkkayi" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" class="article-date">
-  <time datetime="2015-02-23T23:03:00.000Z" itemprop="datePublished">Feb 24 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/Ubuntu/">Ubuntu</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/">Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Buenas,</p>
-<p>Utilizo Ubuntu 14.04 Gnome <a href="http://ubuntugnome.org/" target="_blank" rel="external">http://ubuntugnome.org/</a> y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :</p>
-<ul>
-<li><p>No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/">http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</a></p>
-</li>
-<li><p>Al buscarlo en el buscador no aparece, para este caso debemos:</p>
-<ul>
-<li>Crear un archivo en en : <code>/usr/share/applications/</code> como por ejemplo con nano o vi :</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/share/applications/</span><br><span class="line">$ sudo nano sublime-text-2.desktop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Que el archivo contenga :</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name= NOMBRE DEL PROGRAMA</span><br><span class="line">GenericName=DESCRIPCION DEL PROGRAMA</span><br><span class="line">Comment=COMENTARIO DEL PROGRAMA</span><br><span class="line">Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon= RUTAN DEL ICONO</span><br><span class="line">Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;</span><br><span class="line">StartupNotify=false</span><br></pre></td></tr></table></figure>
-<p>Como por ejemplo para sublime test :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=Sublime</span><br><span class="line">GenericName=Sublime</span><br><span class="line">Comment=Editor</span><br><span class="line">Exec=/home/luisan/Sublime2/sublime_text</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png</span><br></pre></td></tr></table></figure>
-<p>Y nada espero que os sirva ;) .</p>
-<p>Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:</p>
-<p><code>~/Sublime2/sublime_text</code> en vez de <code>/home/luisan/Sublime2/sublime_text</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cim66fduz0002eiug10xktakz" class="article-share-link">Share</a>
-      
-        <a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a></li></ul>
 
     </footer>
   </div>

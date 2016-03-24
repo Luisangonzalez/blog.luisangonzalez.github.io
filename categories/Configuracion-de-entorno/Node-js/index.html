@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Linux | LuisanGonzalez</title>
+  <title>Category: Node.js | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://luisangonzalez.es/tags/Linux/index.html">
+<meta property="og:url" content="http://luisangonzalez.es/categories/Configuracion-de-entorno/Node-js/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -88,14 +88,14 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
-    <article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejs-sin-sudo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/02/28/add-device-android/" class="article-date">
-  <time datetime="2016-02-28T16:59:23.000Z" itemprop="datePublished">Feb 28 2016</time>
+    <a href="/2016/03/19/nodejs-sin-sudo/" class="article-date">
+  <time datetime="2016-03-19T01:03:02.000Z" itemprop="datePublished">Mar 19 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a>
   </div>
 
   </div>
@@ -106,7 +106,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o Cordova/Phonegap</a>
+      <a class="article-title" href="/2016/03/19/nodejs-sin-sudo/">Instalar node + npm sin sudo</a>
     </h1>
   
 
@@ -114,100 +114,36 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
-<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
-<ul>
-<li><p>Intalar MTPS</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</span><br><span class="line">sudo apt-get install mtpfs</span><br></pre></td></tr></table></figure>
+        <p>Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, <strong>OjO esto es peligroso</strong>, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).</p>
+<ol>
+<li><p>Para ello debemos tener instalado build essentials (g++ c++ make)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Añadir el id :</p>
+<li><p>Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&gt;  <a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs.org</a></p>
 </li>
-</ul>
-<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$lsusb</span><br><span class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</span><br><span class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</span><br><span class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br><span class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</span><br><span class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</span><br><span class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</span><br><span class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</span><br><span class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+<li><p>Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta <code>~/.local</code> creare la carpeta node.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.local</span><br><span class="line">$ mkdir node</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
+<li><p>Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tar xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components=1</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
-<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
+<li><p>Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas <a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node/bin:$PATH'</span> &gt;&gt; ~/.zshrc</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node:$PATH'</span> &gt;&gt; ~/.zshrc</span><br><span class="line">$ <span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v4.2.3</span><br></pre></td></tr></table></figure></p>
+<p>Por último si queremos podemos actulizar npm :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npm</span><br></pre></td></tr></table></figure></p>
+<p>Fuente original, traducida y modificada: <a href="http://corejs.docs.bqws.io/setup/#ubuntu" target="_blank" rel="external">http://corejs.docs.bqws.io/setup/#ubuntu</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2016/02/28/add-device-android/" data-id="cim66fdv80009eiugrpctdb7h" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/" data-id="cim66fdvd000geiugrixntik5" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" class="article-date">
-  <time datetime="2015-02-23T23:03:00.000Z" itemprop="datePublished">Feb 24 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/Ubuntu/">Ubuntu</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/">Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Buenas,</p>
-<p>Utilizo Ubuntu 14.04 Gnome <a href="http://ubuntugnome.org/" target="_blank" rel="external">http://ubuntugnome.org/</a> y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :</p>
-<ul>
-<li><p>No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/">http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</a></p>
-</li>
-<li><p>Al buscarlo en el buscador no aparece, para este caso debemos:</p>
-<ul>
-<li>Crear un archivo en en : <code>/usr/share/applications/</code> como por ejemplo con nano o vi :</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/share/applications/</span><br><span class="line">$ sudo nano sublime-text-2.desktop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Que el archivo contenga :</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name= NOMBRE DEL PROGRAMA</span><br><span class="line">GenericName=DESCRIPCION DEL PROGRAMA</span><br><span class="line">Comment=COMENTARIO DEL PROGRAMA</span><br><span class="line">Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon= RUTAN DEL ICONO</span><br><span class="line">Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;</span><br><span class="line">StartupNotify=false</span><br></pre></td></tr></table></figure>
-<p>Como por ejemplo para sublime test :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=Sublime</span><br><span class="line">GenericName=Sublime</span><br><span class="line">Comment=Editor</span><br><span class="line">Exec=/home/luisan/Sublime2/sublime_text</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png</span><br></pre></td></tr></table></figure>
-<p>Y nada espero que os sirva ;) .</p>
-<p>Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:</p>
-<p><code>~/Sublime2/sublime_text</code> en vez de <code>/home/luisan/Sublime2/sublime_text</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cim66fduz0002eiug10xktakz" class="article-share-link">Share</a>
-      
-        <a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
     </footer>
   </div>

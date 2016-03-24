@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://luisangonzalez.es/"/>
-  <updated>2016-03-19T01:17:11.537Z</updated>
+  <updated>2016-03-24T11:14:58.137Z</updated>
   <id>http://luisangonzalez.es/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Instalar entorno para desarrollo en Android</title>
+    <link href="http://luisangonzalez.es/2016/03/24/entorno-android/"/>
+    <id>http://luisangonzalez.es/2016/03/24/entorno-android/</id>
+    <published>2016-03-24T11:09:03.000Z</published>
+    <updated>2016-03-24T11:14:58.137Z</updated>
+    
+    <content type="html">&lt;p&gt;Pasos a seguir para configurar el entorno para desarrollar en Android con Android Studio en Ubuntu 14.04&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descargar &lt;a href=&quot;http://developer.android.com/intl/es/sdk/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android Studio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Descomprimir donde queramos, en mi caso en ~/.local/android&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/&quot;&gt;Añadir icono y acceso directo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Para evitar el error de &lt;a href=&quot;http://stackoverflow.com/questions/28847151/unable-to-install-android-studio-in-ubuntu&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;“Unable to install Android Studio in Ubuntu”&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Añado las variables de entorno a .zshrc en mi caso, si no se tiene instalado sería en .bashrc&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;export PATH=$HOME/.local/android/sdk:$PATH&#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;export PATH=$HOME/.local/android/sdk/tools:$PATH&#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;export PATH=$HOME/.local/android/sdk/platform-tools:$PATH&#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Instalar &lt;a href=&quot;http://developer.android.com/intl/es/tools/help/adb.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;adb&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install android-tools-adb android-tools-fastboot&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://luisangonzalez.es/2016/02/28/add-device-android/&quot;&gt;Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Pasos a seguir para configurar el entorno para desarrollar en Android con Android Studio en Ubuntu 14.04&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descargar &lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Android/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Instalar node + npm sin sudo</title>
     <link href="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/"/>
     <id>http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/</id>
     <published>2016-03-19T01:03:02.000Z</published>
-    <updated>2016-03-19T01:17:11.537Z</updated>
+    <updated>2016-03-24T11:22:58.625Z</updated>
     
     <content type="html">&lt;p&gt;Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, &lt;strong&gt;OjO esto es peligroso&lt;/strong&gt;, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).&lt;/p&gt;
 &lt;ol&gt;
@@ -50,14 +95,14 @@
     
     </summary>
     
-      <category term="node" scheme="http://luisangonzalez.es/categories/node/"/>
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Node.js" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Node-js/"/>
     
     
       <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
     
-      <category term="node" scheme="http://luisangonzalez.es/tags/node/"/>
-    
-      <category term="npm" scheme="http://luisangonzalez.es/tags/npm/"/>
+      <category term="Node.js" scheme="http://luisangonzalez.es/tags/Node-js/"/>
     
   </entry>
   
@@ -66,7 +111,7 @@
     <link href="http://luisangonzalez.es/2016/03/13/write-new-post/"/>
     <id>http://luisangonzalez.es/2016/03/13/write-new-post/</id>
     <published>2016-03-13T18:19:29.000Z</published>
-    <updated>2016-03-13T18:27:20.837Z</updated>
+    <updated>2016-03-24T11:20:56.949Z</updated>
     
     <content type="html">&lt;p&gt;Para escribir una nueva entrada en &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt; la forma más rápida es:&lt;/p&gt;
 &lt;ul&gt;
@@ -90,8 +135,6 @@
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
     
-      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
-    
       <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
     
   </entry>
@@ -101,7 +144,7 @@
     <link href="http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/"/>
     <id>http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/</id>
     <published>2016-03-13T17:05:08.000Z</published>
-    <updated>2016-03-13T18:02:33.593Z</updated>
+    <updated>2016-03-24T11:23:40.037Z</updated>
     
     <content type="html">&lt;p&gt;Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.&lt;/p&gt;
 &lt;p&gt;Cuando vamos a desarrollar una aplicación que hace uso de elementos nativos de la plataforma, es decir no solo es una capa de presentación web si no que utilizamos elementos físicos como el giroscopio, wifi o bluetooth en la mayoría de los casos nos vemos obligados de utilizar &lt;a href=&quot;https://cordova.apache.org/plugins/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;plugins de cordova/phonegap&lt;/a&gt;.&lt;/p&gt;
@@ -146,27 +189,23 @@
     
     </summary>
     
-      <category term="cordova/phonegap" scheme="http://luisangonzalez.es/categories/cordova-phonegap/"/>
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/categories/Cordova-Phonegap/"/>
     
     
       <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
     
-      <category term="cordova/phonegap" scheme="http://luisangonzalez.es/tags/cordova-phonegap/"/>
-    
-      <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
-    
       <category term="Arduino" scheme="http://luisangonzalez.es/tags/Arduino/"/>
     
-      <category term="phonegap" scheme="http://luisangonzalez.es/tags/phonegap/"/>
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
     
   </entry>
   
   <entry>
-    <title>Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</title>
+    <title>Añadir dispositivo para depurar e instalar apps con Android Studio o Cordova/Phonegap</title>
     <link href="http://luisangonzalez.es/2016/02/28/add-device-android/"/>
     <id>http://luisangonzalez.es/2016/02/28/add-device-android/</id>
     <published>2016-02-28T16:59:23.000Z</published>
-    <updated>2016-02-28T17:08:26.282Z</updated>
+    <updated>2016-03-24T11:17:41.929Z</updated>
     
     <content type="html">&lt;p&gt;Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.&lt;/p&gt;
 &lt;p&gt;En mi caso utilizo un &lt;a href=&quot;http://www.bq.com/es/aquaris-x5&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;bq X5&lt;/a&gt; y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.&lt;/p&gt;
@@ -204,7 +243,7 @@
     
       <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
     
-      <category term="cordova/phonegap" scheme="http://luisangonzalez.es/tags/cordova-phonegap/"/>
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
     
   </entry>
   
@@ -213,7 +252,7 @@
     <link href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/"/>
     <id>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</id>
     <published>2016-02-11T00:29:00.000Z</published>
-    <updated>2016-03-19T01:13:55.173Z</updated>
+    <updated>2016-03-24T11:25:08.161Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Guia-sencilla-para-instalar-cordova&quot;&gt;&lt;a href=&quot;#Guia-sencilla-para-instalar-cordova&quot; class=&quot;headerlink&quot; title=&quot;Guia sencilla para instalar cordova&quot;&gt;&lt;/a&gt;Guia sencilla para instalar cordova&lt;/h2&gt;&lt;p&gt;Como indican en la web de &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;apache cordova&lt;/a&gt; o traves del gestor de paquetes &lt;a href=&quot;https://www.npmjs.com/package/cordova&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm&lt;/a&gt; siguiendo las instrucciones que indican:&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-add-repository ppa:cordova-ubuntu/ppa&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install cordova-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install -g cordova&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -227,14 +266,16 @@
     
     </summary>
     
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Cordova-Phonegap/"/>
+    
     
       <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
     
       <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
     
-      <category term="Cordova" scheme="http://luisangonzalez.es/tags/Cordova/"/>
-    
-      <category term="npm" scheme="http://luisangonzalez.es/tags/npm/"/>
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
     
   </entry>
   
@@ -243,7 +284,7 @@
     <link href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/"/>
     <id>http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/</id>
     <published>2015-02-23T23:03:00.000Z</published>
-    <updated>2016-02-28T10:53:23.558Z</updated>
+    <updated>2016-03-24T11:18:32.641Z</updated>
     
     <content type="html">&lt;p&gt;Buenas,&lt;/p&gt;
 &lt;p&gt;Utilizo Ubuntu 14.04 Gnome &lt;a href=&quot;http://ubuntugnome.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ubuntugnome.org/&lt;/a&gt; y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :&lt;/p&gt;
@@ -280,7 +321,9 @@
       <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
     
     
-      <category term="    Sublime_text" scheme="http://luisangonzalez.es/tags/Sublime-text/"/>
+      <category term="Linux" scheme="http://luisangonzalez.es/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
     
   </entry>
   
@@ -289,7 +332,7 @@
     <link href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/"/>
     <id>http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</id>
     <published>2015-02-23T22:51:00.000Z</published>
-    <updated>2016-02-28T10:53:23.558Z</updated>
+    <updated>2016-03-24T11:20:49.953Z</updated>
     
     <content type="html">&lt;p&gt;Muy buenas ;)&lt;/p&gt;
 &lt;p&gt;Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:&lt;/p&gt;
@@ -323,7 +366,7 @@
       <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
     
     
-      <category term="Sublime_text" scheme="http://luisangonzalez.es/tags/Sublime-text/"/>
+      <category term="Sublime Text" scheme="http://luisangonzalez.es/tags/Sublime-Text/"/>
     
   </entry>
   
@@ -437,7 +480,7 @@
     <link href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/"/>
     <id>http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/</id>
     <published>2015-02-22T23:03:00.000Z</published>
-    <updated>2016-02-28T10:53:23.558Z</updated>
+    <updated>2016-03-24T11:20:35.229Z</updated>
     
     <content type="html">&lt;p&gt;Después de un largo tiempo sin utilizar el blog que comenze con &lt;a href=&quot;http://octopress.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octopress&lt;/a&gt; he decidido continuar escribiendo pero esta vez utilizando &lt;a href=&quot;http://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt;, los motivos del cambio son :&lt;/p&gt;
 &lt;ol&gt;
@@ -460,8 +503,6 @@
     
       <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
     
-    
-      <category term="Blog" scheme="http://luisangonzalez.es/tags/Blog/"/>
     
       <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
     
