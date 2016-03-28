@@ -3,27 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3 | LuisanGonzalez</title>
+  <title>Instalar Oh my zsh | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
+  <meta name="description" content="Oh my ZSH! Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)
+El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3">
-<meta property="og:url" content="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/index.html">
+<meta property="og:title" content="Instalar Oh my zsh">
+<meta property="og:url" content="http://luisangonzalez.es/2016/03/28/ohmyzsh/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
-<meta property="og:description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
-<meta property="og:updated_time" content="2016-03-24T11:18:32.641Z">
+<meta property="og:description" content="Oh my ZSH! Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)
+El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que">
+<meta property="og:image" content="http://luisangonzalez.es/img/ohmyzsh.jpg">
+<meta property="og:updated_time" content="2016-03-28T12:41:50.795Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3">
-<meta name="twitter:description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
+<meta name="twitter:title" content="Instalar Oh my zsh">
+<meta name="twitter:description" content="Oh my ZSH! Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)
+El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que">
+<meta name="twitter:image" content="http://luisangonzalez.es/img/ohmyzsh.jpg">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -96,14 +92,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ohmyzsh" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" class="article-date">
-  <time datetime="2015-02-23T23:03:00.000Z" itemprop="datePublished">Feb 24 2015</time>
+    <a href="/2016/03/28/ohmyzsh/" class="article-date">
+  <time datetime="2016-03-28T11:37:28.000Z" itemprop="datePublished">Mar 28 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/Ubuntu/">Ubuntu</a>
+    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a>
   </div>
 
   </div>
@@ -114,7 +110,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3
+      Instalar Oh my zsh
     </h1>
   
 
@@ -122,37 +118,25 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Buenas,</p>
-<p>Utilizo Ubuntu 14.04 Gnome <a href="http://ubuntugnome.org/" target="_blank" rel="external">http://ubuntugnome.org/</a> y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :</p>
-<ul>
-<li><p>No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/">http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</a></p>
-</li>
-<li><p>Al buscarlo en el buscador no aparece, para este caso debemos:</p>
-<ul>
-<li>Crear un archivo en en : <code>/usr/share/applications/</code> como por ejemplo con nano o vi :</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/share/applications/</span><br><span class="line">$ sudo nano sublime-text-2.desktop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Que el archivo contenga :</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name= NOMBRE DEL PROGRAMA</span><br><span class="line">GenericName=DESCRIPCION DEL PROGRAMA</span><br><span class="line">Comment=COMENTARIO DEL PROGRAMA</span><br><span class="line">Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon= RUTAN DEL ICONO</span><br><span class="line">Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;</span><br><span class="line">StartupNotify=false</span><br></pre></td></tr></table></figure>
-<p>Como por ejemplo para sublime test :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=Sublime</span><br><span class="line">GenericName=Sublime</span><br><span class="line">Comment=Editor</span><br><span class="line">Exec=/home/luisan/Sublime2/sublime_text</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png</span><br></pre></td></tr></table></figure>
-<p>Y nada espero que os sirva ;) .</p>
-<p>Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:</p>
-<p><code>~/Sublime2/sublime_text</code> en vez de <code>/home/luisan/Sublime2/sublime_text</code></p>
+        <p><a href="http://ohmyz.sh/" target="_blank" rel="external">Oh my ZSH!</a> Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)</p>
+<p>El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que le da al terminal lo que hace que se más práctico, el poder conocer en la rama en la que nos encontramos así como cuando hemos realizado una modificación nos ayuda para saber el estado en el repo en el que nos encontramos, aquí podemos observar un pantallazo del términal con ohmyzsh y el plugin git:</p>
+<p><img src="img/ohmyzsh.jpg" alt="Oh my zsh imagen" title="Oh my zsh imagen"></p>
+<p>Este es uno de los plugins, hay miles de <a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins" target="_blank" rel="external">plugins</a> que podemos encontrar en su repo oficial además de <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="external">temas.</a></p>
+<p>Para instalarlo, se han de siguir los siguintes pasos sacados de su <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">repo oficial</a></p>
+<p> 1.Instalar via apt-get<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br></pre></td></tr></table></figure></p>
+<p> 2.Hacer zsh como shell por defecto<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh <span class="_">-s</span> $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure></p>
+<p> 3.Cerrar sesión y volver a abrir, al abrir el terminal nos pregungar si crear el archivo ~/.zshrc, el cual hará la función de bashrc.</p>
+<p> 4.En mi caso se instala correctamente pero no carga los temas ni aparece la carpeta <code>~/.oh-my-zsh</code> en la cual se pueden instalar temas y plugins, para ello descargando e instalando el siguiente script se soluciona:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -L http://install.ohmyz.sh &gt; install.sh</span><br><span class="line">sh install.sh</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cimbysa3p0001biugs9o9y8fr" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2016/03/28/ohmyzsh/" data-id="cimbysa4d000mbiug6bhgrx3v" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2016/03/28/ohmyzsh/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
 
     </footer>
   </div>
@@ -160,19 +144,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Instalar Cordova Android en Ubuntu 14.04
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/24/entorno-android/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Sublime Text 2 en Ubuntu 14.04</div>
+      <div class="article-nav-title">Instalar entorno para desarrollo en Android</div>
     </a>
   
 </nav>
@@ -316,7 +291,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
-  var disqus_url = 'http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/';
+  var disqus_url = 'http://luisangonzalez.es/2016/03/28/ohmyzsh/';
   
   (function(){
     var dsq = document.createElement('script');

@@ -3,27 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3 | LuisanGonzalez</title>
+  <title>Archives | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3">
-<meta property="og:url" content="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/index.html">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LuisanGonzalez">
+<meta property="og:url" content="http://luisangonzalez.es/archives/page/2/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
-<meta property="og:description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
-<meta property="og:updated_time" content="2016-03-24T11:18:32.641Z">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3">
-<meta name="twitter:description" content="Buenas,
-Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
-
-No se puede ejecutar desde cualquier sitio con el términal y para ello es">
+<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:description">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -96,14 +86,16 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-Primer-post-con-hexo-io" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" class="article-date">
-  <time datetime="2015-02-23T23:03:00.000Z" itemprop="datePublished">Feb 24 2015</time>
+    <a href="/2015/02/23/Primer-post-con-hexo-io/" class="article-date">
+  <time datetime="2015-02-22T23:03:00.000Z" itemprop="datePublished">Feb 23 2015</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>►<a class="article-category-link" href="/categories/Linux/Ubuntu/">Ubuntu</a>
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
   </div>
 
   </div>
@@ -113,8 +105,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/23/Primer-post-con-hexo-io/">Primer post con hexo.io</a>
     </h1>
   
 
@@ -122,70 +114,40 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Buenas,</p>
-<p>Utilizo Ubuntu 14.04 Gnome <a href="http://ubuntugnome.org/" target="_blank" rel="external">http://ubuntugnome.org/</a> y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :</p>
-<ul>
-<li><p>No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/">http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</a></p>
+        <p>Después de un largo tiempo sin utilizar el blog que comenze con <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a> he decidido continuar escribiendo pero esta vez utilizando <a href="http://hexo.io" target="_blank" rel="external">hexo.io</a>, los motivos del cambio son :</p>
+<ol>
+<li><p>By by Ruby, no tengo nada contra Ruby pero me parece un coñazo todo el tema de las gemas, RVM, Bundle, rake install, rake… y me siento más comodo utilizando JavaScript.</p>
 </li>
-<li><p>Al buscarlo en el buscador no aparece, para este caso debemos:</p>
-<ul>
-<li>Crear un archivo en en : <code>/usr/share/applications/</code> como por ejemplo con nano o vi :</li>
-</ul>
+<li><p>Después de utilizar Octopress que me ha parecido estupendo prefiero utilizar hexo.io que usa Node.js el cual estoy conociendo cada vez más y quiero profundizar.</p>
 </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/share/applications/</span><br><span class="line">$ sudo nano sublime-text-2.desktop</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Que el archivo contenga :</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name= NOMBRE DEL PROGRAMA</span><br><span class="line">GenericName=DESCRIPCION DEL PROGRAMA</span><br><span class="line">Comment=COMENTARIO DEL PROGRAMA</span><br><span class="line">Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon= RUTAN DEL ICONO</span><br><span class="line">Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;</span><br><span class="line">StartupNotify=false</span><br></pre></td></tr></table></figure>
-<p>Como por ejemplo para sublime test :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=Sublime</span><br><span class="line">GenericName=Sublime</span><br><span class="line">Comment=Editor</span><br><span class="line">Exec=/home/luisan/Sublime2/sublime_text</span><br><span class="line">Terminal=false</span><br><span class="line">Type=Application</span><br><span class="line">Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png</span><br></pre></td></tr></table></figure>
-<p>Y nada espero que os sirva ;) .</p>
-<p>Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:</p>
-<p><code>~/Sublime2/sublime_text</code> en vez de <code>/home/luisan/Sublime2/sublime_text</code></p>
+<li><p>Como indican en hexo.io —&gt; A fast, simple &amp; powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>Saludos ;)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="cimbysa3p0001biugs9o9y8fr" class="article-share-link">Share</a>
+      <a data-url="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="cimbysa3z0006biugoi3xu850" class="article-share-link">Share</a>
       
-        <a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2016/02/11/instalar-cordova-android-en-ubuntu/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Instalar Cordova Android en Ubuntu 14.04
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Sublime Text 2 en Ubuntu 14.04</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
@@ -316,13 +278,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
-  var disqus_url = 'http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
