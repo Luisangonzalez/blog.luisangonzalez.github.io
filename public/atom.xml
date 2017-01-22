@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LuisanGonzalez</title>
+  <subtitle>Developer</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://luisangonzalez.es/"/>
+  <updated>2016-08-22T17:57:44.869Z</updated>
+  <id>http://luisangonzalez.es/</id>
+  
+  <author>
+    <name>Luisangonzalez</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Montar directorio NFS en Synology DS214</title>
+    <link href="http://luisangonzalez.es/2016/08/22/nfs-synology/"/>
+    <id>http://luisangonzalez.es/2016/08/22/nfs-synology/</id>
+    <published>2016-08-22T16:18:03.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu"><a href="#Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu" class="headerlink" title="Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu"></a>Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu</h5><p>Como indican en la web de <a href="https://www.synology.com/es-es/knowledgebase/DSM/tutorial/File_Sharing/How_to_access_files_on_Synology_NAS_within_the_local_network_NFS" target="_blank" rel="external">Synology</a> seguimos todos los pasos para crear nuestras carpetas compartidas en local mediante NFS.</p>
+<p>Una vez configurado el NAS, para montar las carpetas necesitamos instalar el paquete <code>nfs-commons</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nfs-common</div></pre></td></tr></table></figure>
+<p>Y añadimos en el archivo <code>/etc/fstab</code> como root:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/fstab</div></pre></td></tr></table></figure></p>
+<p>las carpetas a montar, como por ejemplo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.1.129:/volume1/video    /mnt/video      nfs     auto    0 0</div></pre></td></tr></table></figure>
+<p>En mi caso <code>192.168.1.129</code> es la IP del NAS y luego seguido de dos puntos <code>:</code> el directorio de la carpeta del NAS a montar <code>/volume1/video</code>.<br>La ruta <code>/mnt/video</code> es donde se va a montar en nuestro equipo.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu&quot;&gt;&lt;a href=&quot;#Guia-para-configurar-carpetas-NFS-en-Synology-en-n
+    
+    </summary>
+    
+      <category term="Synology" scheme="http://luisangonzalez.es/categories/Synology/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Synology" scheme="http://luisangonzalez.es/tags/Synology/"/>
+    
+      <category term="NAS" scheme="http://luisangonzalez.es/tags/NAS/"/>
+    
+      <category term="NFS" scheme="http://luisangonzalez.es/tags/NFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar Oh my zsh</title>
+    <link href="http://luisangonzalez.es/2016/03/28/ohmyzsh/"/>
+    <id>http://luisangonzalez.es/2016/03/28/ohmyzsh/</id>
+    <published>2016-03-28T11:37:28.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://ohmyz.sh/" target="_blank" rel="external">Oh my ZSH!</a> Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)</p>
+<p>El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que le da al terminal lo que hace que se más práctico, el poder conocer en la rama en la que nos encontramos así como cuando hemos realizado una modificación nos ayuda para saber el estado en el repo en el que nos encontramos, aquí podemos observar un pantallazo del términal con ohmyzsh y el plugin git:</p>
+<p><img src="img/ohmyzsh.jpg" alt="Oh my zsh imagen" title="Oh my zsh imagen"></p>
+<p>Este es uno de los plugins, hay miles de <a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins" target="_blank" rel="external">plugins</a> que podemos encontrar en su repo oficial además de <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="external">temas.</a></p>
+<p>Para instalarlo, se han de siguir los siguintes pasos sacados de su <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">repo oficial</a></p>
+<p> 1.Instalar via apt-get<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install zsh</div></pre></td></tr></table></figure></p>
+<p> 2.Hacer zsh como shell por defecto<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">chsh <span class="_">-s</span> $(<span class="built_in">which</span> zsh)</div></pre></td></tr></table></figure></p>
+<p> 3.Cerrar sesión y volver a abrir, al abrir el terminal nos pregungar si crear el archivo ~/.zshrc, el cual hará la función de bashrc.</p>
+<p> 4.En mi caso se instala correctamente pero no carga los temas ni aparece la carpeta <code>~/.oh-my-zsh</code> en la cual se pueden instalar temas y plugins, para ello descargando e instalando el siguiente script se soluciona:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -L http://install.ohmyz.sh &gt; install.sh</div><div class="line">sh install.sh</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://ohmyz.sh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Oh my ZSH!&lt;/a&gt; Es un términal configurable con multitud de plugins como Git que
+    
+    </summary>
+    
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Ohmyz.sh" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Ohmyz-sh/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Ohmyz.sh" scheme="http://luisangonzalez.es/tags/Ohmyz-sh/"/>
+    
+      <category term="Git" scheme="http://luisangonzalez.es/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar entorno para desarrollo en Android</title>
+    <link href="http://luisangonzalez.es/2016/03/24/entorno-android/"/>
+    <id>http://luisangonzalez.es/2016/03/24/entorno-android/</id>
+    <published>2016-03-24T11:09:03.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Pasos a seguir para configurar el entorno para desarrollar en Android con Android Studio en Ubuntu 14.04</p>
+<ol>
+<li>Descargar <a href="http://developer.android.com/intl/es/sdk/index.html" target="_blank" rel="external">Android Studio</a></li>
+<li>Descomprimir donde queramos, en mi caso en ~/.local/android</li>
+<li><a href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/">Añadir icono y acceso directo</a></li>
+<li><p>Para evitar el error de <a href="http://stackoverflow.com/questions/28847151/unable-to-install-android-studio-in-ubuntu" target="_blank" rel="external">“Unable to install Android Studio in Ubuntu”</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6</div></pre></td></tr></table></figure>
+</li>
+<li><p>Añado las variables de entorno a .zshrc en mi caso, si no se tiene instalado sería en .bashrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/android/sdk:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/android/sdk/tools:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/android/sdk/platform-tools:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">source</span> ~/.zshrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>Instalar <a href="http://developer.android.com/intl/es/tools/help/adb.html" target="_blank" rel="external">adb</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install android-tools-adb android-tools-fastboot</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://luisangonzalez.es/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</a></p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Pasos a seguir para configurar el entorno para desarrollar en Android con Android Studio en Ubuntu 14.04&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descargar &lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Android/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar node + npm sin sudo</title>
+    <link href="http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/"/>
+    <id>http://luisangonzalez.es/2016/03/19/nodejs-sin-sudo/</id>
+    <published>2016-03-19T01:03:02.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, <strong>OjO esto es peligroso</strong>, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).</p>
+<ol>
+<li><p>Para ello debemos tener instalado build essentials (g++ c++ make)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install build-essential</div></pre></td></tr></table></figure>
+</li>
+<li><p>Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&gt;  <a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs.org</a></p>
+</li>
+<li><p>Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta <code>~/.local</code> creare la carpeta node.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.local</div><div class="line">$ mkdir node</div></pre></td></tr></table></figure>
+</li>
+<li><p>Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components=1</div></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas <a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node/bin:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">source</span> ~/.zshrc</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v4.2.3</div></pre></td></tr></table></figure></p>
+<p>Por último si queremos podemos actulizar npm :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g npm</div></pre></td></tr></table></figure></p>
+<p>Fuente original, traducida y modificada: <a href="http://corejs.docs.bqws.io/setup/#ubuntu" target="_blank" rel="external">http://corejs.docs.bqws.io/setup/#ubuntu</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que qu
+    
+    </summary>
+    
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Node.js" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Node-js/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Node.js" scheme="http://luisangonzalez.es/tags/Node-js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Escribir nuevo post en hexo.io</title>
+    <link href="http://luisangonzalez.es/2016/03/13/write-new-post/"/>
+    <id>http://luisangonzalez.es/2016/03/13/write-new-post/</id>
+    <published>2016-03-13T18:19:29.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Para escribir una nueva entrada en <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a> la forma más rápida es:</p>
+<ul>
+<li>En la carpeta raiz del blog hexo.io:</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new nombre_post</div></pre></td></tr></table></figure>
+<p><em>Se debe de tener en cuenta no incluir espacios en el nombre, para ello utilizar nombre_post y automaticamente lo transforma en nombre-post</em></p>
+<p>Una vez ejecutado <code>hexo new nombre_post</code> se crea un archivo <code>nombre_post.md</code> en la carpeta <code>/source/_post/</code></p>
+<p>Podemos ver la nueva entrada en blanco lanzando el server: <code>hexo server</code> e ir modificando el archivo <code>nombre_post.md</code> de nuestra nueva entrada.</p>
+<p>En mi caso utilizo <a href="https://atom.io/" target="_blank" rel="external">atom.io</a> con el plugin <a href="https://atom.io/packages/markdown-preview" target="_blank" rel="external">markdown_preview</a> que permite ver en tiempo real como va quedando el markdown de nuestra entrada.</p>
+<p>Cuando ya tenemos nuestra entrada terminada, simplemente generar y desplegar en nuestro bloq:<br> <code>hexo generate --deploy</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Para escribir una nueva entrada en &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo.io&lt;/a&gt; la forma más rápida es:&lt;/p&gt;
+&lt;ul&gt;
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Conectar placa arduino (bq zum) por Bluetooth en Android</title>
+    <link href="http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/"/>
+    <id>http://luisangonzalez.es/2016/03/13/arduino-bluetooth-android/</id>
+    <published>2016-03-13T17:05:08.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.</p>
+<p>Cuando vamos a desarrollar una aplicación que hace uso de elementos nativos de la plataforma, es decir no solo es una capa de presentación web si no que utilizamos elementos físicos como el giroscopio, wifi o bluetooth en la mayoría de los casos nos vemos obligados de utilizar <a href="https://cordova.apache.org/plugins/" target="_blank" rel="external">plugins de cordova/phonegap</a>.</p>
+<p>En este caso vamos a utilizar <a href="https://www.npmjs.com/package/cordova-plugin-bluetooth-serial" target="_blank" rel="external">cordova-plugin-bluetooth-serial</a>.</p>
+<p>La aplicación de ejemplo consiste en conectar nuestro móvil con una placa Arduino que dispone de modulo de Bluetooth, en este caso <a href="http://www.bq.com/es/placa-zum-core" target="_blank" rel="external">bq zum</a> pero se puede utilizar cualquier otra añadiendo el modulo de Bluetooth.</p>
+<p>Para ello:</p>
+<ul>
+<li>En la placa Arduino conectaremos un LED en el pin 13.</li>
+<li>Cargamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">programa</a> en la placa.</li>
+<li><p>El código de la App lo tenemos dispone en el repo de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial" target="_blank" rel="external">github</a>.</p>
+</li>
+<li><p>Nos descagamos el código o hacemos git clone:<br><code>git clone git@github.com:Luisangonzalez/cordova-bluetooth-serial.git</code></p>
+</li>
+<li>Accedemos al directorio: <code>cd cordova-bluetooth-serial</code></li>
+<li>Asumiendo que tenemos <a href="http://developer.android.com/sdk/installing/index.html" target="_blank" rel="external">instalado el SDK de Android</a>.</li>
+<li>Con <a href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/">cordova instalado y configurado</a> compilamos la APP:<ul>
+<li>Añadimos la plataforma android: <code>$ cordova platform add android</code></li>
+<li>Instalamos el plugin bluetooth: <code>$ cordova plugin add cordova-plugin-bluetooth-serial</code></li>
+<li>compilamos la app: <code>$ cordova run</code></li>
+</ul>
+</li>
+</ul>
+<p>Si observamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">código Arduino</a> que hemos subido a la placa consiste en estar leyendo constantemente y en el caso de leer “b” encender el led y en caso “c” apagar el led.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (bluetooth_0.available() &gt; <span class="number">0</span>) &#123;</div><div class="line">        bluetooth_0.println(<span class="string">"Avaliable"</span>);</div><div class="line">        read = bluetooth_0.readString();</div><div class="line">        <span class="keyword">if</span> (read == <span class="string">"b"</span> || ledon) &#123;</div><div class="line">            bluetooth_0.print(<span class="string">"ON"</span>);</div><div class="line">            digitalWrite(led_0, HIGH);</div><div class="line">            ledon = <span class="literal">true</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (read == <span class="string">"c"</span> || !ledon) &#123;</div><div class="line">            bluetooth_0.print(<span class="string">"OFF"</span>);</div><div class="line">            digitalWrite(led_0, LOW);</div><div class="line">            ledon = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>En el caso del código de cordova observamos en <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/js/index.js" target="_blank" rel="external">www/js/index.js</a> :</p>
+<ul>
+<li><p>Al comienzo del archivo en comentarios incluimos las funciones globales como LED13ON y LED13OFF que posterimente indicamos:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">global cordova, console, $, bluetoothSerial,refreshButton, deviceList, disconnectButton, connectionScreen, messageDiv, led13ButtonON,led13ButtonOFF</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>A parte de las funciones para conectar y emparejar las propias que hemos realizado para enviar “b” para encender el LED:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LED13ON: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  bluetoothSerial.write(<span class="string">"b"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>y “c para apagarlo”:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LED13OFF: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  bluetoothSerial.write(<span class="string">"c"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>En el caso de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/index.html" target="_blank" rel="external">www/index.html</a>:<br>para hacer uso de las funciones de index.js simplemente añadimos al id de los botones el nombre de las funciones:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonON"</span>&gt;</span>LED 13 ON<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonOFF"</span>&gt;</span>LED 13 OFF<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Para cualquier enviar comentarios para que os pueda ayudar si me es posible, espero que os haya gustado ;).</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en
+    
+    </summary>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/categories/Cordova-Phonegap/"/>
+    
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
+    
+      <category term="Arduino" scheme="http://luisangonzalez.es/tags/Arduino/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Añadir dispositivo para depurar e instalar apps con Android Studio o Cordova/Phonegap</title>
+    <link href="http://luisangonzalez.es/2016/02/28/add-device-android/"/>
+    <id>http://luisangonzalez.es/2016/02/28/add-device-android/</id>
+    <published>2016-02-28T16:59:23.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los gestos táctiles, la mejor opción es depurar e isntalar las aplicaciones que estamos desarrollando en un dispositivo físico el problema es que no siempre se añade y configura automaticamente para ser usuado con Android Studio o con cordova.</p>
+<p>En mi caso utilizo un <a href="http://www.bq.com/es/aquaris-x5" target="_blank" rel="external">bq X5</a> y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.</p>
+<ul>
+<li><p>Intalar MTPS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9</div><div class="line">sudo apt-get install mtpfs</div></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir el id :</p>
+</li>
+</ul>
+<p>Con el comando <code>lsusb</code> nos listara todos los usbs conectados, entre ellos el dispositivo móvil.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$lsusb</div><div class="line">Bus 002 Device 002: ID 8087:8001 Intel Corp.</div><div class="line">Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</div><div class="line">Bus 001 Device 002: ID 8087:8009 Intel Corp.</div><div class="line">Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</div><div class="line">Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub</div><div class="line">Bus 003 Device 003: ID 8087:07dc Intel Corp.</div><div class="line">Bus 003 Device 002: ID 046d:c52e Logitech, Inc.</div><div class="line">Bus 003 Device 005: ID 2a47:7f10  #Este es id</div><div class="line">Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Como usuario root añadimos al archivo <code>/etc/udev/rules.d/51-android.rules.</code> la siguiente linea:<br><code>SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;0x2a47&quot;, MODE=&quot;0666&quot;, GROUP=&quot;plugdev&quot;</code></p>
+</li>
+<li><p>En el archivo que se encuentra en nuestra carpeta de usuario <code>~/.android/adb_usb.ini</code> añaidmos el id del dispositivo: <code>0x2a47</code> en nuestro caso.</p>
+</li>
+</ul>
+<p>Siguiendo estos pasos, podremos utilizar nuestro móvil con Android Studio o cordova/phonegap.</p>
+<p>Indicar que gran parte de la información se encuentra en<br><code>http://developer.android.com/tools/device.html</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Desarrollar aplicaciones móviles usando el emulador de Android no siempre es tan rápido como esperamos ni mucho menos para testear los ge
+    
+    </summary>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/categories/Android/"/>
+    
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Instalar Cordova Android en Ubuntu 14.04</title>
+    <link href="http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/"/>
+    <id>http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/</id>
+    <published>2016-02-11T00:29:00.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Guia-sencilla-para-instalar-cordova"><a href="#Guia-sencilla-para-instalar-cordova" class="headerlink" title="Guia sencilla para instalar cordova"></a>Guia sencilla para instalar cordova</h2><p>Como indican en la web de <a href="https://www.npmjs.com/package/cordova" target="_blank" rel="external">apache cordova</a> o traves del gestor de paquetes <a href="https://www.npmjs.com/package/cordova" target="_blank" rel="external">npm</a> siguiendo las instrucciones que indican:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-add-repository ppa:cordova-ubuntu/ppa</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install cordova-cli</div><div class="line">npm install -g cordova</div></pre></td></tr></table></figure>
+<p>Y para Ubuntu instalando los paquetes:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install cmake debhelper libx11-dev libicu-dev pkg-config qtbase5-dev qtchooser qtdeclarative5-dev qtfeedback5-dev qtlocation5-dev qtmultimedia5-dev qtpim5-dev qtsensors5-dev qtsystems5-dev</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Guia-sencilla-para-instalar-cordova&quot;&gt;&lt;a href=&quot;#Guia-sencilla-para-instalar-cordova&quot; class=&quot;headerlink&quot; title=&quot;Guia sencilla para ins
+    
+    </summary>
+    
+      <category term="Configuración de entorno" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/"/>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/categories/Configuracion-de-entorno/Cordova-Phonegap/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+      <category term="Android" scheme="http://luisangonzalez.es/tags/Android/"/>
+    
+      <category term="Cordova/Phonegap" scheme="http://luisangonzalez.es/tags/Cordova-Phonegap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Añadir icono y acceso directo de una aplicación en Ubuntu gnome 3</title>
+    <link href="http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/"/>
+    <id>http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/</id>
+    <published>2015-02-23T23:03:00.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Buenas,</p>
+<p>Utilizo Ubuntu 14.04 Gnome <a href="http://ubuntugnome.org/" target="_blank" rel="external">http://ubuntugnome.org/</a> y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :</p>
+<ul>
+<li><p>No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : <a href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/">http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</a></p>
+</li>
+<li><p>Al buscarlo en el buscador no aparece, para este caso debemos:</p>
+<ul>
+<li>Crear un archivo en en : <code>/usr/share/applications/</code> como por ejemplo con nano o vi :</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd /usr/share/applications/</div><div class="line">$ sudo nano sublime-text-2.desktop</div></pre></td></tr></table></figure>
+<ul>
+<li>Que el archivo contenga :</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Name= NOMBRE DEL PROGRAMA</div><div class="line">GenericName=DESCRIPCION DEL PROGRAMA</div><div class="line">Comment=COMENTARIO DEL PROGRAMA</div><div class="line">Exec=RUTA DEL PROGRAMA O EL NOMBRE SI ESTA AÑADIDO AL PATH start -i</div><div class="line">Terminal=false</div><div class="line">Type=Application</div><div class="line">Icon= RUTAN DEL ICONO</div><div class="line">Categories=CATEGORIA A LA QUE PERTENECE, QUE EXISTA COMO Network;FileTransfer;</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
+<p>Como por ejemplo para sublime test :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Name=Sublime</div><div class="line">GenericName=Sublime</div><div class="line">Comment=Editor</div><div class="line">Exec=/home/luisan/Sublime2/sublime_text</div><div class="line">Terminal=false</div><div class="line">Type=Application</div><div class="line">Icon=/home/luisan/Sublime2/Icon/128x128/sublime_text.png</div></pre></td></tr></table></figure>
+<p>Y nada espero que os sirva ;) .</p>
+<p>Indicar que tuve problemas porque estaba escribiendo la ruta de esta forma:</p>
+<p><code>~/Sublime2/sublime_text</code> en vez de <code>/home/luisan/Sublime2/sublime_text</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas,&lt;/p&gt;
+&lt;p&gt;Utilizo Ubuntu 14.04 Gnome &lt;a href=&quot;http://ubuntugnome.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ubuntugnome.org/&lt;/a&gt; y 
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/categories/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
+    
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sublime Text 2 en Ubuntu 14.04</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/</id>
+    <published>2015-02-23T22:51:00.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Muy buenas ;)</p>
+<p>Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:</p>
+<ul>
+<li><p>Descargar de su web <a href="http://www.sublimetext.com/2" target="_blank" rel="external">http://www.sublimetext.com/2</a> en 64bit en mi caso y (Ubuntu 14.04).</p>
+</li>
+<li><p>Una vez descargado descomprmir y dar permisos totales :</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo chmod -R 777 ./Sublime2</div></pre></td></tr></table></figure>
+<ul>
+<li>Doble click en sublime_text o ejecutarlo :</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ./Sublime2</div></pre></td></tr></table></figure>
+<p>Una vez descargado para no tener que ir cada vez que quiera ejecutarlo a la carpeta lo añado al path de mi equipo añadiendo las siguientes lineas a .bashrc ( se encuentra en la carpeta home oculto)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export SUBLIME_HOME=~/Sublime2</div><div class="line">export PATH=$&#123;PATH&#125;:$SUBLIME_HOME</div></pre></td></tr></table></figure>
+<p>Indicar que yo he descargado Sublime Text 2 en mi directorio home ~/ y que he renombrado la carpeta a Sublime2 para no tener problemas con los espacios.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Muy buenas ;)&lt;/p&gt;
+&lt;p&gt;Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Descargar de su web &lt;a href=&quot;http://www.subl
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://luisangonzalez.es/categories/Linux/"/>
+    
+      <category term="Ubuntu" scheme="http://luisangonzalez.es/categories/Linux/Ubuntu/"/>
+    
+    
+      <category term="Sublime Text" scheme="http://luisangonzalez.es/tags/Sublime-Text/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Esquema básico de Markdown</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/</id>
+    <published>2015-02-22T23:41:00.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Buenas, aquí un esquema de uso básico de Markdown. Para más información vean la <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">especificación oficial de su creador John Gruber</a> o el <a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">ejemplo de Github</a>.</p>
+<blockquote>
+<h4 id="Voy-a-mostrar-primero-el-codigo-markdown-y-posteriormente-el-resultado"><a href="#Voy-a-mostrar-primero-el-codigo-markdown-y-posteriormente-el-resultado" class="headerlink" title="Voy a mostrar primero el código markdown y posteriormente el resultado."></a>Voy a mostrar primero el código markdown y posteriormente el resultado.</h4><h2 id="Texto-basico"><a href="#Texto-basico" class="headerlink" title="Texto básico :"></a>Texto básico :</h2></blockquote>
+<h5 id="Codigo-markdown"><a href="#Codigo-markdown" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Cursiva:  *italic* y  así tambien  _italic_ , en  negrita **bold**  y también __bold__ , resaltar  texto : `important` text. signo de porcentaje : % y `%`</div><div class="line">Paragrafo con nota de pie (builtin parser only). [^note-id]</div><div class="line">Insertar `[ TOC ]` sin espacions genera una tabla de contenidos (builtin parsers only)</div></pre></td></tr></table></figure>
+<h5 id="Resultado"><a href="#Resultado" class="headerlink" title="Resultado:"></a>Resultado:</h5><p>Cursiva:  <em>italic</em> y  así tambien  <em>italic</em> , en  negrita <strong>bold</strong>  y también <strong>bold</strong> , resaltar  texto : <code>important</code> text. signo de porcentaje : % y <code>%</code><br>Paragrafo con nota de pie (builtin parser only). [^note-id]<br>Insertar <code>[ TOC ]</code> sin espacions genera una tabla de contenidos (builtin parsers only)</p>
+<blockquote>
+<h2 id="Indentacion"><a href="#Indentacion" class="headerlink" title="Indentación :"></a>Indentación :</h2></blockquote>
+<h5 id="Codigo-markdown-1"><a href="#Codigo-markdown-1" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; Aquí texto indentado</div><div class="line">&gt;&gt; aún mas indentado</div></pre></td></tr></table></figure>
+<h5 id="Resultado-1"><a href="#Resultado-1" class="headerlink" title="Resultado:"></a>Resultado:</h5><blockquote>
+<p>Aquí texto indentado</p>
+<blockquote>
+<p>aún mas indentado</p>
+</blockquote>
+<h2 id="Titulo-cabeceras"><a href="#Titulo-cabeceras" class="headerlink" title="Titulo cabeceras :"></a>Titulo cabeceras :</h2></blockquote>
+<h5 id="Codigo-markdown-2"><a href="#Codigo-markdown-2" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># El más grande (h1)</div><div class="line">## Mediano (h2)</div><div class="line">### Pequeño (h3)</div><div class="line">#### más pequeno (hX)</div><div class="line">##### y más pequeño (hX)</div><div class="line">###### y más pequeño.. (hX)</div></pre></td></tr></table></figure>
+<h5 id="Resultado-2"><a href="#Resultado-2" class="headerlink" title="Resultado:"></a>Resultado:</h5><h1 id="El-mas-grande-h1"><a href="#El-mas-grande-h1" class="headerlink" title="El más grande (h1)"></a>El más grande (h1)</h1><h2 id="Mediano-h2"><a href="#Mediano-h2" class="headerlink" title="Mediano (h2)"></a>Mediano (h2)</h2><h3 id="Pequeno-h3"><a href="#Pequeno-h3" class="headerlink" title="Pequeño (h3)"></a>Pequeño (h3)</h3><h4 id="mas-pequeno-hX"><a href="#mas-pequeno-hX" class="headerlink" title="más pequeno (hX)"></a>más pequeno (hX)</h4><h5 id="y-mas-pequeno-hX"><a href="#y-mas-pequeno-hX" class="headerlink" title="y más pequeño (hX)"></a>y más pequeño (hX)</h5><h6 id="y-mas-pequeno-hX-1"><a href="#y-mas-pequeno-hX-1" class="headerlink" title="y más pequeño.. (hX)"></a>y más pequeño.. (hX)</h6><blockquote>
+<h2 id="Listas"><a href="#Listas" class="headerlink" title="Listas :"></a>Listas :</h2></blockquote>
+<h5 id="Codigo-markdown-3"><a href="#Codigo-markdown-3" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- Los puntos/guinoes puedne ser con :  `-`, `+`, or `*`</div><div class="line">- Punto uno</div><div class="line">- Punto dos </div><div class="line">  - sub item 1</div><div class="line">  - sub item 2</div><div class="line">Con texto indentado dentro</div><div class="line">- Punto de la lista 3</div><div class="line">+ Punto de la lista 4</div><div class="line">* Punto de la lista 5</div><div class="line"></div><div class="line">1. Punto ordenado uno</div><div class="line">2. Punto ordenado dos</div><div class="line">...  y así sucesivamente</div></pre></td></tr></table></figure>
+<h5 id="Resultado-3"><a href="#Resultado-3" class="headerlink" title="Resultado:"></a>Resultado:</h5><ul>
+<li>Los puntos/guinoes puedne ser con :  <code>-</code>, <code>+</code>, or <code>*</code></li>
+<li>Punto uno</li>
+<li>Punto dos <ul>
+<li>sub item 1</li>
+<li>sub item 2<br>Con texto indentado dentro</li>
+</ul>
+</li>
+<li>Punto de la lista 3</li>
+</ul>
+<ul>
+<li>Punto de la lista 4</li>
+</ul>
+<ul>
+<li>Punto de la lista 5</li>
+</ul>
+<ol>
+<li>Punto ordenado uno</li>
+<li>Punto ordenado dos<br>…  y así sucesivamente</li>
+</ol>
+<blockquote>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links :"></a>Links :</h2></blockquote>
+<h5 id="Codigo-markdown-4"><a href="#Codigo-markdown-4" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Esto es un ejemplo  [de link a mi blog](http://luisangonzalez.es/).</div></pre></td></tr></table></figure>
+<h5 id="Resultado-4"><a href="#Resultado-4" class="headerlink" title="Resultado:"></a>Resultado:</h5><p>Esto es un ejemplo  <a href="http://luisangonzalez.es/">de link a mi blog</a>.</p>
+<blockquote>
+<h2 id="Imagenes"><a href="#Imagenes" class="headerlink" title="Imágenes :"></a>Imágenes :</h2></blockquote>
+<h5 id="Codigo-markdown-5"><a href="#Codigo-markdown-5" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Un simple imagen :</div><div class="line">![Fenix logo](http://luisangonzalez.es/img/fenix.jpg &quot;Fenix logo&quot;)</div></pre></td></tr></table></figure>
+<h5 id="Resultado-5"><a href="#Resultado-5" class="headerlink" title="Resultado:"></a>Resultado:</h5><p><img src="http://luisangonzalez.es/img/fenix.jpg" alt="Fenix logo" title="Fenix logo"></p>
+<blockquote>
+<h2 id="Codigo"><a href="#Codigo" class="headerlink" title="Código :"></a>Código :</h2></blockquote>
+<h5 id="Codigo-markdown-6"><a href="#Codigo-markdown-6" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Es sencillo mostrar código en markdown.</div><div class="line">Puede hacerse  `highlight` para algunas palabras.</div><div class="line">Y bloques de código :</div><div class="line">&lt;script&gt;</div><div class="line">int cinco = 5;</div><div class="line">&lt;/script&gt;</div><div class="line">En hexo en la línea del principio 3 x ` y 3 x ` al final</div></pre></td></tr></table></figure>
+<p>&gt;<br>&gt;</p>
+<h5 id="Resultado-6"><a href="#Resultado-6" class="headerlink" title="Resultado:"></a>Resultado:</h5><p>Es sencillo mostrar código en markdown.<br>Puede hacerse  <code>highlight</code> para algunas palabras.<br>Y bloques de código :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">Ojo en la línea del principio 3 x ` </div><div class="line">document.location = &apos;http://lmgtfy.com/?q=markdown+cheat+sheet&apos;;</div><div class="line"> y 3 x ` al final </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="Tablas"><a href="#Tablas" class="headerlink" title="Tablas :"></a>Tablas :</h2></blockquote>
+<h5 id="Codigo-markdown-7"><a href="#Codigo-markdown-7" class="headerlink" title="Código markdown:"></a>Código markdown:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| Año  | Mínima temperatura | Máxima temperatura |</div><div class="line">| ---- | ------------------ | -------------------|</div><div class="line">| 1900 | -10 				|				  25 |</div><div class="line">| 1910 | -15 				|                 30 |</div><div class="line">| 1920 | -10 				|			      32 |</div></pre></td></tr></table></figure>
+<h5 id="Resultado-7"><a href="#Resultado-7" class="headerlink" title="Resultado:"></a>Resultado:</h5><table>
+<thead>
+<tr>
+<th>Año</th>
+<th>Mínima temperatura</th>
+<th>Máxima temperatura</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1900</td>
+<td>-10</td>
+<td>25</td>
+</tr>
+<tr>
+<td>1910</td>
+<td>-15</td>
+<td>30</td>
+</tr>
+<tr>
+<td>1920</td>
+<td>-10</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Buenas, aquí un esquema de uso básico de Markdown. Para más información vean la &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot; ta
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+      <category term="Markdown" scheme="http://luisangonzalez.es/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Primer post con hexo.io</title>
+    <link href="http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/"/>
+    <id>http://luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/</id>
+    <published>2015-02-22T23:03:00.000Z</published>
+    <updated>2016-08-22T17:57:44.869Z</updated>
+    
+    <content type="html"><![CDATA[<p>Después de un largo tiempo sin utilizar el blog que comenze con <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a> he decidido continuar escribiendo pero esta vez utilizando <a href="http://hexo.io" target="_blank" rel="external">hexo.io</a>, los motivos del cambio son :</p>
+<ol>
+<li><p>By by Ruby, no tengo nada contra Ruby pero me parece un coñazo todo el tema de las gemas, RVM, Bundle, rake install, rake… y me siento más comodo utilizando JavaScript.</p>
+</li>
+<li><p>Después de utilizar Octopress que me ha parecido estupendo prefiero utilizar hexo.io que usa Node.js el cual estoy conociendo cada vez más y quiero profundizar.</p>
+</li>
+<li><p>Como indican en hexo.io —&gt; A fast, simple &amp; powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo -g</div><div class="line">$ hexo init blog</div><div class="line">$ cd blog</div><div class="line">$ npm install</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>Saludos ;)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Después de un largo tiempo sin utilizar el blog que comenze con &lt;a href=&quot;http://octopress.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octopress&lt;
+    
+    </summary>
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/categories/Hexo-io/"/>
+    
+    
+      <category term="Hexo.io" scheme="http://luisangonzalez.es/tags/Hexo-io/"/>
+    
+  </entry>
+  
+</feed>
