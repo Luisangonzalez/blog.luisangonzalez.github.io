@@ -1,0 +1,26 @@
+# Header
+menu:
+  Home: /
+  Curriculum Vitae: /CV_Luisangonzalez.pdf
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# Miscellaneous
+google_analytics: UA-58250004-1
+favicon: /luisangonzalez.ico
+twitter: Luisangonzlez
+google_plus: 106076558377478942230
+fb_admins:
+fb_app_id:

@@ -1,0 +1,14 @@
+<aside id="sidebar"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+ 
+  <% theme.widgets.forEach(function(widget){ %>
+    <%- partial('_widget/' + widget) %>
+
+  <% }) %>
+       <!-- twitter start -->
+         <%- partial('_widget/twitter') %>
+      <!-- ads fin -->
+  <!-- ads start -->
+          <%- partial('_partial/google-ads') %>
+    <!-- ads fin -->
+
+</aside>

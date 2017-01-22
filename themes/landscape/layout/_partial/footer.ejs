@@ -1,0 +1,18 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>  - Política de <a href="http://luisangonzalez.es/cookies.html">cookies.</a>  <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script src="js/cookiechoices.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      cookieChoices.showCookieConsentBar('Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies',
+        'Entendido', 'Más información', 'http://luisangonzalez.es/cookies.html');
+    });
+  </script>
+</footer>
