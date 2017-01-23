@@ -86,7 +86,7 @@ exclude_generator:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Luisangonzalez/Luisangonzalez.github.io.git
+  repo: git@github.com:Luisangonzalez/bog.luisangonzalez.github.io.git
   branch: master
   message: New post
 
@@ -95,7 +95,7 @@ deploy:
 backup:
     type: git
     repository:
-       github: git@github.com:Luisangonzalez/Luisangonzalez.github.io.git,backup
+       github: git@github.com:Luisangonzalez/bog.luisangonzalez.github.io.git,backup
 
 #feed plugin https://github.com/hexojs/hexo-generator-feed
 
