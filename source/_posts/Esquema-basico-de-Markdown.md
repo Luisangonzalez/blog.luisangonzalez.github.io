@@ -115,12 +115,12 @@ Con texto indentado dentro
 
 ##### Código markdown:
 ```
-Esto es un ejemplo  [de link a mi blog](http://luisangonzalez.es/).
+Esto es un ejemplo  [de link a mi blog](http://blog.luisangonzalez.es/).
 ```
 ##### Resultado:
 
 
-Esto es un ejemplo  [de link a mi blog](http://luisangonzalez.es/).
+Esto es un ejemplo  [de link a mi blog](http://blog.luisangonzalez.es/).
 
 > 
 > 
@@ -129,11 +129,11 @@ Esto es un ejemplo  [de link a mi blog](http://luisangonzalez.es/).
 ##### Código markdown:
 ```
 Un simple imagen :
-![Fenix logo](http://luisangonzalez.es/img/fenix.jpg "Fenix logo")
+![Fenix logo](http://blog.luisangonzalez.es/img/fenix.jpg "Fenix logo")
 ```
 ##### Resultado:
 
-![Fenix logo](http://luisangonzalez.es/img/fenix.jpg "Fenix logo")
+![Fenix logo](http://blog.luisangonzalez.es/img/fenix.jpg "Fenix logo")
 
 > 
 > 

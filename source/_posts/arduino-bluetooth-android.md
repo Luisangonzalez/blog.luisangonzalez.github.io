@@ -26,7 +26,7 @@ Para ello:
  `git clone git@github.com:Luisangonzalez/cordova-bluetooth-serial.git `
 * Accedemos al directorio: `cd cordova-bluetooth-serial`
 * Asumiendo que tenemos [instalado el SDK de Android](http://developer.android.com/sdk/installing/index.html).
-* Con [cordova instalado y configurado](http://luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/) compilamos la APP:
+* Con [cordova instalado y configurado](http://blog.luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/) compilamos la APP:
  * Añadimos la plataforma android: `$ cordova platform add android`
  * Instalamos el plugin bluetooth: `$ cordova plugin add cordova-plugin-bluetooth-serial`
  * compilamos la app: `$ cordova run`

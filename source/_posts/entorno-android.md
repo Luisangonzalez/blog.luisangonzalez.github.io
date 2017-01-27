@@ -12,7 +12,7 @@ Pasos a seguir para configurar el entorno para desarrollar en Android con Androi
 
 1. Descargar [Android Studio](http://developer.android.com/intl/es/sdk/index.html)
 2. Descomprimir donde queramos, en mi caso en ~/.local/android
-3. [Añadir icono y acceso directo](http://luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/)
+3. [Añadir icono y acceso directo](http://blog.luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/)
 4. Para evitar el error de ["Unable to install Android Studio in Ubuntu"](http://stackoverflow.com/questions/28847151/unable-to-install-android-studio-in-ubuntu)
 ```bash
 $ sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
@@ -28,4 +28,4 @@ $ source ~/.zshrc
 ```bash
 $ sudo apt-get install android-tools-adb android-tools-fastboot
 ```
-7. [Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap](http://luisangonzalez.es/2016/02/28/add-device-android/)
+7. [Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap](http://blog.luisangonzalez.es/2016/02/28/add-device-android/)
