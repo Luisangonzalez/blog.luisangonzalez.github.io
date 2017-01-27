@@ -1,13 +1,6 @@
 # Hexo.io ignore
 
-.DS_Store
-Thumbs.db
-db.json
-public/
-.deploy/
-.deploy_git
-
-# Logs
+#Logs
 logs
 *.log
 npm-debug.log*

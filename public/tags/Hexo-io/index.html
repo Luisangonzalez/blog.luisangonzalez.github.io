@@ -85,6 +85,58 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-backup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/27/hexo-backup/" class="article-date">
+  <time datetime="2017-01-27T20:09:31.000Z" itemprop="datePublished">Jan 27 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/27/hexo-backup/">Hacer un backup de hexo.io</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Al comenzar a utilizar <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a> lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en markdown.</p>
+<p>Así que lo primero que híze fue instalar <a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="external">hexo-git-backup</a> y la verdad es que una vez configurado funciona<strong>ba</strong> perfectamente.. pero las últimas veces al hacer backup mi hacía un merge de las ramas que utiliza el plugin internamente para funcionar, además al usar el repositorio del blog en otro equipo distinto al habitual su funcionamiento no era el mismo.</p>
+<p>Al final, lo más sencillo es lo más eficaz, ahora para hacer un backup tengo dos ramas en el repo del blog, <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io" target="_blank" rel="external">master</a> donde se encuentran los archivos estaticos del blog y <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io/tree/backup" target="_blank" rel="external">backup</a> donde esta toda la configuración y archivos necesarios en local para utilizar <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a>.</p>
+<p>De modo que <strong>en local siempre me encuentro en la rama backup, y en github la rama principal es master</strong>.</p>
+<p>Lo único a tener en cuenta, es añadir la rama donde se hacen los deploys en el archivo de configuiración:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> git@github.com:Luisangonzalez/bog.luisangonzalez.github.io.git</div><div class="line"><span class="attr">  branch:</span> master</div><div class="line"><span class="attr">  message:</span> New post</div></pre></td></tr></table></figure>
+<p><strong>Es importante si no se hará el deploy en la rama en la que nos encontramos.</strong></p>
+<p>En definitiva, muchas veces lo mejor es no añadir complejidad innecesaria.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.luisangonzalez.es/2017/01/27/hexo-backup/" data-id="ciyga1w8o000hm5mewbpsi7hp" class="article-share-link">Share</a>
+      
+        <a href="http://blog.luisangonzalez.es/2017/01/27/hexo-backup/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-write-new-post" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/13/write-new-post/" class="article-date">
@@ -125,7 +177,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/03/13/write-new-post/" data-id="ciy91efvb000txymentc4x8s4" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2016/03/13/write-new-post/" data-id="ciyga1w8y000zm5mex8ddu2j7" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2016/03/13/write-new-post/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,7 +302,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="ciy91efum0003xymeip9scpcp" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="ciyga1w890003m5me506uqebh" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -305,7 +357,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="ciy91efuu0007xymeme1ujxog" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="ciyga1w8f0007m5me4ujhdjl0" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -329,7 +381,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -339,7 +391,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -349,7 +401,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 15px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
+      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 17.5px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
     </div>
   </div>
 
@@ -359,7 +411,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -370,6 +422,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/01/27/hexo-backup/">Hacer un backup de hexo.io</a>
+          </li>
         
           <li>
             <a href="/2017/01/22/Flexbox/">Resumen Flexblox del curso &quot;Cracking the case with Flexbox&quot; de CodeSchool</a>
@@ -385,10 +441,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/03/24/entorno-android/">Instalar entorno para desarrollo en Android</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/19/nodejs-sin-sudo/">Instalar node + npm sin sudo</a>
           </li>
         
       </ul>

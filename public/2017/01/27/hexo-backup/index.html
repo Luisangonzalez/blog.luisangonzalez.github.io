@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Category: Node.js | LuisanGonzalez</title>
+  <title>Hacer un backup de hexo.io | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://blog.luisangonzalez.es/categories/Configuracion-de-entorno/Node-js/index.html">
+  <meta name="description" content="Al comenzar a utilizar hexo.io lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en mar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hacer un backup de hexo.io">
+<meta property="og:url" content="http://blog.luisangonzalez.es/2017/01/27/hexo-backup/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:description" content="Al comenzar a utilizar hexo.io lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en mar">
+<meta property="og:updated_time" content="2017-01-27T20:42:45.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:title" content="Hacer un backup de hexo.io">
+<meta name="twitter:description" content="Al comenzar a utilizar hexo.io lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en mar">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -83,16 +87,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-nodejs-sin-sudo" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-backup" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/19/nodejs-sin-sudo/" class="article-date">
-  <time datetime="2016-03-19T01:03:02.000Z" itemprop="datePublished">Mar 19 2016</time>
+    <a href="/2017/01/27/hexo-backup/" class="article-date">
+  <time datetime="2017-01-27T20:09:31.000Z" itemprop="datePublished">Jan 27 2017</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a>
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
   </div>
 
   </div>
@@ -102,8 +104,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/19/nodejs-sin-sudo/">Instalar node + npm sin sudo</a>
+    <h1 class="article-title" itemprop="name">
+      Hacer un backup de hexo.io
     </h1>
   
 
@@ -111,45 +113,48 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, <strong>OjO esto es peligroso</strong>, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).</p>
-<ol>
-<li><p>Para ello debemos tener instalado build essentials (g++ c++ make)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install build-essential</div></pre></td></tr></table></figure>
-</li>
-<li><p>Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&gt;  <a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs.org</a></p>
-</li>
-<li><p>Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta <code>~/.local</code> creare la carpeta node.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.local</div><div class="line">$ mkdir node</div></pre></td></tr></table></figure>
-</li>
-<li><p>Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ tar xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components=1</div></pre></td></tr></table></figure>
-</li>
-<li><p>Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas <a href="http://ohmyz.sh/" target="_blank" rel="external">oh-my-zsh</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node/bin:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">echo</span> <span class="string">'export PATH=$HOME/.local/node:$PATH'</span> &gt;&gt; ~/.zshrc</div><div class="line">$ <span class="built_in">source</span> ~/.zshrc</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ node -v</div><div class="line">v4.2.3</div></pre></td></tr></table></figure></p>
-<p>Por último si queremos podemos actulizar npm :<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g npm</div></pre></td></tr></table></figure></p>
-<p>Fuente original, traducida y modificada: <a href="http://corejs.docs.bqws.io/setup/#ubuntu" target="_blank" rel="external">http://corejs.docs.bqws.io/setup/#ubuntu</a></p>
+        <p>Al comenzar a utilizar <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a> lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en markdown.</p>
+<p>Así que lo primero que híze fue instalar <a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="external">hexo-git-backup</a> y la verdad es que una vez configurado funciona<strong>ba</strong> perfectamente.. pero las últimas veces al hacer backup mi hacía un merge de las ramas que utiliza el plugin internamente para funcionar, además al usar el repositorio del blog en otro equipo distinto al habitual su funcionamiento no era el mismo.</p>
+<p>Al final, lo más sencillo es lo más eficaz, ahora para hacer un backup tengo dos ramas en el repo del blog, <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io" target="_blank" rel="external">master</a> donde se encuentran los archivos estaticos del blog y <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io/tree/backup" target="_blank" rel="external">backup</a> donde esta toda la configuración y archivos necesarios en local para utilizar <a href="https://hexo.io/" target="_blank" rel="external">hexo.io</a>.</p>
+<p>De modo que <strong>en local siempre me encuentro en la rama backup, y en github la rama principal es master</strong>.</p>
+<p>Lo único a tener en cuenta, es añadir la rama donde se hacen los deploys en el archivo de configuiración:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> git@github.com:Luisangonzalez/bog.luisangonzalez.github.io.git</div><div class="line"><span class="attr">  branch:</span> master</div><div class="line"><span class="attr">  message:</span> New post</div></pre></td></tr></table></figure>
+<p><strong>Es importante si no se hará el deploy en la rama en la que nos encontramos.</strong></p>
+<p>En definitiva, muchas veces lo mejor es no añadir complejidad innecesaria.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/03/19/nodejs-sin-sudo/" data-id="ciyga1w8u000sm5mehpfzz877" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/27/hexo-backup/" data-id="ciyga1w8o000hm5mewbpsi7hp" class="article-share-link">Share</a>
       
-        <a href="http://blog.luisangonzalez.es/2016/03/19/nodejs-sin-sudo/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.luisangonzalez.es/2017/01/27/hexo-backup/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/22/Flexbox/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Resumen Flexblox del curso &quot;Cracking the case with Flexbox&quot; de CodeSchool</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -280,11 +285,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
+  var disqus_url = 'http://blog.luisangonzalez.es/2017/01/27/hexo-backup/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
