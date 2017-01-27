@@ -1,7 +1,9 @@
 # Header
 menu:
-  Home: /
+  Blog: /
+  Personal Page: https://luisangonzalez.es
   Curriculum Vitae: /CV_Luisangonzalez.pdf
+  Quizy App: https://quizy.luisangonzalez.es
 rss: /atom.xml
 
 # Content
