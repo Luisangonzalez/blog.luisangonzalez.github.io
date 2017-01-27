@@ -11,7 +11,7 @@ Buenas,
 
 Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sublime text 2 o Eclipse me ocurre que :
 
-* No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : http://luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/
+* No se puede ejecutar desde cualquier sitio con el términal y para ello es necesario agregar la ruta al PATH : http://blog.luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/
 
 * Al buscarlo en el buscador no aparece, para este caso debemos:
   * Crear un archivo en en : `/usr/share/applications/` como por ejemplo con nano o vi :
