@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Synology | LuisanGonzalez</title>
+  <title>Resumen curso &quot;Accelerating through ANGULAR 2&quot; de CodeSchool | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://blog.luisangonzalez.es/tags/Synology/index.html">
+  <meta name="description" content="Al igual que en post Resumen de Flexbox en este post voy a realizar un esquema de los puntosprincipales del curso Accelerating through ANGULAR 2 de CodeSchool, este resumen es más un mero esquema para">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Resumen curso "Accelerating through ANGULAR 2" de CodeSchool">
+<meta property="og:url" content="http://blog.luisangonzalez.es/2017/01/30/angular2/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:description" content="Al igual que en post Resumen de Flexbox en este post voy a realizar un esquema de los puntosprincipales del curso Accelerating through ANGULAR 2 de CodeSchool, este resumen es más un mero esquema para">
+<meta property="og:updated_time" content="2017-01-30T22:57:46.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:title" content="Resumen curso "Accelerating through ANGULAR 2" de CodeSchool">
+<meta name="twitter:description" content="Al igual que en post Resumen de Flexbox en este post voy a realizar un esquema de los puntosprincipales del curso Accelerating through ANGULAR 2 de CodeSchool, este resumen es más un mero esquema para">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -87,16 +91,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-nfs-synology" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/08/22/nfs-synology/" class="article-date">
-  <time datetime="2016-08-22T16:18:03.000Z" itemprop="datePublished">Aug 22 2016</time>
+    <a href="/2017/01/30/angular2/" class="article-date">
+  <time datetime="2017-01-30T22:21:00.000Z" itemprop="datePublished">Jan 30 2017</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Synology/">Synology</a>
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
   </div>
 
   </div>
@@ -106,8 +108,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/nfs-synology/">Montar directorio NFS en Synology DS214</a>
+    <h1 class="article-title" itemprop="name">
+      Resumen curso &quot;Accelerating through ANGULAR 2&quot; de CodeSchool
     </h1>
   
 
@@ -115,32 +117,68 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu"><a href="#Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu" class="headerlink" title="Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu"></a>Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu</h5><p>Como indican en la web de <a href="https://www.synology.com/es-es/knowledgebase/DSM/tutorial/File_Sharing/How_to_access_files_on_Synology_NAS_within_the_local_network_NFS" target="_blank" rel="external">Synology</a> seguimos todos los pasos para crear nuestras carpetas compartidas en local mediante NFS.</p>
-<p>Una vez configurado el NAS, para montar las carpetas necesitamos instalar el paquete <code>nfs-commons</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nfs-common</div></pre></td></tr></table></figure>
-<p>Y añadimos en el archivo <code>/etc/fstab</code> como root:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/fstab</div></pre></td></tr></table></figure></p>
-<p>las carpetas a montar, como por ejemplo:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.1.129:/volume1/video    /mnt/video      nfs     auto    0 0</div></pre></td></tr></table></figure>
-<p>En mi caso <code>192.168.1.129</code> es la IP del NAS y luego seguido de dos puntos <code>:</code> el directorio de la carpeta del NAS a montar <code>/volume1/video</code>.<br>La ruta <code>/mnt/video</code> es donde se va a montar en nuestro equipo.</p>
+        <p>Al igual que en post <a href="">Resumen de Flexbox</a> en este post voy a realizar un esquema de los puntos<br>principales del curso <a href="https://www.codeschool.com/courses/accelerating-through-angular-2" target="_blank" rel="external">Accelerating through ANGULAR 2</a> de <a href="https://www.codeschool.com" target="_blank" rel="external">CodeSchool</a>, este resumen es más un mero esquema para recordar algunos aspectos importantes que una guía para aprender sobre el tema.</p>
+<p>Para profundizar, recomendaría estos enlaces de cursos y fuentes:</p>
+<ul>
+<li><a href="https://angular.io" target="_blank" rel="external">Angular.io</a></li>
+<li><a href="https://angularclass.github.io/awesome-angular2/#angular-2-material-design" target="_blank" rel="external">Awesome Angular 2</a></li>
+<li>El propio cursos <a href="https://www.codeschool.com/courses/accelerating-through-angular-2" target="_blank" rel="external">Accelerating through ANGULAR 2</a> de <a href="https://www.codeschool.com" target="_blank" rel="external">CodeSchool</a></li>
+</ul>
+<p>También es necesario tener conocimientos TypeScript:</p>
+<ul>
+<li><a href="https://www.typescriptlang.org" target="_blank" rel="external">TypeScript</a></li>
+<li><a href="https://courses.edx.org/courses/course-v1%3AMicrosoft%2BDEV201x%2B2015_T2/" target="_blank" rel="external">Microsoft: DEV201x Introduction to TypeScript</a></li>
+</ul>
+<h6 id="Contenido-del-curso"><a href="#Contenido-del-curso" class="headerlink" title="Contenido del curso:"></a>Contenido del curso:</h6><ul>
+<li><a href="/2017/01/30/angular2-primer-componente/">Primer componente</a></li>
+<li>Estructura de directivas, Pipes y Métodos</li>
+<li>Organización de código y modelo de datos</li>
+<li>Data Binding</li>
+<li>Servicios y HTTP</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/08/22/nfs-synology/" data-id="ciykozkgb000vuemeh4qj51rm" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2/" data-id="ciykozkfz000duemezi9oybh8" class="article-share-link">Share</a>
       
-        <a href="http://blog.luisangonzalez.es/2016/08/22/nfs-synology/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.luisangonzalez.es/2017/01/30/angular2/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NAS/">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NFS/">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Synology/">Synology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/30/angular2-primer-componente/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Primer componente Angular 2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/27/hexo-backup/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hacer un backup de hexo.io</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -275,11 +313,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
+  var disqus_url = 'http://blog.luisangonzalez.es/2017/01/30/angular2/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

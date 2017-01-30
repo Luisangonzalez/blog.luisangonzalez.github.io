@@ -3,14 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Synology | LuisanGonzalez</title>
+  <title>Primer componente Angular 2 | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://blog.luisangonzalez.es/tags/Synology/index.html">
+  <meta name="description" content="El siguiente post es continuación del resumen de Angular 2
+Para comenzar añadir en index.html el primer componente, llamado en este caso &amp;lt;my-app&amp;gt;&amp;lt;/my-app&amp;gt;
+123456789101112&amp;lt;!DOCTYPE html&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Primer componente Angular 2">
+<meta property="og:url" content="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:description" content="El siguiente post es continuación del resumen de Angular 2
+Para comenzar añadir en index.html el primer componente, llamado en este caso &amp;lt;my-app&amp;gt;&amp;lt;/my-app&amp;gt;
+123456789101112&amp;lt;!DOCTYPE html&amp;">
+<meta property="og:updated_time" content="2017-01-30T22:57:09.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:title" content="Primer componente Angular 2">
+<meta name="twitter:description" content="El siguiente post es continuación del resumen de Angular 2
+Para comenzar añadir en index.html el primer componente, llamado en este caso &amp;lt;my-app&amp;gt;&amp;lt;/my-app&amp;gt;
+123456789101112&amp;lt;!DOCTYPE html&amp;">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -87,16 +97,14 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-nfs-synology" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular2-primer-componente" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/08/22/nfs-synology/" class="article-date">
-  <time datetime="2016-08-22T16:18:03.000Z" itemprop="datePublished">Aug 22 2016</time>
+    <a href="/2017/01/30/angular2-primer-componente/" class="article-date">
+  <time datetime="2017-01-30T22:43:59.000Z" itemprop="datePublished">Jan 30 2017</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Synology/">Synology</a>
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
   </div>
 
   </div>
@@ -106,8 +114,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/nfs-synology/">Montar directorio NFS en Synology DS214</a>
+    <h1 class="article-title" itemprop="name">
+      Primer componente Angular 2
     </h1>
   
 
@@ -115,32 +123,53 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu"><a href="#Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu" class="headerlink" title="Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu"></a>Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu</h5><p>Como indican en la web de <a href="https://www.synology.com/es-es/knowledgebase/DSM/tutorial/File_Sharing/How_to_access_files_on_Synology_NAS_within_the_local_network_NFS" target="_blank" rel="external">Synology</a> seguimos todos los pasos para crear nuestras carpetas compartidas en local mediante NFS.</p>
-<p>Una vez configurado el NAS, para montar las carpetas necesitamos instalar el paquete <code>nfs-commons</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install nfs-common</div></pre></td></tr></table></figure>
-<p>Y añadimos en el archivo <code>/etc/fstab</code> como root:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo nano /etc/fstab</div></pre></td></tr></table></figure></p>
-<p>las carpetas a montar, como por ejemplo:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">192.168.1.129:/volume1/video    /mnt/video      nfs     auto    0 0</div></pre></td></tr></table></figure>
-<p>En mi caso <code>192.168.1.129</code> es la IP del NAS y luego seguido de dos puntos <code>:</code> el directorio de la carpeta del NAS a montar <code>/volume1/video</code>.<br>La ruta <code>/mnt/video</code> es donde se va a montar en nuestro equipo.</p>
+        <p>El siguiente post es continuación del <a href="/2017/01/30/angular2/">resumen de Angular 2</a></p>
+<p>Para comenzar añadir en <code>index.html</code> el primer componente, llamado en este caso <code>&lt;my-app&gt;&lt;/my-app&gt;</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- All the Angular 2 libraries needed --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-app</span>&gt;</span>Loading App ...<span class="tag">&lt;/<span class="name">my-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Para cargar Js hay varias opciones, una de ellas es utilizar la librería <a href="https://www.npmjs.com/package/systemjs" target="_blank" rel="external">SystemJS</a> que se utiliza en el curso de codeschool:</p>
+<p>El siguiente código añade el código de <code>app/main.ts</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- All the Angular 2 libraries needed --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    System.import('app')</div><div class="line">      .catch(function(err)&#123; console.error(err); &#125;);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-app</span>&gt;</span>Loading App ...<span class="tag">&lt;/<span class="name">my-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>También una buena opción es con <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a> como <a href="https://angular.io/docs/ts/latest/guide/webpack.html" target="_blank" rel="external">explican al detalle en la web oficial de angular.io</a>.</p>
+<p>En <code>app/main.ts</code> añadimos nuestro primer componente:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; NgModule, Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="comment">//Las siguientes dependencias son para renderizar en el navegador</span></div><div class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</div><div class="line"><span class="keyword">import</span> &#123; platformBrowserDynamic &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser-dynamic'</span>;</div><div class="line"></div><div class="line"><span class="comment">// Our component decorator code goes here:</span></div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line"><span class="comment">//la etiqueta añadida anteriormente &lt;my-app&gt;&lt;/my-app&gt; 	</span></div><div class="line">  selector: <span class="string">'my-app'</span>,</div><div class="line"></div><div class="line"><span class="comment">// El contendio que se carga en nuestro componente</span></div><div class="line">  template: <span class="string">`&lt;h1&gt; &#123;&#123;title&#125;&#125; &lt;/h1&gt;</span></div><div class="line">	&lt;h2&gt;&#123;&#123;carPart.name&#125;&#125;&lt;h2&gt;</div><div class="line">	&lt;p&gt;&#123;&#123;carPart.description&#125;&#125;&lt;p&gt;</div><div class="line">	&lt;p&gt;&#123;&#123;carPart.inStock&#125;&#125; in Stock&lt;p&gt;`</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">	<span class="comment">//Definimos las propiedades que usamos en el template con &#123;&#123; &#125;&#125;</span></div><div class="line">	title = <span class="string">'Ultra Racing'</span>;</div><div class="line">	carPart = &#123;</div><div class="line">		<span class="string">"id"</span>: <span class="number">1</span>,</div><div class="line">		<span class="string">"name"</span>: <span class="string">"Super Tires"</span>,</div><div class="line">		<span class="string">"description"</span>: <span class="string">"These tires are the very best"</span>,</div><div class="line">		<span class="string">"inStock"</span>: <span class="number">5</span></div><div class="line">		&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// El nuevo componente lo debemos declarar en el decorador @NgModucle</span></div><div class="line">@NgModule (&#123;</div><div class="line"><span class="attr">declarations</span>: [ AppComponent ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</div><div class="line"></div><div class="line"><span class="comment">// Bootrasp app (Arrancar la aplicación)</span></div><div class="line">platformBrowserDynamic()</div><div class="line">  .bootstrapModule(AppModule);</div></pre></td></tr></table></figure>
+<p>Tanto @Component como @NgModule son decorators, una feauture de typescript, explicado de forma breve digamos que “extiende” la funcionalidad o comportamiento de la clase a  un objeto:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Decorator_pattern" target="_blank" rel="external">Wikipedía</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="external">TypeScript lang</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/08/22/nfs-synology/" data-id="ciykozkgb000vuemeh4qj51rm" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/" data-id="ciykp0rf6003duemew9y3dej3" class="article-share-link">Share</a>
       
-        <a href="http://blog.luisangonzalez.es/2016/08/22/nfs-synology/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NAS/">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NFS/">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Synology/">Synology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/30/angular2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Resumen curso &quot;Accelerating through ANGULAR 2&quot; de CodeSchool</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -275,11 +304,13 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
+  var disqus_url = 'http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
