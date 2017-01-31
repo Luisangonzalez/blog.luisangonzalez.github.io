@@ -25,7 +25,7 @@ También es necesario tener conocimientos TypeScript:
 ###### Contenido del curso:
 
 * [Primer componente](/2017/01/30/angular2-primer-componente/)
-* Estructura de directivas, Pipes y Métodos
+* [Estructura de directivas, Pipes y Métodos](/2017/01/31/angular2-directivas/)
 * Organización de código y modelo de datos
 * Data Binding
 * Servicios y HTTP

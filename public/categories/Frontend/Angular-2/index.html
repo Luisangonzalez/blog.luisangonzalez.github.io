@@ -89,6 +89,82 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-angular2-directivas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/31/angular2-directivas/" class="article-date">
+  <time datetime="2017-01-31T19:48:17.000Z" itemprop="datePublished">Jan 31 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/31/angular2-directivas/">Angular 2 - Estructura de directivas, Pipes y Métodos</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Directivas"><a href="#Directivas" class="headerlink" title="Directivas"></a>Directivas</h3><p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.</p>
+<p>Existen tres tipos diferentes de directivas:</p>
+<ul>
+<li>Component<ul>
+<li>Tiene un template, es el más común, lo hemos utilizado al <a href="/2017/01/30/angular2-primer-componente/">crear el primer componente</a></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/structural-directives.html" target="_blank" rel="external">Structural Directives</a><ul>
+<li>Por ejemplo bucles <code>*ngFor</code> o condicionales <code>*ngIF</code></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" rel="external">Attribute Directives</a><ul>
+<li>Nos permite cambiar la apariencia o comportamiento de un componente.</li>
+</ul>
+</li>
+</ul>
+<p>Podemos verlas en el framento de código:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">@Component(&#123;</div><div class="line">  <span class="comment">// El selector y templatte sería el primer tipo de directiva</span></div><div class="line">  selector: <span class="string">'my-app'</span>,</div><div class="line">  <span class="attr">template</span>: <span class="string">`&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</span></div><div class="line">    &lt;ul&gt;</div><div class="line">      &lt;li *ngFor="let carPart of carParts"&gt;</div><div class="line">        &lt;h2&gt;&#123;&#123;carPart.name&#125;&#125;&lt;h2&gt;</div><div class="line">        &lt;p&gt;&#123;&#123;carPart.description&#125;&#125;&lt;p&gt;</div><div class="line">        &lt;p *ngIf="carPart.inStock &gt; 0"&gt;&#123;&#123;carPart.inStock&#125;&#125; in Stock&lt;/p&gt;</div><div class="line">        &lt;p *ngIf="carPart.inStock === 0"&gt;Out of Stock&lt;/p&gt;</div><div class="line">      &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;`</div><div class="line"></div><div class="line">  <span class="comment">// En el propio template observamos las directivas de estructura *ngFor y *ngIf</span></div><div class="line"></div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="Pipes-y-Metodos"><a href="#Pipes-y-Metodos" class="headerlink" title="Pipes y Métodos"></a>Pipes y Métodos</h3><p>Un <strong>pipe</strong> coge un dato de entrada y lo transforma a la salida deseada, como por ejemplo:</p>
+<ul>
+<li><p>Poner un texto en máyusculas:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;carPart.name | uppercase &#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir formato de moneda:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;carPart.price | currency:&apos;EUR&apos;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank" rel="external">Y muchos más que encontramos en la documentación oficial</a></p>
+</li>
+</ul>
+<p><em>Métodos (Methods)</em> como podemos imaginar es añadir métodos en la clase de nuestro componente para luego ser utilizada:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">@Component(&#123;</div><div class="line">  <span class="attr">selector</span>: <span class="string">'my-app'</span>,</div><div class="line">  <span class="attr">template</span>: <span class="string">`&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;`</span></div><div class="line"></div><div class="line">  &#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">  exampleMethod() &#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/" data-id="ciylyago500003qme4fzcug1q" class="article-share-link">Share</a>
+      
+        <a href="http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-angular2-primer-componente" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/30/angular2-primer-componente/" class="article-date">
@@ -107,7 +183,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/30/angular2-primer-componente/">Primer componente Angular 2</a>
+      <a class="article-title" href="/2017/01/30/angular2-primer-componente/">Angular 2 - Primer componente Angular 2</a>
     </h1>
   
 
@@ -119,7 +195,7 @@ ga('send', 'pageview');
 <p>Para comenzar añadir en <code>index.html</code> el primer componente, llamado en este caso <code>&lt;my-app&gt;&lt;/my-app&gt;</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- All the Angular 2 libraries needed --&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-app</span>&gt;</span>Loading App ...<span class="tag">&lt;/<span class="name">my-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>Para cargar Js hay varias opciones, una de ellas es utilizar la librería <a href="https://www.npmjs.com/package/systemjs" target="_blank" rel="external">SystemJS</a> que se utiliza en el curso de codeschool:</p>
-<p>El siguiente código añade el código de <code>app/main.ts</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- All the Angular 2 libraries needed --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    System.import('app')</div><div class="line">      .catch(function(err)&#123; console.error(err); &#125;);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-app</span>&gt;</span>Loading App ...<span class="tag">&lt;/<span class="name">my-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>El siguiente código añade el código de <code>app/main.ts</code>:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- All the Angular 2 libraries needed --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    System.import(<span class="string">'app'</span>)</div><div class="line">      .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123; <span class="built_in">console</span>.error(err); &#125;);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">my-app</span>&gt;</span>Loading App ...<span class="tag">&lt;/<span class="name">my-app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>También una buena opción es con <a href="https://webpack.github.io/" target="_blank" rel="external">webpack</a> como <a href="https://angular.io/docs/ts/latest/guide/webpack.html" target="_blank" rel="external">explican al detalle en la web oficial de angular.io</a>.</p>
 <p>En <code>app/main.ts</code> añadimos nuestro primer componente:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; NgModule, Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"><span class="comment">//Las siguientes dependencias son para renderizar en el navegador</span></div><div class="line"><span class="keyword">import</span> &#123; BrowserModule &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser'</span>;</div><div class="line"><span class="keyword">import</span> &#123; platformBrowserDynamic &#125; <span class="keyword">from</span> <span class="string">'@angular/platform-browser-dynamic'</span>;</div><div class="line"></div><div class="line"><span class="comment">// Our component decorator code goes here:</span></div><div class="line"></div><div class="line">@Component(&#123;</div><div class="line"><span class="comment">//la etiqueta añadida anteriormente &lt;my-app&gt;&lt;/my-app&gt; 	</span></div><div class="line">  selector: <span class="string">'my-app'</span>,</div><div class="line"></div><div class="line"><span class="comment">// El contendio que se carga en nuestro componente</span></div><div class="line">  template: <span class="string">`&lt;h1&gt; &#123;&#123;title&#125;&#125; &lt;/h1&gt;</span></div><div class="line">	&lt;h2&gt;&#123;&#123;carPart.name&#125;&#125;&lt;h2&gt;</div><div class="line">	&lt;p&gt;&#123;&#123;carPart.description&#125;&#125;&lt;p&gt;</div><div class="line">	&lt;p&gt;&#123;&#123;carPart.inStock&#125;&#125; in Stock&lt;p&gt;`</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">	<span class="comment">//Definimos las propiedades que usamos en el template con &#123;&#123; &#125;&#125;</span></div><div class="line">	title = <span class="string">'Ultra Racing'</span>;</div><div class="line">	carPart = &#123;</div><div class="line">		<span class="string">"id"</span>: <span class="number">1</span>,</div><div class="line">		<span class="string">"name"</span>: <span class="string">"Super Tires"</span>,</div><div class="line">		<span class="string">"description"</span>: <span class="string">"These tires are the very best"</span>,</div><div class="line">		<span class="string">"inStock"</span>: <span class="number">5</span></div><div class="line">		&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// El nuevo componente lo debemos declarar en el decorador @NgModucle</span></div><div class="line">@NgModule (&#123;</div><div class="line"><span class="attr">declarations</span>: [ AppComponent ]</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppModule</span> </span>&#123; &#125;</div><div class="line"></div><div class="line"><span class="comment">// Bootrasp app (Arrancar la aplicación)</span></div><div class="line">platformBrowserDynamic()</div><div class="line">  .bootstrapModule(AppModule);</div></pre></td></tr></table></figure>
@@ -132,7 +208,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/" data-id="ciykp0rf6003duemew9y3dej3" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/" data-id="ciylyago900013qme082aed91" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -186,7 +262,7 @@ ga('send', 'pageview');
 </ul>
 <h6 id="Contenido-del-curso"><a href="#Contenido-del-curso" class="headerlink" title="Contenido del curso:"></a>Contenido del curso:</h6><ul>
 <li><a href="/2017/01/30/angular2-primer-componente/">Primer componente</a></li>
-<li>Estructura de directivas, Pipes y Métodos</li>
+<li><a href="/2017/01/31/angular2-directivas/">Estructura de directivas, Pipes y Métodos</a></li>
 <li>Organización de código y modelo de datos</li>
 <li>Data Binding</li>
 <li>Servicios y HTTP</li>
@@ -195,7 +271,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2/" data-id="ciykozkfz000duemezi9oybh8" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/30/angular2/" data-id="ciyly9i9c000e02me8xmjvmew" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2017/01/30/angular2/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -219,7 +295,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -229,7 +305,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -239,7 +315,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 12.5px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 17.5px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 12.5px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
+      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 15px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 17.5px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
     </div>
   </div>
 
@@ -249,7 +325,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -262,7 +338,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2017/01/30/angular2-primer-componente/">Primer componente Angular 2</a>
+            <a href="/2017/01/31/angular2-directivas/">Angular 2 - Estructura de directivas, Pipes y Métodos</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/30/angular2-primer-componente/">Angular 2 - Primer componente Angular 2</a>
           </li>
         
           <li>
@@ -275,10 +355,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/01/22/Flexbox/">Resumen Flexblox del curso &quot;Cracking the case with Flexbox&quot; de CodeSchool</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/22/nfs-synology/">Montar directorio NFS en Synology DS214</a>
           </li>
         
       </ul>

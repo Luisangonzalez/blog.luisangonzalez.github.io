@@ -3,63 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LuisanGonzalez</title>
+  <title>Angular 2 - Estructura de directivas, Pipes y Métodos | LuisanGonzalez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="/* ============================== Política de COOKIES =========================== */
-
-.cookies th 
-{    
-    width: auto;
-    text-align:center;
-  
-}
-  
-.cookies tr td
-{
-  
-  width: auto;
-
-}
-.cookie">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LuisanGonzalez">
-<meta property="og:url" content="http://blog.luisangonzalez.es/cookies.html">
+  <meta name="description" content="DirectivasEl siguiente post es continuación del resumen de Angular 2
+Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.
+Existen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 2 - Estructura de directivas, Pipes y Métodos">
+<meta property="og:url" content="http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/index.html">
 <meta property="og:site_name" content="LuisanGonzalez">
-<meta property="og:description" content="/* ============================== Política de COOKIES =========================== */
-
-.cookies th 
-{    
-    width: auto;
-    text-align:center;
-  
-}
-  
-.cookies tr td
-{
-  
-  width: auto;
-
-}
-.cookie">
-<meta property="og:updated_time" content="2017-01-27T20:08:55.173Z">
+<meta property="og:description" content="DirectivasEl siguiente post es continuación del resumen de Angular 2
+Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.
+Existen">
+<meta property="og:updated_time" content="2017-01-31T20:02:10.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LuisanGonzalez">
-<meta name="twitter:description" content="/* ============================== Política de COOKIES =========================== */
-
-.cookies th 
-{    
-    width: auto;
-    text-align:center;
-  
-}
-  
-.cookies tr td
-{
-  
-  width: auto;
-
-}
-.cookie">
+<meta name="twitter:title" content="Angular 2 - Estructura de directivas, Pipes y Métodos">
+<meta name="twitter:description" content="DirectivasEl siguiente post es continuación del resumen de Angular 2
+Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.
+Existen">
 <meta name="twitter:creator" content="@Luisangonzlez">
 <link rel="publisher" href="106076558377478950000">
   
@@ -136,227 +97,89 @@ ga('send', 'pageview');
 </header>
 
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular2-directivas" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/cookies.html" class="article-date">
-  <time datetime="2017-01-27T20:08:55.173Z" itemprop="datePublished">Jan 27 2017</time>
+    <a href="/2017/01/31/angular2-directivas/" class="article-date">
+  <time datetime="2017-01-31T19:48:17.000Z" itemprop="datePublished">Jan 31 2017</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Angular 2 - Estructura de directivas, Pipes y Métodos
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <style type="text/css">
-
-/* ============================== Política de COOKIES =========================== */
-
-.cookies th 
-{    
-    width: auto;
-    text-align:center;
-  
-}
-  
-.cookies tr td
-{
-  
-  width: auto;
-
-}
-.cookies tr td
-{
-    width: auto;
-  text-align: center;
-}
-.cookies th.propias
-{
-  background-color:#CCC;
-  color:#666;
-  text-align: center;
-}
-.cookies th.terceros
-{
-  background-color:#CCC;
-  color:#666;
-  text-align: center;
-}
-.asterisco
-{
-  color:#F00;
-}
-
-.cookies tr td.necesarias
-{
-  
-  background-color:#EDE0F8;
-
-}
-
-.cookies tr td.publicidad
-{
-  
-  background-color:#FDE0FE;
-
-}
-.cookies tr td.publicidadBis
-{
-  
-  background-color:#FDE7FE;
-
-}
-.cookies tr td.analiticas
-{
-  
-  background-color:#CFC;
-
-}
-.cookies tr td.analiticasBis
-{
-  
-  background-color:#DFFFDF;
-
-}
-
-.cookies tr td.comportamental
-{
-  
-  background-color: #D0E3F2;
-
-}
-.cookies tr td.comportamentalBis
-{
-  
-  background-color: #E6EDFF;
-
-}
-#contenedor {
-  overflow: visible;
-  position: relative;
-  padding-bottom: 20px;
-  background: #fff;
-}
-</style>
-<div id="contenedor">
-
-      <h1>POLÍTICA DE COOKIES</h1>
-
-        <p>Una cookie es un fichero que se descarga en el ordenador/smartphone/tablet del usuario al acceder a determinadas páginas web para almacenar y recuperar información sobre la navegación que se efectúa desde dicho equipo. Para conocer más información
-          sobre las cookies :<a href="http://www.iabspain.net/privacidadeninternet/usuario" target="_blank"> http://www.iabspain.net/privacidadeninternet/usuario</a>.</p>
-        <p>
-          En este sitio web se utilizan las siguientes cookies que se detallan en el cuadro siguiente:
-        </p>
-        <ul class="normal">
-          <li>cookies estrictamente necesarias para la prestación de determinados servicios solicitados expresamente por el usuario: si se desactivan estas cookies, no podrá recibir correctamente nuestros contenidos y servicios; y</li>
-          <li>cookies analíticas (para el seguimiento y análisis estadístico del comportamiento del conjunto de los usuarios), publicitarias (para la gestión de los espacios publicitarios en base a criterios como la frecuencia en la que se muestran los anuncios)
-            y comportamentales (para la gestión de los espacios publicitarios según el perfil específico del usuario): si se desactivan estas cookies, el sitio web podrá seguir funcionando sin perjuicio de que la información captada por estas cookies
-            sobre el uso de nuestra web y sobre el éxito de los anuncios mostrados en ella permite mejorar nuestros servicios y obtener ingresos que nos permiten ofrecerle de forma gratuita muchos contenidos.</li>
-        </ul>
-        <br>
-      
-        <table style="width:100%; " class="cookies" border="1px">
-         
-          <thead>
-            <tr>
-              <th colspan="2" style="width:10%;">Cookies</th>
-              <th style="width:15%;">Información (*)</th>
-              <th style="width:45%;">Finalidad</th>
-              <th style="width:30%;">Opt-out (*)</th>
-            </tr>
-          <tr>
-              <th colspan="5" class="propias">COOKIES PROPIAS</th>
-            </tr> 
-          </thead>
-         
-          <tbody>
-            
-            <tr>
-              <td colspan="2" class="necesarias"><strong>Estrictamente necesarias</strong>
-              </td>
-              <td>Sesión</td>
-              <td>Gestión del funcionamiento de la web</td>
-                <td><strong>N/A</strong> 
-              </td>
-            </tr>
-            
-
-            
-            <tr>
-              <th colspan="5" class="terceros"><strong>COOKIES DE TERCEROS<br>
-                </strong>(la información recogida a continuación ha sido facilitada por esos terceros)</th>
-            </tr>
-            
-            <tr>
-              <td colspan="2" class="analiticas" style="width:100px;"><strong>Analíticas</strong> </td>
-              <td class="Google Analitycs">
-                  <p><a href="https://www.google.es/intl/es/policies/technologies/types/" target="_blank">Google Analitycs
-                    </a>
-                  </p>
-              </td>
-              <td>Tiempo de navegación, sitio web visitado e información relacionada con la propia navegación</td>
-              <td>Crear informes sobre patrones generales de visitas al sitio web</td>
-            </tr>
-            
-            <tr>
-              <td colspan="2" class="publicidad"><strong>Publicidad</strong> </td>
-              <td class="publicidadBis">
-                <p><a href="https://support.google.com/adsense/answer/2839090?hl=en" target="_blank">Doubleclick
-                    <br>
-                    (Google, Inc.) </a>
-                </p>
-              </td>
-              <td>Información sobre los anuncios que han sido mostrados a un usuario, sobre los que le interesan y sobre si visita la página web del anunciante</td>
-              <td><a href="https://support.google.com/adsense/answer/2839090?hl=en" target="_blank">Ver</a></td>
-           
-            </tr>
-           
-          </tbody>
-        </table>
-
-        <p><span class="asterisco">(*)</span> La información obtenida a través de estas cookies, referida al equipo del usuario, podrá ser combinada con sus datos personales sólo si Ud. está registrado en este sitio web.</p>
-        <p><span class="asterisco">(**) DESACTIVACIÓN DE COOKIES.</span> El usuario podrá -en cualquier momento- elegir qué cookies quiere que funcionen en este sitio web mediante:</p>
-        <ul class="normal">
-          <li>la configuración del <strong>navegador</strong>; por ejemplo:
-            <br>
-            <br>
-            <ul class="normal">
-              <li><strong>Chrome</strong>, desde <a href="http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647" target="_blank">http://support.google.com/chrome/bin/answer.py?hl=es&amp;answer=95647 </a>
-              </li>
-              <li><strong>Explorer</strong>, desde <a href="http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9" target="_blank">http://windows.microsoft.com/es-es/windows7/how-to-manage-cookies-in-internet-explorer-9</a>
-              </li>
-              <li><strong>Firefox</strong>, desde <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" target="_blank">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a>
-              </li>
-              <li>Safari, desde <a href="http://support.apple.com/kb/ph5042" target="_blank">http://support.apple.com/kb/ph5042</a>
-                <br>
-                <br>
-              </li>
-            </ul>
-          </li>
-          <li>los sistemas de opt-out específicos indicados en la tabla anterior respecto de la cookie de que se trate (estos sistemas pueden conllevar que se instale en su equipo una cookie "de rechazo" para que funcione su elección de desactivación); o
-            <br>
-            <br>
-          </li>
-          <li>otras herramientas de terceros, disponibles on line, que permiten a los usuarios detectar las cookies en cada sitio web que visita y gestionar su desactivación (por ejemplo, Ghostery: <a href="http://www.ghostery.com/privacy-statement" target="_blank">http://www.ghostery.com/privacy-statement</a>,
-            <a href="http://www.ghostery.com/faq" target="_blank">http://www.ghostery.com/faq</a>).</li>
-        </ul>
-        <br>
-        <p>La web y su propietario no se hace responsable del contenido y veracidad de las políticas de privacidad de los terceros incluidas en esta política de cookies.</p>
-
-</div>
+        <h3 id="Directivas"><a href="#Directivas" class="headerlink" title="Directivas"></a>Directivas</h3><p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.</p>
+<p>Existen tres tipos diferentes de directivas:</p>
+<ul>
+<li>Component<ul>
+<li>Tiene un template, es el más común, lo hemos utilizado al <a href="/2017/01/30/angular2-primer-componente/">crear el primer componente</a></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/structural-directives.html" target="_blank" rel="external">Structural Directives</a><ul>
+<li>Por ejemplo bucles <code>*ngFor</code> o condicionales <code>*ngIF</code></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" rel="external">Attribute Directives</a><ul>
+<li>Nos permite cambiar la apariencia o comportamiento de un componente.</li>
+</ul>
+</li>
+</ul>
+<p>Podemos verlas en el framento de código:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">@Component(&#123;</div><div class="line">  <span class="comment">// El selector y templatte sería el primer tipo de directiva</span></div><div class="line">  selector: <span class="string">'my-app'</span>,</div><div class="line">  <span class="attr">template</span>: <span class="string">`&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;</span></div><div class="line">    &lt;ul&gt;</div><div class="line">      &lt;li *ngFor="let carPart of carParts"&gt;</div><div class="line">        &lt;h2&gt;&#123;&#123;carPart.name&#125;&#125;&lt;h2&gt;</div><div class="line">        &lt;p&gt;&#123;&#123;carPart.description&#125;&#125;&lt;p&gt;</div><div class="line">        &lt;p *ngIf="carPart.inStock &gt; 0"&gt;&#123;&#123;carPart.inStock&#125;&#125; in Stock&lt;/p&gt;</div><div class="line">        &lt;p *ngIf="carPart.inStock === 0"&gt;Out of Stock&lt;/p&gt;</div><div class="line">      &lt;/li&gt;</div><div class="line">    &lt;/ul&gt;`</div><div class="line"></div><div class="line">  <span class="comment">// En el propio template observamos las directivas de estructura *ngFor y *ngIf</span></div><div class="line"></div><div class="line">&#125;)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">...</div></pre></td></tr></table></figure>
+<h3 id="Pipes-y-Metodos"><a href="#Pipes-y-Metodos" class="headerlink" title="Pipes y Métodos"></a>Pipes y Métodos</h3><p>Un <strong>pipe</strong> coge un dato de entrada y lo transforma a la salida deseada, como por ejemplo:</p>
+<ul>
+<li><p>Poner un texto en máyusculas:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;carPart.name | uppercase &#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Añadir formato de moneda:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;carPart.price | currency:&apos;EUR&apos;&#125;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank" rel="external">Y muchos más que encontramos en la documentación oficial</a></p>
+</li>
+</ul>
+<p><em>Métodos (Methods)</em> como podemos imaginar es añadir métodos en la clase de nuestro componente para luego ser utilizada:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">@Component(&#123;</div><div class="line">  <span class="attr">selector</span>: <span class="string">'my-app'</span>,</div><div class="line">  <span class="attr">template</span>: <span class="string">`&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;`</span></div><div class="line"></div><div class="line">  &#125;)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</div><div class="line">  exampleMethod() &#123;</div><div class="line">      <span class="keyword">return</span> <span class="number">10</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/cookies.html" data-id="ciyly9i86000002mevxselflu" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/" data-id="ciylyago500003qme4fzcug1q" class="article-share-link">Share</a>
       
-        <a href="http://blog.luisangonzalez.es/cookies.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/30/angular2-primer-componente/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Angular 2 - Primer componente Angular 2</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -500,7 +323,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'blogluisangonzalezes';
   
-  var disqus_url = 'http://blog.luisangonzalez.es/cookies.html';
+  var disqus_url = 'http://blog.luisangonzalez.es/2017/01/31/angular2-directivas/';
   
   (function(){
     var dsq = document.createElement('script');

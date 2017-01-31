@@ -89,6 +89,85 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-arduino-bluetooth-android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/13/arduino-bluetooth-android/" class="article-date">
+  <time datetime="2016-03-13T17:05:08.000Z" itemprop="datePublished">Mar 13 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/arduino-bluetooth-android/">Conectar placa arduino (bq zum) por Bluetooth en Android</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Con Cordova o Phonegap tenemos la gran ventaja de desarrollar una sola vez y que esta sea compatible para multiple plataformas móviles en las que se encuentran Android y IOS.</p>
+<p>Cuando vamos a desarrollar una aplicación que hace uso de elementos nativos de la plataforma, es decir no solo es una capa de presentación web si no que utilizamos elementos físicos como el giroscopio, wifi o bluetooth en la mayoría de los casos nos vemos obligados de utilizar <a href="https://cordova.apache.org/plugins/" target="_blank" rel="external">plugins de cordova/phonegap</a>.</p>
+<p>En este caso vamos a utilizar <a href="https://www.npmjs.com/package/cordova-plugin-bluetooth-serial" target="_blank" rel="external">cordova-plugin-bluetooth-serial</a>.</p>
+<p>La aplicación de ejemplo consiste en conectar nuestro móvil con una placa Arduino que dispone de modulo de Bluetooth, en este caso <a href="http://www.bq.com/es/placa-zum-core" target="_blank" rel="external">bq zum</a> pero se puede utilizar cualquier otra añadiendo el modulo de Bluetooth.</p>
+<p>Para ello:</p>
+<ul>
+<li>En la placa Arduino conectaremos un LED en el pin 13.</li>
+<li>Cargamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">programa</a> en la placa.</li>
+<li><p>El código de la App lo tenemos dispone en el repo de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial" target="_blank" rel="external">github</a>.</p>
+</li>
+<li><p>Nos descagamos el código o hacemos git clone:<br><code>git clone git@github.com:Luisangonzalez/cordova-bluetooth-serial.git</code></p>
+</li>
+<li>Accedemos al directorio: <code>cd cordova-bluetooth-serial</code></li>
+<li>Asumiendo que tenemos <a href="http://developer.android.com/sdk/installing/index.html" target="_blank" rel="external">instalado el SDK de Android</a>.</li>
+<li>Con <a href="http://blog.luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/">cordova instalado y configurado</a> compilamos la APP:<ul>
+<li>Añadimos la plataforma android: <code>$ cordova platform add android</code></li>
+<li>Instalamos el plugin bluetooth: <code>$ cordova plugin add cordova-plugin-bluetooth-serial</code></li>
+<li>compilamos la app: <code>$ cordova run</code></li>
+</ul>
+</li>
+</ul>
+<p>Si observamos el <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino" target="_blank" rel="external">código Arduino</a> que hemos subido a la placa consiste en estar leyendo constantemente y en el caso de leer “b” encender el led y en caso “c” apagar el led.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (bluetooth_0.available() &gt; <span class="number">0</span>) &#123;</div><div class="line">        bluetooth_0.println(<span class="string">"Avaliable"</span>);</div><div class="line">        read = bluetooth_0.readString();</div><div class="line">        <span class="keyword">if</span> (read == <span class="string">"b"</span> || ledon) &#123;</div><div class="line">            bluetooth_0.print(<span class="string">"ON"</span>);</div><div class="line">            digitalWrite(led_0, HIGH);</div><div class="line">            ledon = <span class="literal">true</span>;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (read == <span class="string">"c"</span> || !ledon) &#123;</div><div class="line">            bluetooth_0.print(<span class="string">"OFF"</span>);</div><div class="line">            digitalWrite(led_0, LOW);</div><div class="line">            ledon = <span class="literal">false</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>En el caso del código de cordova observamos en <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/js/index.js" target="_blank" rel="external">www/js/index.js</a> :</p>
+<ul>
+<li><p>Al comienzo del archivo en comentarios incluimos las funciones globales como LED13ON y LED13OFF que posterimente indicamos:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">global cordova, console, $, bluetoothSerial,refreshButton, deviceList, disconnectButton, connectionScreen, messageDiv, led13ButtonON,led13ButtonOFF</div><div class="line">*/</div></pre></td></tr></table></figure>
+</li>
+<li><p>A parte de las funciones para conectar y emparejar las propias que hemos realizado para enviar “b” para encender el LED:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LED13ON: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  bluetoothSerial.write(<span class="string">"b"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>y “c para apagarlo”:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">LED13OFF: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  bluetoothSerial.write(<span class="string">"c"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>En el caso de <a href="https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/www/index.html" target="_blank" rel="external">www/index.html</a>:<br>para hacer uso de las funciones de index.js simplemente añadimos al id de los botones el nombre de las funciones:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonON"</span>&gt;</span>LED 13 ON<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"topcoat-button--large"</span> <span class="attr">id</span>=<span class="string">"led13ButtonOFF"</span>&gt;</span>LED 13 OFF<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Para cualquier enviar comentarios para que os pueda ayudar si me es posible, espero que os haya gustado ;).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.luisangonzalez.es/2016/03/13/arduino-bluetooth-android/" data-id="ciyly9i9f000i02melfuopeuq" class="article-share-link">Share</a>
+      
+        <a href="http://blog.luisangonzalez.es/2016/03/13/arduino-bluetooth-android/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Arduino/">Arduino</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-add-device-android" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/28/add-device-android/" class="article-date">
@@ -138,7 +217,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/02/28/add-device-android/" data-id="ciykozkfy000buemeqbuqp45d" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2016/02/28/add-device-android/" data-id="ciyly9i9a000c02mej69y8r5q" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2016/02/28/add-device-android/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -186,7 +265,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/" data-id="ciykozkga000tueme5dnlraxv" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/" data-id="ciyly9i9l000p02me8u21cvax" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2016/02/11/instalar-cordova-android-en-ubuntu/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,7 +330,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="ciykozkfq0003uemetartu21i" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/" data-id="ciyly9i93000602meir6p1fhk" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -311,7 +390,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" data-id="ciykozkg1000guemevg25j3k9" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/" data-id="ciyly9i96000802meqo7zz403" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/23/Sublime-Text-2-en-Ubuntu-14-04/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -436,7 +515,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="ciykozkft0006uemexfxgpei5" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/" data-id="ciyly9i8t000202mel9yj6l74" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/23/Esquema-basico-de-Markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -491,7 +570,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="ciykozkfx0008uemeo6g8e13c" class="article-share-link">Share</a>
+      <a data-url="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/" data-id="ciyly9i94000702me6kitk09w" class="article-share-link">Share</a>
       
         <a href="http://blog.luisangonzalez.es/2015/02/23/Primer-post-con-hexo-io/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -519,7 +598,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -529,7 +608,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -539,7 +618,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 12.5px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 17.5px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 12.5px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
+      <a href="/tags/Android/" style="font-size: 17.5px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 15px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 15px;">Cordova/Phonegap</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 17.5px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 20px;">Ubuntu</a>
     </div>
   </div>
 
@@ -549,7 +628,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -562,7 +641,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
-            <a href="/2017/01/30/angular2-primer-componente/">Primer componente Angular 2</a>
+            <a href="/2017/01/31/angular2-directivas/">Angular 2 - Estructura de directivas, Pipes y Métodos</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/30/angular2-primer-componente/">Angular 2 - Primer componente Angular 2</a>
           </li>
         
           <li>
@@ -575,10 +658,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/01/22/Flexbox/">Resumen Flexblox del curso &quot;Cracking the case with Flexbox&quot; de CodeSchool</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/22/nfs-synology/">Montar directorio NFS en Synology DS214</a>
           </li>
         
       </ul>

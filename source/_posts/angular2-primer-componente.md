@@ -1,4 +1,4 @@
-title: Primer componente Angular 2
+title: Angular 2 - Primer componente Angular 2
 date: 2017-01-30 23:43:59
 tags:
 - Angular 2
