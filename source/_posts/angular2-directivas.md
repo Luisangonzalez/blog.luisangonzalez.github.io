@@ -23,7 +23,7 @@ Existen tres tipos diferentes de directivas:
 * [Attribute Directives](https://angular.io/docs/ts/latest/guide/attribute-directives.html)
   * Nos permite cambiar la apariencia o comportamiento de un componente.
 
-Podemos verlas en el framento de código:
+Podemos verlas en el fragmento de código:
 
 ```js
 ...
