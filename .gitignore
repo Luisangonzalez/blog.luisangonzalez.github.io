@@ -1,4 +1,7 @@
 # Hexo.io ignore
+public/*
+db.json
+.deploy_git
 
 #Logs
 logs
