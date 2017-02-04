@@ -28,5 +28,10 @@ También es necesario tener conocimientos TypeScript:
 * [Estructura de directivas, Pipes y Métodos](/2017/01/31/angular2-directivas/)
 * [Organización de código](http://localhost:4000/2017/01/31/angular2-code-organize/)
 * [Modelo de datos y mocks](/2017/02/02/mocks/)
-* Data Binding
-* Servicios y HTTP
+* Binding
+ * [Binding de propiedades y clases (CSS) (One-way Binding)](/2017/02/02/Angular2-dataBinging/)
+ * Binding de eventos
+ * Two-way Binding
+* Servicios
+  * HTTP
+* Routes
