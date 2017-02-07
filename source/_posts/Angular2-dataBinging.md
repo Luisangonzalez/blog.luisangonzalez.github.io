@@ -1,4 +1,4 @@
-title: Binding de propiedades y clases (CSS)
+title: Property Binding - Binding de propiedades y clases CSS (One-way binding)
 date: 2017-02-02 21:25:08
 tags:
 - Angular 2
@@ -10,9 +10,7 @@ categories:
 
 *El siguiente post es continuación del **[resumen de Angular 2](/2017/01/30/angular2/)***
 
-### Property binding - Binding de propiedades (One way binding)
-
-El *Binding* de propiedades significa mostrar las propiedades de nuesto componente en el DOM de la web y que cambie dinamícamente según cambía la propiedad, *One way binding* es debido a que la comunicación es desde los modelos de los componentes de nuestra app al DOM no del DOM a la aplicación.
+El *Binding* de propiedades significa mostrar las propiedades de nuesto componente en el DOM de la web y que cambie dinamícamente según cambía la propiedad, *One-way binding* es debido a que la comunicación es desde los modelos de los componentes de nuestra app al DOM no del DOM a la aplicación.
 
 Con `[ ]` decimos a Angular 2 que esa propiedad del DOM va unida a una propiedad de nuestro modelo como por ejemplo:
 
@@ -25,7 +23,7 @@ Con `[ ]` decimos a Angular 2 que esa propiedad del DOM va unida a una propiedad
 
 ### Binding Class (CSS)
 
-También es posible hacer binding de una una clase CSS dependiendo del modelo.
+También es posible hacer binding de una clase CSS dependiendo del modelo.
 
 Por ejemplo la clase CSS
 ```CSS
@@ -50,5 +48,5 @@ Hay que tener en cuenta, que de esta forma cada elemento tiene su scope, el cód
 En definitiva:
 
 * El binding de propiedades permite hacer binding entre las propiedades del componente y el DOM.
-* Cualquier actualización del valor de la propiedad actualizara el DOM, pero no viceversa, una actualización del DOM no actualiza el modelo (One way binding).
+* Cualquier actualización del valor de la propiedad actualizara el DOM, pero no viceversa, una actualización del DOM no actualiza el modelo (One-way binding).
 * El binding de clases CSS nos permite especificar estilos a un elemento del DOM si la propiedad del componente es `true`, tienen su propio scope del estilo que es dado.
