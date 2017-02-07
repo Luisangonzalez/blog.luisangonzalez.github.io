@@ -10,7 +10,7 @@ categories:
 
 *El siguiente post es continuación del **[resumen de Angular 2](/2017/01/30/angular2/)***
 
-En el [post anterior se explicaba el (Binding de propiedades)](http://localhost:4000/2017/02/02/Angular2-dataBinging/) el cual consistía en la comunicación de las propiedades de las clases de los componentes (TypeScript o JavaScript) al DOM, es decir:
+En el [post anterior se explicaba el (Binding de propiedades)](/2017/02/02/Angular2-dataBinging/) el cual consistía en la comunicación de las propiedades de las clases de los componentes (TypeScript o JavaScript) al DOM, es decir:
 
 > JavaScript to HMTL
 
