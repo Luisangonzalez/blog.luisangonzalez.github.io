@@ -34,4 +34,4 @@ También es necesario tener conocimientos TypeScript:
  * [Two-way Binding](/2017/02/07/angular2-two-way-binding/)
 * [Servicios](/2017/02/08/angular2-services/)
   * [HTTP](/2017/06/10/angular2-services-http/)
-* Routes
+* [Routes](/2017/06/11/angular2-routes/)
