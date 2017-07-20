@@ -16,7 +16,7 @@ Hay varias formas de hacer un router en angular, una de ellas es la siguiente ut
 Para el ejemplo partimos de :
 
 * Un componente cualqiera como puede ser login situdado en `/login/login.component` el cual exportamos:
-  ```ts
+  ```typescript
   import { Component, NgZone } from '@angular/core';
 
   @Component({
@@ -35,7 +35,7 @@ Para el ejemplo partimos de :
   * NgModule
   * Routes y RouterModule
 
-  ```ts
+  ```typescript
   import { NgModule } from '@angular/core';
   import { Routes, RouterModule } from '@angular/router';
   import { LoginComponent } from './login/login.component';
@@ -43,7 +43,7 @@ Para el ejemplo partimos de :
   ```
 
   En el modulo creamos un array de rutas del objeto Routes en el cual se indica el path y el componente a dicho path:
-    ```ts
+    ```typescript
     export const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent }
@@ -52,7 +52,7 @@ Para el ejemplo partimos de :
 
   En @NgModule se importan las rutas para el routerModule y se exportan una vez añadidas las rutas:
 
-    ```ts
+    ```typescript
     @NgModule({
       imports: [ RouterModule.forRoot(routes) ],
       exports: [ RouterModule ],
@@ -61,7 +61,7 @@ Para el ejemplo partimos de :
 
 Por último exportamos `AppRoutingModule` y además todos los componentes los cuales serán incluidos en AppModule para ser declarados, de esta forma no tenemos que importar uno a uno en AppModule, si no todos los componentes añadidos en el array de AppRoutingModule.
 
-```ts
+```typescript
 export class AppRoutingModule {}
 export const routedComponents = [ LoginComponent, RegisterComponent ];
 
@@ -69,7 +69,7 @@ export const routedComponents = [ LoginComponent, RegisterComponent ];
 
 En definitiva AppRoutingModule sería por ejemplo:
 
-```ts
+```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -89,15 +89,13 @@ export const routes: Routes = [
 export class AppRoutingModule {}
 
 export const routedComponents = [ LoginComponent, RegisterComponent ];
-
-
 ```
 
 Y en app.module se importa `import { AppRoutingModule, routedComponents } from './app-routing.module';` para añadir a `imports` AppRoutingModule y declarar en `declarations` routedComponents.
 
 `app.module.ts`:
 
-```ts
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';

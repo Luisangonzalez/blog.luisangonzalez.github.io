@@ -16,7 +16,7 @@ Utilizo Ubuntu 14.04 Gnome http://ubuntugnome.org/ y al instalar por ejemplo Sub
 * Al buscarlo en el buscador no aparece, para este caso debemos:
   * Crear un archivo en en : `/usr/share/applications/` como por ejemplo con nano o vi :
 
-```
+```bash
 $ cd /usr/share/applications/
 $ sudo nano sublime-text-2.desktop
 ```

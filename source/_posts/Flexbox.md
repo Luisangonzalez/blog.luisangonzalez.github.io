@@ -40,7 +40,7 @@ Esta claro que Flexbox está para quedarse, actualmente es soportado por todos l
 El valor por defecto en Flexbox es `nowrap`, cuando se indica `flex-wrap: wrap` se obliga a los elementos a permanecer en la misma línea aún sin espacio, cuando no hay espacio horizontalmente coloca los elementos uno debajo de otro, verticalmente, parecido a display block.
 
 
-```CSS
+```css
 .setup {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +49,7 @@ El valor por defecto en Flexbox es `nowrap`, cuando se indica `flex-wrap: wrap` 
 #### flex-wrap: wrap-reverse;
 Renderiza al reves, el primer elemento es colocado el último.
 
-```CSS
+```css
 .setup {
 display: flex;
 flex-wrap: wrap-reverse;
@@ -60,7 +60,7 @@ flex-wrap: wrap-reverse;
 
 Flex wrap apila los elementos en pila tipo block cuando no hay espacio, si queremos apilar los elementos aún habiendo espacio debemos utlizar la propiedad `flex-direction` con el valor `column`.
 
-```CSS
+```css
 .setup {
 display: flex;
 flex-direction: column;
@@ -157,7 +157,7 @@ Combiar `flex-basis` y `flex-shrink nos permite hacer layouts homogenos, es deci
 
 Hay que tener en cuenta:
 
-```CSS
+```css
 /* Intrinsic sizing keywords*/
 flex-basis: fill;
 flex-basis: max-content;
@@ -187,14 +187,14 @@ Es útil para usarlo en column, para ello ver las diapositivas 73 y 74.
 
 The default *0 1 auto*:
 
-```
+```css
 .flex {
     flex: 0 1 auto;
 }
 ```
 es igual a:
 
-```
+```css
 .flex {
     flex-grow: 0;
     flex-shrink: 1;

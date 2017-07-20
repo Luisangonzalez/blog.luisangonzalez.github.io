@@ -15,20 +15,20 @@ Los pasos para instalar Sublime Text 2 en Ubuntu 14.04:
 
 * Una vez descargado descomprmir y dar permisos totales :
 
-```
+```bash
 $ sudo chmod -R 777 ./Sublime2
 ```
 
 * Doble click en sublime_text o ejecutarlo :
 
-```
+```bash
 $ ./Sublime2
 ```
 
 Una vez descargado para no tener que ir cada vez que quiera ejecutarlo a la carpeta lo añado al path de mi equipo añadiendo las siguientes lineas a .bashrc ( se encuentra en la carpeta home oculto)
 
 
-```
+```bash
 export SUBLIME_HOME=~/Sublime2
 export PATH=${PATH}:$SUBLIME_HOME
 ```

@@ -15,7 +15,7 @@ Después de un largo tiempo sin utilizar el blog que comenze con [Octopress](htt
  3. Como indican en hexo.io —> A fast, simple & powerful blog framework, powered by Node.js. Y así es, esto me ha convencido :
 
 
-```
+```bash
  $ npm install hexo -g
  $ hexo init blog
  $ cd blog

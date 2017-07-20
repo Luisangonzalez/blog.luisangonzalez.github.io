@@ -34,7 +34,7 @@ Para ello:
 
 
 Si observamos el [código Arduino](https://github.com/Luisangonzalez/cordova-bluetooth-serial/blob/master/Arduino/Comunicacion_serie_Bluetooth_Z.ino) que hemos subido a la placa consiste en estar leyendo constantemente y en el caso de leer "b" encender el led y en caso "c" apagar el led.
-```C
+```c
 if (bluetooth_0.available() > 0) {
         bluetooth_0.println("Avaliable");
         read = bluetooth_0.readString();

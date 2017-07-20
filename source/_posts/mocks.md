@@ -13,7 +13,7 @@ categories:
 
 Básicamente los modelos en angular 2 son clases como por ejemplo:
 
-```js
+```typescript
 export class Carpart {
   id: number;
   name: string;
@@ -26,7 +26,7 @@ export class Carpart {
 
 De esta forma en la clase de nuestro componente podemos crear arrays de la clase Cardpart, importando la clase.
 
-```js
+```typescript
 import { Component } from '@angular/core';
 import { CarPart } from './car-part';
 
@@ -49,7 +49,7 @@ Una forma simple es creando nuestro array de datos JSON o de clases que vayamos 
 
 Como por ejemplo:
 
-```js
+```typescript
 import { CarPart } from './car-part';
 
 export const CARPARTS: CarPart[] = [{
@@ -63,7 +63,7 @@ export const CARPARTS: CarPart[] = [{
 
 Y ahora en nuestro componente mediante la función `ngOnInit()` damos el valor a la propiedad correspondiente, en este ejemplo a la propiedad `cardParts` se le asigna el valor `CARDPARTS` el cual es el array de cardparts que hemos importado.
 
-```js
+```typescript
 import { Component } from '@angular/core';
 import { CarPart } from './car-part';
 import { CARPARTS } from './mocks';

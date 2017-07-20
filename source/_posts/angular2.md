@@ -7,7 +7,7 @@ categories:
 - Angular 2
 date: 2017-01-30 23:21:00
 ---
-Al igual que en post [Resumen de Flexbox]() en este post voy a realizar un esquema de los puntos
+Al igual que en post [Resumen de Flexbox](/2017/01/22/Flexbox/) en este post voy a realizar un esquema de los puntos
 principales del curso [Accelerating through ANGULAR 2](https://www.codeschool.com/courses/accelerating-through-angular-2) de [CodeSchool](https://www.codeschool.com), este resumen es más un mero esquema para recordar algunos aspectos importantes que una guía para aprender sobre el tema.
 
 Para profundizar, recomendaría estos enlaces de cursos y fuentes:

@@ -27,7 +27,7 @@ Two-way Binding es la unión de ambos para tener una comunicación bidireccional
 
  En este ejemplo en el mismo input se muestra la cantidad (Binding de propiedades) y se añade la cantidad (Binding de eventos):
 
-```HTML
+```html
 <input class="number" type="text" [value]="carPart.quantity" (input)="carPart.quantity = $event.target.value">
 ```
 
@@ -35,7 +35,7 @@ Two-way Binding es la unión de ambos para tener una comunicación bidireccional
 
 Para ello en la clase del componente se importa `@angular/forms`:
 
-```js
+```typescript
 ...
 import { FormsModule } from '@angular/forms';
 
@@ -51,7 +51,7 @@ class AppModule { }
 
 Y en el input se utiliza la síntasis `[ () ]`:
 
-```HTML
+```html
 <input class="number" type="text" [(ngModel)]="carPart.quantity" >
 ```
 

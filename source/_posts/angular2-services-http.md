@@ -23,7 +23,7 @@ Con HTTP podemos hacer peticiones GET, POST, PUT, DELETE las cuales las podemos 
 
 * Mediante observables, como por ejemplo el método login:
 
-```
+```typescript
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -48,7 +48,6 @@ export class AuthService {
             (error) => console.log(error)
             );
     }
-
 ```
 
 Como se observa importamos la librería `@angular/http` y la instanciamos en el constructor.
@@ -57,7 +56,7 @@ Tambíen necesitamos importar `rxjs/add/operator/map` para map en el observable.
 
 * Con Promesas
 
-```
+```typescript
 getHeroes() {
    this.heroService.getHeroes()
                     .subscribe(

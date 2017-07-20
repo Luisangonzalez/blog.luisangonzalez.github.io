@@ -4,7 +4,7 @@
 
 # Site
 title: LuisanGonzalez
-subtitle: Developer
+subtitle: Developer Bitácora
 description:
 author: Luisangonzalez
 email:
@@ -12,7 +12,7 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.luisangonzalez.es
+url: https://blog.luisangonzalez.es
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -35,9 +35,15 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 highlight:
-  enable: true
+  enable: false
   line_number: true
   tab_replace:
+
+prism_plugin:
+  mode: 'preprocess'    # realtime or preprocess
+  theme: 'tomorrow'
+  line_number: true    # default false
+  auto_import_assets: true   # default true
 
 # Category & Tag
 default_category: uncategorized

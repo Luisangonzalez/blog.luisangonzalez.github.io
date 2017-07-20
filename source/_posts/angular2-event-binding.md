@@ -20,7 +20,7 @@ En el caso de Event Binding, es lo contrario:
 
 Por ejemplo añadimos una función en nuestro componente:
 
-```js
+```typescript
 export class CarPartsComponent {
   ...
   upQuantity() {
@@ -31,14 +31,14 @@ export class CarPartsComponent {
 
 Y este es llamado desde HTML, por ejemplo al hacer click:
 
-```HTML
+```html
   <button (click)="upQuantity( carPart )" >Click to alert</button>
 ```
 
 Además del click tenemos los siguientes eventos:
 
 
-```HTML
+```html
 <div (mouseover)="call()">
 
 <input (blur)="call()">
@@ -54,13 +54,13 @@ Como es de esperar es posible coger información desde el elemento HTML para lue
 
 * Código HTML:
 
-```HMTL
+```html
 <input type="text" (keydown)="showKey($event)">
 ```
 
 * TypeScript o JavaScript
 
-```js
+```typescript
 export class CarPartsComponent {
   ...
   showKey(event) {

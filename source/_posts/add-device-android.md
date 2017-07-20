@@ -14,7 +14,7 @@ Desarrollar aplicaciones móviles usando el emulador de Android no siempre es ta
 En mi caso utilizo un [bq X5](http://www.bq.com/es/aquaris-x5) y estos son los pasos que he seguido para pdoer utilizarlo en Ubuntu 14.04.
 
 -  Intalar MTPS
-```
+```bash
 sudo apt-get install libmtp-common mtp-tools libmtp-dev libmtp-runtime libmtp9
 sudo apt-get install mtpfs
 ```
@@ -22,9 +22,7 @@ sudo apt-get install mtpfs
 - Añadir el id :
 
 Con el comando `lsusb` nos listara todos los usbs conectados, entre ellos el dispositivo móvil.
-
-
-```
+```bash
 $lsusb
 Bus 002 Device 002: ID 8087:8001 Intel Corp.
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

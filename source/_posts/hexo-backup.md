@@ -16,7 +16,7 @@ De modo que **en local siempre me encuentro en la rama backup, y en github la ra
 
 Lo único a tener en cuenta, es añadir la rama donde se hacen los deploys en el archivo de configuiración:
 
-```yml
+```yaml
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:

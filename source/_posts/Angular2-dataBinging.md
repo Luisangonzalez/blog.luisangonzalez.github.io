@@ -26,7 +26,7 @@ Con `[ ]` decimos a Angular 2 que esa propiedad del DOM va unida a una propiedad
 También es posible hacer binding de una clase CSS dependiendo del modelo.
 
 Por ejemplo la clase CSS
-```CSS
+```css
 .featured {
   background: #57595D;
 }
@@ -40,7 +40,7 @@ Hay que tener en cuenta, que de esta forma cada elemento tiene su scope, el cód
 
 `<div _ngcontent-opf-2 >`
 
-```CSS
+```css
 .featured[_ngcontent-opf-2] {
   background: #57595D;
 }

@@ -15,13 +15,13 @@ Como indican en la web de [Synology](https://www.synology.com/es-es/knowledgebas
 
 Una vez configurado el NAS, para montar las carpetas necesitamos instalar el paquete `nfs-commons` :
 
-```
+```bash
 sudo apt-get install nfs-common
 
 ```
 
 Y añadimos en el archivo `/etc/fstab` como root:
-```
+```bash
 sudo nano /etc/fstab
 ```
 las carpetas a montar, como por ejemplo:
