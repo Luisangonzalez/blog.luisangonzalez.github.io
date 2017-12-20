@@ -3,12 +3,12 @@
   "version": "2.8.3",
   "private": true,
   "scripts": {
-    "server": "./node_modules/hexo/bin/hexo server",
-    "generate": "./node_modules/hexo/bin/hexo generate --watch",
-    "build": "./node_modules/hexo/bin/hexo build",
+    "server": "./node_modules/.bin/hexo server",
+    "generate": "./node_modules/.bin/hexo generate --watch",
+    "deploy": "./node_modules/.bin/hexo deploy",
     "browser-sync": "./node_modules/browser-sync/bin/browser-sync.js start --server 'public' --files 'public'",
     "watch": "run-p generate browser-sync",
-    "hexo": "./node_modules/hexo/bin/hexo"
+    "hexo": "./node_modules/.bin/hexo"
   },
   "repository": {
     "type": "git",
