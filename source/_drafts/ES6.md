@@ -205,11 +205,116 @@ function displayTags(...tags) {
 // Spread Operator --> Function invocation --> Individual argument, not array
 displayTags(...tags);
 ```
+## Using Arrow Functions to Preserve Scope
+#### **ES5**
+
+```js
+// For example, the `TagComponent` object *encapsulates* the code for tetching tags and adding them to a page.
+
+function TagComponent(target, urlPath){
+    this.targetElement = target;
+    this.urlPath = urlPath; // Properties set on the constructor function
+}
+
+TagComponent.prototype.render = function(){
+    // ..can be accesed from other instance methods
+    getRequest(this.urlPath, function(data){
+        let tags = data.tags;
+
+        // ISSUE The scope of the TagComponent object is not the same as the scope of the anonymous function
+        // this.tarElement --> undefined
+        displayTags(this.targetElement, ...tags);
+    });
+}
+
+// Passing target element and the URL path as arguments
+let tagComponent = new TagComponent(targetDiv, "/topics/17/tags");
+tagComponent.render();
+
+```
+
+#### **ES6**
+
+* Arrow functions bind to the scope of where they are **defined**, not where they are called.
+(also known as **lexical binding**)
+
+```js
+
+function TagComponent(target, urlPath){
+    this.targetElement = target;
+    this.urlPath = urlPath;
+}
+
+TagComponent.prototype.render = function(){
+            // Arrow functions bind to the lexical scope
+    getRequest(this.urlPath, (data) => {
+        let tags = data.tags;
+        // this now properly refers to the TagComponent object
+        displayTags(this.targetElement, ...tags);
+    });
+}
+
+let tagComponent = new TagComponent(targetDiv, "/topics/17/tags");
+tagComponent.render();
+
+```
+
+## Objects and Strings
 
 
 
---> Set, create arrays without duplicate variables
 
-new Set(['asd', 'asdf','aa']); --> ['asd','aa']
 
-   D
+## From Functions to Objects to Class
+
+Javascript objects can help us with the encapsulation, organization, and testability of our code.
+
+```js
+
+// Functions like getRequest and displayTags
+// should not be exposed to caller code
+
+// We want to convert code like this...
+getRequest("/topics/17/tags", function( data ){
+    let tags = data .tags;
+    displayTags( ... tags);
+})
+
+// ...into code like this
+
+let tagComponent = new TagComponent(targetDiv,"/topics/17/tags");
+tagComponent.render();
+
+// Use prototype objects
+
+function TagComponent(target, urlPath){
+    this.targetElement = target;
+    this.urlPath = urlPath; // Properties set on the constructor function
+}
+
+TagComponent.prototype.render = function(){
+    // ..can be accesed from other instance methods
+    getRequest(this.urlPath, function(data){
+        let tags = data.tags;
+
+        // ISSUE The scope of the TagComponent object is not the same as the scope of the anonymous function
+        // this.tarElement --> undefined
+        displayTags(this.targetElement, ...tags);
+    });
+}
+
+// Fix this context, use arrow functions:
+TagComponent.prototype.render = function(){
+            // Arrow functions bind to the lexical scope
+    getRequest(this.urlPath, (data) => {
+        let tags = data.tags;
+        // this now properly refers to the TagComponent object
+        displayTags(this.targetElement, ...tags);
+    });
+}
+
+
+
+// Use class
+
+```
