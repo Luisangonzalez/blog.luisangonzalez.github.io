@@ -259,7 +259,134 @@ tagComponent.render();
 
 ```
 
-## Objects and Strings
+## Objects
+
+### Removing repetition from crating objects
+
+#### ES5
+
+Crate object in ES5:
+```js
+var firstName = 'Luis';
+var User = {
+    firstName: firstName,
+    username: 'Gonzalez'
+}
+```
+#### ES6
+
+* **Removing repetition from creating objects**. In ES6 we can remove **duplicate** variable names from object properties when those properties have the **same name** as the variables being assigned to them. 
+We can use shortland to assign **properties** from objects to **local variables** with the ***same name**.
+
+```js
+var firstName = 'Luis';
+var User = {
+    firstName, // create firstName propertie with value
+    username: 'Gonzalez'
+}
+```
+
+* **Object Destructuring**. We can use shortland to assing **properties** from objects to **local variables** with the **same name.**.
+
+#### ES5
+```js
+var User = {
+    firstName, // create firstName propertie with value
+    username: 'Gonzalez'
+}
+// Unnecessary reptition (ES5)
+let firstName = User.firstName // Unnecessary reptition
+let username = User.username// Unnecessary reptition
+
+```
+#### ES6
+```js
+// Same names as properties from return object, less repetiton (ES6)
+let { firstName, username } = User;
+console.log(first);
+console.log(username);
+
+// Not all properties have to be destructured all the time.
+// We can explecitly select ones we want.
+let { firstName } = User;
+console.log(first);
+```
+### Adding a Function to an Object
+
+#### ES5
+* Adding a function to an object required specifying the **property name** and the **full function defintion** (including the function keyword).
+```js
+var User = {
+    firstName,
+    username: 'Gonzalez',
+    fullname: function() {
+        return firstName + username;
+    }
+}
+```
+
+#### ES6
+
+* A new shortland notation is avaliable for adding a method to an object where the keyword *function* is no longer necessary.
+```js
+var User = {
+    firstName,
+    username: 'Gonzalez',
+    fullname() {
+        return firstName + username;
+    }
+}
+```
+## Strings
+
+### Template Strings
+
+* Template strings are **string literals** allowing embedded expressions. This allows for a much better way to do **string interpolation** (ES5).
+#### ES5
+```js
+let name = 'Manolo';
+let surname = 'Garcia';
+// String interpolation
+console.log('Name :' + name + ' & Surname:' + surname);
+```
+#### ES6
+
+```js
+let name = 'Manolo';
+let surname = 'Garcia';
+// String literal allowing embedded expressions
+console.log(`Name: ${name} + & Surname: ${surname}`);
+// OjO Enclosed by back-ticks ` NOt single quotes,
+// and code is wrapped inside dollar sign and curly braces.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
