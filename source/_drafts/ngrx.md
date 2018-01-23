@@ -89,6 +89,23 @@ Now we need a way to present and change the state in the UI. Here are a few key 
 ```
 
 
+5. Effects:
+ You can almost think of your Effects as special kinds of reducer functions that are meant to be a place for you to put your async calls in such a way that the returned data can then be easily inserted into the store’s internal state for the application. 
+ [fuente](https://medium.com/@flashMasterJim/the-basics-of-ngrx-effects-effect-and-async-middleware-for-ngrx-store-in-angular-2-f25587493329)
+
+
+
+To practique:
+https://medium.com/front-end-hacking/an-intro-to-ngrx-effects-ngrx-store-with-angular-4-c55c4d1d5baf
+
+Tour of herores:
+
+
+Tour of heroes with ngrx:
+http://bodiddlie.github.io/ng-2-toh-with-ngrx-suite/
+
+
+
 Por ahora en resumen:
 
 * Archivo **reducer**: `src/app/simple.reducer.ts` función que ejecuta un swith donde se encuentran las acciones que se van a llamar cuando se realice un `dispatch` para cambiar el estado.
@@ -112,3 +129,8 @@ To view in ReduxDevtools:
 And add in import on `app.module.ts`
 
 `(ENV !== 'production') ? StoreDevtoolsModule.instrument({maxAge: 70}) : [],`
+
+Rxjs:
+
+https://www.gitbook.com/book/btroncone/learn-rxjs/details
+
