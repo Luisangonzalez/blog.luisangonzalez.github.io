@@ -114,3 +114,11 @@ And mount the partitons you want:
 
 
 https://askubuntu.com/questions/236263/browse-img-without-mounting
+
+
+### Tethering in OMV
+
+https://pmf.silvrback.com/fixing-tethering-on-android-kitkat
+
+Start an adb shell: adb shell
+In the adb shell, run this command: settings put global tether_dun_required 0
