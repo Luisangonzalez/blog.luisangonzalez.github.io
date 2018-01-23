@@ -26,7 +26,7 @@ También es necesario tener conocimientos TypeScript:
 
 * [Primer componente](/2017/01/30/angular2-primer-componente/)
 * [Estructura de directivas, Pipes y Métodos](/2017/01/31/angular2-directivas/)
-* [Organización de código](http://localhost:4000/2017/01/31/angular2-code-organize/)
+* [Organización de código](/2017/01/31/angular2-code-organize/)
 * [Modelo de datos y mocks](/2017/02/02/mocks/)
 * Binding
  * [Binding de propiedades y clases (CSS) (One-way Binding)](/2017/02/02/Angular2-dataBinging/)
