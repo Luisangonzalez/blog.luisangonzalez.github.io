@@ -40,18 +40,22 @@ The *const* keyword creates ***read-only*** named constants and must be assigned
 Unexpect argumentes might cause *errors* during function *execution*, the common practice is **to check for presence** of arguments.
 
 ```js
-function loadProfiles(userNames) {
-    let names = typeof usernames !== 'undefined' ? userNames : [];
-    let namesLength = names.length;
-    console.log(namesLength);
+function multiplicar(a, b) {
+  b = typeof b !== 'undefined' ?  b : 1;
+
+  return a*b;
 }
+
+multiplicar(5); // 5
 ```
 Manual arguments check don't scale well, in ES6 **Using default parameter values** :
 
 ```js
-function loadProfiles(userNames = []) {
-    let namesLength = names.length;
-    console.log(namesLength);
+function multiplicar(a, b = 1) {
+  return a*b;
+}
+
+multiplicar(5); // 5
 }
 ```
  * Does not break when invoked wiht no arguments
