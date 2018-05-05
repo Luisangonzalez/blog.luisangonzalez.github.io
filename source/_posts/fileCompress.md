@@ -50,3 +50,8 @@ For example:
 * ### .7z:
   - Install: `sudo apt-get install p7zip-full`
   - Extract: `p7zip -d file.7z`
+
+* ### .zip:
+  - Install: `sudo apt-get install unzip`
+  - Extract: `unzip file.zip`
+  - Compress: `zip name.zip ./file_to_compress`
