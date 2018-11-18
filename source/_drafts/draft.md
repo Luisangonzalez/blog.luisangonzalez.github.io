@@ -33,7 +33,7 @@ ADD ports
                 <name>Quake III Arena</name>
                 <playcount>2</playcount>
                 <lastplayed>20171130T183547</lastplayed>
-        </game>        
+        </game>
         <game>
                 <path>./Quake.sh</path>
                 <name>Quake</name>
@@ -53,12 +53,12 @@ ADD ports
                 <lastplayed>20171130T183547</lastplayed>
         </game>
 </gameList>
-                                                                                                                                                             
+
 Create ports folder in rooms
 
 
 
-Instal nds 
+Instal nds
 lr-desmume
 DraStic
 
@@ -104,7 +104,7 @@ Number  Start          End            Size           Type     File system  Flags
  3      156774694912B  171454758911B  14680064000B   primary  ntfs
  4      171454758912B  180044693503B  8589934592B    primary
 
-(parted )q 
+(parted )q
 ```
 
 And mount the partitons you want:
@@ -122,3 +122,43 @@ https://pmf.silvrback.com/fixing-tethering-on-android-kitkat
 
 Start an adb shell: adb shell
 In the adb shell, run this command: settings put global tether_dun_required 0
+
+
+Fstab retropie
+
+proc            /proc           proc    defaults          0       0
+PARTUUID=5728b712-01  /boot           vfat    defaults          0       2
+PARTUUID=5728b712-02  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+192.168.1.129:/volume1/rpi/roms		/home/pi/RetroPie/roms	nfs rw,nolock 0 0
+
+
+Edit roms location (local o nas) in  vim /etc/emulationstation/es_systems.cfg
+
+
+## neovim
+
+Install
+
+https://github.com/neovim/neovim/wiki/Installing-Neovim#debian
+
+
+Config Plugings:
+https://github.com/junegunn/vim-plug#neovim
+
+
+
+
+
+add plugins
+
+~/.config/nvim/init.vim
+
+
+linter
+
+ale
+
+npm install eslint prettier eslint-config..
+
