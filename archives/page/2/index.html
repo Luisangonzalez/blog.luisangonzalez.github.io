@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Archives | LuisanGonzalez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LuisanGonzalez">
+<meta property="og:url" content="https://blog.luisangonzalez.es/archives/page/2/index.html">
+<meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:creator" content="@Luisangonzlez">
+<link rel="publisher" href="106076558377478950000">
+  
+    <link rel="alternative" href="/atom.xml" title="LuisanGonzalez" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/luisangonzalez.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58250004-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script type="text/javascript" src="js/cookiechoices.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LuisanGonzalez</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Developer Bitácora</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Blog</a>
+        
+          <a class="main-nav-link" href="https://luisangonzalez.es">Personal Page</a>
+        
+          <a class="main-nav-link" href="/CV_LuisanGonzalez.pdf">Curriculum Vitae</a>
+        
+          <a class="main-nav-link" href="https://quizy.luisangonzalez.es">Quizy App</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	<a id="nav-github-link" class="nav-icon" href="https://github.com/Luisangonzalez" target="_blank"></a>
+	<a id="nav-linkedin-link" class="nav-icon" href="http://www.linkedin.com/pub/luis-antonio-gonz%C3%A1lez-mart%C3%ADn/62/355/724" target="_blank"></a>
+	<a id="nav-twitter-link" class="nav-icon" href="https://twitter.com/luisangonzalez" target="_blank"></a>
+	<a id="nav-googleplus-link" class="nav-icon" href="https://plus.google.com/u/0/106076558377478942230" target="_blank"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.luisangonzalez.es"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-angular2-directivas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/31/angular2-directivas/" class="article-date">
+  <time datetime="2017-01-31T19:48:17.000Z" itemprop="datePublished">Jan 31 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/31/angular2-directivas/">Angular 2 - Estructura de directivas, Pipes y Métodos</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Directivas"><a href="#Directivas" class="headerlink" title="Directivas"></a>Directivas</h3><p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.</p>
+<p>Existen tres tipos diferentes de directivas:</p>
+<ul>
+<li>Component<ul>
+<li>Tiene un template, es el más común, lo hemos utilizado al <a href="/2017/01/30/angular2-primer-componente/">crear el primer componente</a></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/structural-directives.html" target="_blank" rel="noopener">Structural Directives</a><ul>
+<li>Por ejemplo bucles <code>*ngFor</code> o condicionales <code>*ngIF</code></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" rel="noopener">Attribute Directives</a><ul>
+<li>Nos permite cambiar la apariencia o comportamiento de un componente.</li>
+</ul>
+</li>
+</ul>
+<p>Podemos verlas en el fragmento de código:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// El selector y templatte sería el primer tipo de directiva</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>
+    &lt;ul>
+      &lt;li *ngFor="let carPart of carParts">
+        &lt;h2>{{carPart.name}}&lt;h2>
+        &lt;p>{{carPart.description}}&lt;p>
+        &lt;p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock&lt;/p>
+        &lt;p *ngIf="carPart.inStock === 0">Out of Stock&lt;/p>
+      &lt;/li>
+    &lt;/ul>`</span></span>
+
+  <span class="token comment" spellcheck="true">// En el propio template observamos las directivas de estructura *ngFor y *ngIf</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Pipes-y-Metodos"><a href="#Pipes-y-Metodos" class="headerlink" title="Pipes y Métodos"></a>Pipes y Métodos</h3><p>Un <strong>pipe</strong> coge un dato de entrada y lo transforma a la salida deseada, como por ejemplo:</p>
+<ul>
+<li><p>Poner un texto en máyusculas:</p>
+<pre><code>{{carPart.name | uppercase }}
+</code></pre></li>
+<li><p>Añadir formato de moneda:</p>
+<pre><code>{{carPart.price | currency:'EUR'}}
+</code></pre></li>
+<li><p><a href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank" rel="noopener">Y muchos más que encontramos en la documentación oficial</a></p>
+</li>
+</ul>
+<p><em>Métodos (Methods)</em> como podemos imaginar es añadir métodos en la clase de nuestro componente para luego ser utilizada:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>`</span></span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  <span class="token function">exampleMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/31/angular2-directivas/" data-id="ck04gtzc2000oskmeu57kklnf" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/31/angular2-directivas/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-primer-componente" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/30/angular2-primer-componente/" class="article-date">
+  <time datetime="2017-01-30T22:43:59.000Z" itemprop="datePublished">Jan 30 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/angular2-primer-componente/">Angular 2 - Primer componente Angular 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>El siguiente post es continuación del <a href="/2017/01/30/angular2/">resumen de Angular 2</a></p>
+<p>Para comenzar añadir en <code>index.html</code> el primer componente, llamado en este caso <code>&lt;my-app&gt;&lt;/my-app&gt;</code></p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- All the Angular 2 libraries needed --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-app</span><span class="token punctuation">></span></span>Loading App ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-app</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Para cargar Js hay varias opciones, una de ellas es utilizar la librería <a href="https://www.npmjs.com/package/systemjs" target="_blank" rel="noopener">SystemJS</a> que se utiliza en el curso de codeschool:</p>
+<p>El siguiente código añade el código de <code>app/main.ts</code>:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- All the Angular 2 libraries needed --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    System<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-app</span><span class="token punctuation">></span></span>Loading App ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-app</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>También una buena opción es con <a href="https://webpack.github.io/" target="_blank" rel="noopener">webpack</a> como <a href="https://angular.io/docs/ts/latest/guide/webpack.html" target="_blank" rel="noopener">explican al detalle en la web oficial de angular.io</a>.</p>
+<p>En <code>app/main.ts</code> añadimos nuestro primer componente:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule<span class="token punctuation">,</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//Las siguientes dependencias son para renderizar en el navegador</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> platformBrowserDynamic <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser-dynamic'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Our component decorator code goes here:</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//la etiqueta añadida anteriormente &lt;my-app>&lt;/my-app>     </span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+
+<span class="token comment" spellcheck="true">// El contendio que se carga en nuestro componente</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1> {{title}} &lt;/h1>
+    &lt;h2>{{carPart.name}}&lt;h2>
+    &lt;p>{{carPart.description}}&lt;p>
+    &lt;p>{{carPart.inStock}} in Stock&lt;p>`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//Definimos las propiedades que usamos en el template con {{ }}</span>
+    title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+    carPart <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+        <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+        <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">// El nuevo componente lo debemos declarar en el decorador @NgModucle</span>
+@NgModule <span class="token punctuation">(</span><span class="token punctuation">{</span>
+declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Bootrasp app (Arrancar la aplicación)</span>
+<span class="token function">platformBrowserDynamic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">bootstrapModule</span><span class="token punctuation">(</span>AppModule<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Tanto @Component como @NgModule son decorators, una feauture de typescript, explicado de forma breve digamos que “extiende” la funcionalidad o comportamiento de la clase a  un objeto:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Decorator_pattern" target="_blank" rel="noopener">Wikipedía</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">TypeScript lang</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/" data-id="ck04gtzc4000tskmelxz6dka5" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/30/angular2/" class="article-date">
+  <time datetime="2017-01-30T22:21:00.000Z" itemprop="datePublished">Jan 30 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/angular2/">Resumen curso &#34;Accelerating through ANGULAR 2&#34; de CodeSchool</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Al igual que en post <a href="/2017/01/22/Flexbox/">Resumen de Flexbox</a> en este post voy a realizar un esquema de los puntos<br>principales del curso <a href="https://www.codeschool.com/courses/accelerating-through-angular-2" target="_blank" rel="noopener">Accelerating through ANGULAR 2</a> de <a href="https://www.codeschool.com" target="_blank" rel="noopener">CodeSchool</a>, este resumen es más un mero esquema para recordar algunos aspectos importantes que una guía para aprender sobre el tema.</p>
+<p>Para profundizar, recomendaría estos enlaces de cursos y fuentes:</p>
+<ul>
+<li><a href="https://angular.io" target="_blank" rel="noopener">Angular.io</a></li>
+<li><a href="https://angularclass.github.io/awesome-angular2/#angular-2-material-design" target="_blank" rel="noopener">Awesome Angular 2</a></li>
+<li>El propio cursos <a href="https://www.codeschool.com/courses/accelerating-through-angular-2" target="_blank" rel="noopener">Accelerating through ANGULAR 2</a> de <a href="https://www.codeschool.com" target="_blank" rel="noopener">CodeSchool</a></li>
+</ul>
+<p>También es necesario tener conocimientos TypeScript:</p>
+<ul>
+<li><a href="https://www.typescriptlang.org" target="_blank" rel="noopener">TypeScript</a></li>
+<li><a href="https://courses.edx.org/courses/course-v1%3AMicrosoft%2BDEV201x%2B2015_T2/" target="_blank" rel="noopener">Microsoft: DEV201x Introduction to TypeScript</a></li>
+</ul>
+<h6 id="Contenido-del-curso"><a href="#Contenido-del-curso" class="headerlink" title="Contenido del curso:"></a>Contenido del curso:</h6><ul>
+<li><a href="/2017/01/30/angular2-primer-componente/">Primer componente</a></li>
+<li><a href="/2017/01/31/angular2-directivas/">Estructura de directivas, Pipes y Métodos</a></li>
+<li><a href="/2017/01/31/angular2-code-organize/">Organización de código</a></li>
+<li><a href="/2017/02/02/mocks/">Modelo de datos y mocks</a></li>
+<li>Binding<ul>
+<li><a href="/2017/02/02/Angular2-dataBinging/">Binding de propiedades y clases (CSS) (One-way Binding)</a></li>
+<li><a href="/2017/02/05/angular2-event-binding/">Binding de eventos (One-way Binding)</a></li>
+<li><a href="/2017/02/07/angular2-two-way-binding/">Two-way Binding</a></li>
+</ul>
+</li>
+<li><a href="/2017/02/08/angular2-services/">Servicios</a><ul>
+<li><a href="/2017/06/10/angular2-services-http/">HTTP</a></li>
+</ul>
+</li>
+<li><a href="/2017/06/11/angular2-routes/">Routes</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/30/angular2/" data-id="ck04gtzca001askmevu66s5lx" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/30/angular2/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-backup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/27/hexo-backup/" class="article-date">
+  <time datetime="2017-01-27T20:09:31.000Z" itemprop="datePublished">Jan 27 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/27/hexo-backup/">Hacer un backup de hexo.io</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Al comenzar a utilizar <a href="https://hexo.io/" target="_blank" rel="noopener">hexo.io</a> lo primero que se me vino a la cabeza fue hacer un backup del tema (personalización, adds, archivos estáticos) así como todos los archivos de configuración y post en markdown.</p>
+<p>Así que lo primero que híze fue instalar <a href="https://github.com/coneycode/hexo-git-backup" target="_blank" rel="noopener">hexo-git-backup</a> y la verdad es que una vez configurado funciona<strong>ba</strong> perfectamente.. pero las últimas veces al hacer backup mi hacía un merge de las ramas que utiliza el plugin internamente para funcionar, además al usar el repositorio del blog en otro equipo distinto al habitual su funcionamiento no era el mismo.</p>
+<p>Al final, lo más sencillo es lo más eficaz, ahora para hacer un backup tengo dos ramas en el repo del blog, <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io" target="_blank" rel="noopener">master</a> donde se encuentran los archivos estaticos del blog y <a href="https://github.com/Luisangonzalez/blog.luisangonzalez.github.io/tree/backup" target="_blank" rel="noopener">backup</a> donde esta toda la configuración y archivos necesarios en local para utilizar <a href="https://hexo.io/" target="_blank" rel="noopener">hexo.io</a>.</p>
+<p>De modo que <strong>en local siempre me encuentro en la rama backup, y en github la rama principal es master</strong>.</p>
+<p>Lo único a tener en cuenta, es añadir la rama donde se hacen los deploys en el archivo de configuiración:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Deployment</span>
+<span class="token comment" spellcheck="true">## Docs: http://hexo.io/docs/deployment.html</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>Luisangonzalez/bog.luisangonzalez.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+  <span class="token key atrule">message</span><span class="token punctuation">:</span> New post
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Es importante si no se hará el deploy en la rama en la que nos encontramos.</strong></p>
+<p>En definitiva, muchas veces lo mejor es no añadir complejidad innecesaria.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/27/hexo-backup/" data-id="ck04gtzcf001qskmezolo04bq" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/27/hexo-backup/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Flexbox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/22/Flexbox/" class="article-date">
+  <time datetime="2017-01-21T23:13:38.000Z" itemprop="datePublished">Jan 22 2017</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/22/Flexbox/">Resumen Flexblox del curso &#34;Cracking the case with Flexbox&#34; de CodeSchool</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://www.codeschool.com/courses/cracking-the-case-with-flexbox" target="_blank" rel="noopener">Cracking the case with Flexbox</a></p>
+</blockquote>
+<p><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="noopener">Flexblox</a> es un nuevo tipo de display, uno más de los ya conocidos:</p>
+<ul>
+<li>Block layout</li>
+<li>Table layout</li>
+<li>Inline layout</li>
+<li>Positioning layout</li>
+<li>Flex layout<ul>
+<li>Flex containers</li>
+<li>Flex items</li>
+<li>Flex lines</li>
+</ul>
+</li>
+<li>Aquí podemos encontrar todas las propiedades de <a href="http://www.w3schools.com/cssref/pr_class_display.asp" target="_blank" rel="noopener">display</a>.</li>
+</ul>
+<p>Aparece para facilitarnos <a href="https://developer.mozilla.org/es/docs/Desarrollo_Web/Web_adaptable" target="_blank" rel="noopener">Responsive Design o Diesño adaptable</a> evitando el uso de Float, con Flexbox cambia la forma en la que posicionamos los elementos como veremos en este breve resumen, destacando su estructura compuesta por un contenedor padre <code>display: flex</code> y sus elementos <code>flex</code>.</p>
+<blockquote>
+<p><a href="http://codepen.io/Luisangonzalez/pen/mOmNNM" target="_blank" rel="noopener">Ejemplo de variaciones en flex</a></p>
+</blockquote>
+<p>Esta claro que Flexbox está para quedarse, actualmente es soportado por todos los nuevos navegadores :</p>
+<blockquote>
+<p>Can i use <a href="http://caniuse.com/#search=Flexbox" target="_blank" rel="noopener">Flexbox</a></p>
+</blockquote>
+<h4 id="Algunos-patrones-UI-de-Flexbox"><a href="#Algunos-patrones-UI-de-Flexbox" class="headerlink" title="Algunos patrones UI de Flexbox:"></a>Algunos patrones UI de Flexbox:</h4><ul>
+<li>Equal heights (mismas alturas)</li>
+<li>Vertically centered content (contenido centrado verticalmente)</li>
+<li>Media objects</li>
+<li>Sticky footers (Footer fijo)</li>
+<li>Column layouts (Diseño en columnas)</li>
+</ul>
+<h2 id="Propiedades-Flexbox"><a href="#Propiedades-Flexbox" class="headerlink" title="Propiedades Flexbox:"></a>Propiedades Flexbox:</h2><h3 id="flex-wrap-wrap"><a href="#flex-wrap-wrap" class="headerlink" title="flex-wrap: wrap;"></a>flex-wrap: wrap;</h3><p>El valor por defecto en Flexbox es <code>nowrap</code>, cuando se indica <code>flex-wrap: wrap</code> se obliga a los elementos a permanecer en la misma línea aún sin espacio, cuando no hay espacio horizontalmente coloca los elementos uno debajo de otro, verticalmente, parecido a display block.</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.setup</span> </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="flex-wrap-wrap-reverse"><a href="#flex-wrap-wrap-reverse" class="headerlink" title="flex-wrap: wrap-reverse;"></a>flex-wrap: wrap-reverse;</h4><p>Renderiza al reves, el primer elemento es colocado el último.</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.setup</span> </span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap-reverse<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Flex-direction"><a href="#Flex-direction" class="headerlink" title="Flex direction"></a>Flex direction</h3><p>Flex wrap apila los elementos en pila tipo block cuando no hay espacio, si queremos apilar los elementos aún habiendo espacio debemos utlizar la propiedad <code>flex-direction</code> con el valor <code>column</code>.</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.setup</span> </span><span class="token punctuation">{</span>
+<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>El valor por defecto es <code>row</code>, estos son los posibles valores:</p>
+<ul>
+<li><code>row</code></li>
+<li><code>row-reverse</code></li>
+<li><code>column</code></li>
+<li><code>column-reverse</code></li>
+</ul>
+<h3 id="Justification-and-order"><a href="#Justification-and-order" class="headerlink" title="Justification and order:"></a>Justification and order:</h3><p><img src="https://developer.mozilla.org/files/3739/flex_terms.png" alt="Imagen de Mozilla Fundation con licencia CC-BY-SA 2.5. http://creativecommons.org/licenses/by-sa/2.5/ "></p>
+<h3 id="main-asix"><a href="#main-asix" class="headerlink" title="main asix"></a><em>main asix</em></h3><p><strong>Main axis</strong> es determinada por <em>flex-direction</em>, es el caso por defecto <code>flex-direction: row;</code><br><strong>main axis</strong> es en horizonal y <strong>cross axis</strong> en vertical.</p>
+<p>En el caso de <code>flex-direction: column;</code> es viceversa, <strong>main axis</strong> vertical y <strong>cross axis</strong> horizontal.</p>
+<h4 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a><code>justify-content</code></h4><p>Es usado para distribuir el contenido en el <em><code>main axis</code></em></p>
+<ul>
+<li><code>justify-content: flex-start</code> (Default value)</li>
+<li><code>justify-content: flex-end</code></li>
+<li><code>justify-content: center</code></li>
+<li><code>justify-content: space-between</code></li>
+<li><code>justify-content: space-around</code></li>
+</ul>
+<h4 id="order"><a href="#order" class="headerlink" title="order"></a><code>order</code></h4><p>Ordenar elemento, -1, 0, 1..</p>
+<h3 id="align-items-–-gt-cross-axis"><a href="#align-items-–-gt-cross-axis" class="headerlink" title="align-items –&gt; cross axis"></a><code>align-items</code> –&gt; <em>cross axis</em></h3><p>Para alinear el contenido en el <em>cross axis</em></p>
+<ul>
+<li><code>aling-items: stretch;</code> <em>Defualt</em></li>
+<li><code>aling-items: flex-start;</code></li>
+<li><code>aling-items: flex-end;</code></li>
+<li><code>aling-items: center;</code></li>
+<li><code>aling-items: baseline;</code></li>
+</ul>
+<p><em>OjO</em> No se controla si los items son <code>flex-wrap</code>, para ello <code>align-content</code></p>
+<h3 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h3><p>Nuevas propieades para espacio, lo más común por defecto es usar:</p>
+<p><code>min-width: 0</code></p>
+<ul>
+<li>#<code>flex-grow</code></li>
+</ul>
+<p>Nueva propiedad de espacio en flex, por defecto:</p>
+<p><code>flex-grow: 0;</code></p>
+<p>Asiganando el valor 1 ocupa el máximo espacio posible:</p>
+<p><code>flex-grow: 1;</code></p>
+<p>También es posible utilizarlo proprocinalmente, es decir en un contenedor <strong>sin contenido</strong> de 1000px sería:</p>
+<p><code>flex-grow: 1;</code> –&gt; 250px</p>
+<p><code>flex-grow: 2;</code> –&gt; 500px</p>
+<p><code>flex-grow: 1;</code> –&gt; 250px</p>
+<p>Se cálcula de manera proporcional.</p>
+<p><em>OjO</em> <strong>Con contenido</strong> se adapata dependiendo el contenido que tiene.</p>
+<p><em>OjO</em> Si queremos que las imagenes mantengan su tamaño original:</p>
+<h5 id="flex-shrink-0"><a href="#flex-shrink-0" class="headerlink" title="flex-shrink: 0"></a><code>flex-shrink: 0</code></h5><hr>
+<ul>
+<li><h4 id="OjO-Para-definir-anchos-min-width-en-flex-items"><a href="#OjO-Para-definir-anchos-min-width-en-flex-items" class="headerlink" title="OjO Para definir anchos (min-width) en flex items"></a><em>OjO</em> <strong>Para definir anchos (min-width) en flex items</strong></h4></li>
+</ul>
+<p>Por defecto</p>
+<h4 id="flex-basis-auto"><a href="#flex-basis-auto" class="headerlink" title="flex-basis: auto"></a><code>flex-basis: auto</code></h4><p>Se puede definir en %, px (absolute), em (relative), rm…</p>
+<p>Combiar <code>flex-basis</code> y <code>flex-shrink nos permite hacer layouts homogenos, es decir la imagen ocupa lo máximo de &#39;flex-basis</code> tanto en horizontal como en vertical.</p>
+<p>Hay que tener en cuenta:</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* Intrinsic sizing keywords*/</span>
+<span class="token property">flex-basis</span><span class="token punctuation">:</span> fill<span class="token punctuation">;</span>
+<span class="token property">flex-basis</span><span class="token punctuation">:</span> max-content<span class="token punctuation">;</span>
+<span class="token property">flex-basis</span><span class="token punctuation">:</span> min-content<span class="token punctuation">;</span>
+<span class="token property">flex-basis</span><span class="token punctuation">:</span> fit-content<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* Automatically size based on the flex item's content */</span>
+<span class="token property">flex-basis</span><span class="token punctuation">:</span> content<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<ul>
+<li><h4 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a><code>align-self</code></h4><strong> Para alinear un item flex individual del resto:</strong></li>
+</ul>
+<p>El valor por defecto es <code>align-self: strech</code>, <code>align-self</code> sobreescribe a <code>align-content</code></p>
+<p>Es útil para usarlo en column, para ello ver las diapositivas 73 y 74.</p>
+<ul>
+<li><h4 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a><code>align-content</code></h4><strong>Usado para alinear los flex item wrapped</strong></li>
+</ul>
+<h3 id="Shortland"><a href="#Shortland" class="headerlink" title="Shortland"></a>Shortland</h3><p><em>OjO</em> En IE no funcionan todos.</p>
+<p>The default <em>0 1 auto</em>:</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.flex</span> </span><span class="token punctuation">{</span>
+    <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>es igual a:</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.flex</span> </span><span class="token punctuation">{</span>
+    <span class="token property">flex-grow</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">flex-shrink</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token property">flex-basis</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>Leer en <a href="https://luisangonzalez.gitbooks.io/resumen-flexbox/content/" target="_blank" rel="noopener">Gitbook</a></em></p>
+<h4 id="Fuentes-y-enlaces-de-interes"><a href="#Fuentes-y-enlaces-de-interes" class="headerlink" title="Fuentes y enlaces de interes:"></a>Fuentes y enlaces de interes:</h4><ul>
+<li><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS" target="_blank" rel="noopener">Mozilla: Usando las cajas flexibles CSS</a></li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank" rel="noopener">w3.org</a></li>
+<li><a href="https://www.codeschool.com/courses/cracking-the-case-with-flexbox" target="_blank" rel="noopener">Cracking the case with Flexbox</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/22/Flexbox/" data-id="ck04gtzbw000dskmegcnt7wmr" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/22/Flexbox/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CCS3/">CCS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flexbox/">Flexbox</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nfs-synology" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/22/nfs-synology/" class="article-date">
+  <time datetime="2016-08-22T16:18:03.000Z" itemprop="datePublished">Aug 22 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Synology/">Synology</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/nfs-synology/">Montar directorio NFS en Synology DS214</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu"><a href="#Guia-para-configurar-carpetas-NFS-en-Synology-en-nuestro-equipo-Ubuntu" class="headerlink" title="Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu"></a>Guia para configurar carpetas NFS en Synology en nuestro equipo Ubuntu</h5><p>Como indican en la web de <a href="https://www.synology.com/es-es/knowledgebase/DSM/tutorial/File_Sharing/How_to_access_files_on_Synology_NAS_within_the_local_network_NFS" target="_blank" rel="noopener">Synology</a> seguimos todos los pasos para crear nuestras carpetas compartidas en local mediante NFS.</p>
+<p>Una vez configurado el NAS, para montar las carpetas necesitamos instalar el paquete <code>nfs-commons</code> :</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> nfs-common
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Y añadimos en el archivo <code>/etc/fstab</code> como root:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">nano</span> /etc/fstab
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>las carpetas a montar, como por ejemplo:</p>
+<pre><code>192.168.1.129:/volume1/video    /mnt/video      nfs     auto    0 0
+</code></pre><p>En mi caso <code>192.168.1.129</code> es la IP del NAS y luego seguido de dos puntos <code>:</code> el directorio de la carpeta del NAS a montar <code>/volume1/video</code>.<br>La ruta <code>/mnt/video</code> es donde se va a montar en nuestro equipo.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2016/08/22/nfs-synology/" data-id="ck04gtzci001yskme27zknwgi" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2016/08/22/nfs-synology/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NAS/">NAS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NFS/">NFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Synology/">Synology</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ohmyzsh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/28/ohmyzsh/" class="article-date">
+  <time datetime="2016-03-28T11:37:28.000Z" itemprop="datePublished">Mar 28 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/28/ohmyzsh/">Instalar Oh my zsh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://ohmyz.sh/" target="_blank" rel="noopener">Oh my ZSH!</a> Es un términal configurable con multitud de plugins como Git que hacen más atractivo nuestro terminal ;)</p>
+<p>El plugin de Git es mi favorito, no solo por el tema, es la funcionalidad extra que le da al terminal lo que hace que se más práctico, el poder conocer en la rama en la que nos encontramos así como cuando hemos realizado una modificación nos ayuda para saber el estado en el repo en el que nos encontramos, aquí podemos observar un pantallazo del términal con ohmyzsh y el plugin git:</p>
+<p><img src="img/ohmyzsh.jpg" alt="Oh my zsh imagen" title="Oh my zsh imagen"></p>
+<p>Este es uno de los plugins, hay miles de <a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins" target="_blank" rel="noopener">plugins</a> que podemos encontrar en su repo oficial además de <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="noopener">temas.</a></p>
+<p>Para instalarlo, se han de siguir los siguintes pasos sacados de su <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">repo oficial</a></p>
+<p> 1.Instalar via apt-get</p>
+<pre class="line-numbers language-bash"><code class="language-bash"> <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> zsh
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 2.Hacer zsh como shell por defecto</p>
+<pre class="line-numbers language-bash"><code class="language-bash"> chsh -s <span class="token variable"><span class="token variable">$(</span><span class="token function">which</span> zsh<span class="token variable">)</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p> 3.Cerrar sesión y volver a abrir, al abrir el terminal nos pregungar si crear el archivo ~/.zshrc, el cual hará la función de bashrc.</p>
+<p> 4.En mi caso se instala correctamente pero no carga los temas ni aparece la carpeta <code>~/.oh-my-zsh</code> en la cual se pueden instalar temas y plugins, para ello descargando e instalando el siguiente script se soluciona:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"> curl -L http://install.ohmyz.sh <span class="token operator">></span> install.sh
+ sh install.sh
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2016/03/28/ohmyzsh/" data-id="ck04gtzcl0029skmexfroccww" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2016/03/28/ohmyzsh/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-entorno-android" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/entorno-android/" class="article-date">
+  <time datetime="2016-03-24T11:09:03.000Z" itemprop="datePublished">Mar 24 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Android/">Android</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/entorno-android/">Instalar entorno para desarrollo en Android</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Pasos a seguir para configurar el entorno para desarrollar en Android con Android Studio en Ubuntu 14.04</p>
+<ol>
+<li>Descargar <a href="http://developer.android.com/intl/es/sdk/index.html" target="_blank" rel="noopener">Android Studio</a></li>
+<li>Descomprimir donde queramos, en mi caso en ~/.local/android</li>
+<li><a href="http://blog.luisangonzalez.es/2015/02/24/Anadir-icono-y-acceso-directo-de-una-aplicacion-en-Ubuntu-gnome-3/">Añadir icono y acceso directo</a></li>
+<li>Para evitar el error de <a href="http://stackoverflow.com/questions/28847151/unable-to-install-android-studio-in-ubuntu" target="_blank" rel="noopener">“Unable to install Android Studio in Ubuntu”</a><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>Añado las variables de entorno a .zshrc en mi caso, si no se tiene instalado sería en .bashrc<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token keyword">echo</span> <span class="token string">'export PATH=<span class="token variable">$HOME</span>/.local/android/sdk:<span class="token variable">$PATH</span>'</span> <span class="token operator">>></span> ~/.zshrc
+$ <span class="token keyword">echo</span> <span class="token string">'export PATH=<span class="token variable">$HOME</span>/.local/android/sdk/tools:<span class="token variable">$PATH</span>'</span> <span class="token operator">>></span> ~/.zshrc
+$ <span class="token keyword">echo</span> <span class="token string">'export PATH=<span class="token variable">$HOME</span>/.local/android/sdk/platform-tools:<span class="token variable">$PATH</span>'</span> <span class="token operator">>></span> ~/.zshrc
+$ <span class="token function">source</span> ~/.zshrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>Instalar <a href="http://developer.android.com/intl/es/tools/help/adb.html" target="_blank" rel="noopener">adb</a><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> android-tools-adb android-tools-fastboot
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><a href="http://blog.luisangonzalez.es/2016/02/28/add-device-android/">Añadir dispositivo para depurar e instalar apps con Android Studio o cordova/phonegap</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2016/03/24/entorno-android/" data-id="ck04gtzcc001iskmes643gj9l" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2016/03/24/entorno-android/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nodejs-sin-sudo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/19/nodejs-sin-sudo/" class="article-date">
+  <time datetime="2016-03-19T01:03:02.000Z" itemprop="datePublished">Mar 19 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a>►<a class="article-category-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/19/nodejs-sin-sudo/">Instalar node + npm sin sudo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Buenas, comento los pasos a seguir para instalar node en Ubuntu 14.04 para utilizar sin sudo, es decir poder instalar los paquetes que queramos sin necesidad de privilegios, <strong>OjO esto es peligroso</strong>, cualquier paquete npm o js que ejecutemos con node se ejecutara sin necesidad de sudo, no es nada recomendado para entornos de producción, sin embargo para desarrollo nos facilita bastante :).</p>
+<ol>
+<li>Para ello debemos tener instalado build essentials (g++ c++ make)<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> build-essential
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>Descargar la última versión de node en mi caso recomiendo LTS, para descargarla =&gt;  <a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs.org</a></p>
+</li>
+<li><p>Crear directorio donde vamos a poner todos los archivos de node en mi caso dentro de la carpeta <code>~/.local</code> creare la carpeta node.</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">cd</span> ~/.local
+$ <span class="token function">mkdir</span> node
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>Meter todo los archivos de node (tar que nos hemos descargado en el punto 1), tener en cuenta la ruta de la descarga.<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">tar</span> xf ~/Descargas/node-v4.4.0-linux-x64.tar.xz --strip-components<span class="token operator">=</span>1
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>Añadir el enlace simbolico del PATH en .bashrc o .zshrc si utilizas <a href="http://ohmyz.sh/" target="_blank" rel="noopener">oh-my-zsh</a><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token keyword">echo</span> <span class="token string">'export PATH=<span class="token variable">$HOME</span>/.local/node/bin:<span class="token variable">$PATH</span>'</span> <span class="token operator">>></span> ~/.zshrc
+$ <span class="token keyword">echo</span> <span class="token string">'export PATH=<span class="token variable">$HOME</span>/.local/node:<span class="token variable">$PATH</span>'</span> <span class="token operator">>></span> ~/.zshrc
+$ <span class="token function">source</span> ~/.zshrc
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<p>Una vez terminado podemos comprobar que esta instalado correctamente al abrir el terminal y ejecutar donde nos devolera la versión de node que hemos instalado.</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ node -v
+v4.2.3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Por último si queremos podemos actulizar npm :</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g <span class="token function">npm</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Fuente original, traducida y modificada: <a href="http://corejs.docs.bqws.io/setup/#ubuntu" target="_blank" rel="noopener">http://corejs.docs.bqws.io/setup/#ubuntu</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2016/03/19/nodejs-sin-sudo/" data-id="ck04gtzck0025skmekxacchk4" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2016/03/19/nodejs-sin-sudo/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-write-new-post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/13/write-new-post/" class="article-date">
+  <time datetime="2016-03-13T18:19:29.000Z" itemprop="datePublished">Mar 13 2016</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo-io/">Hexo.io</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/write-new-post/">Escribir nuevo post en hexo.io</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Para escribir una nueva entrada en <a href="https://hexo.io/" target="_blank" rel="noopener">hexo.io</a> la forma más rápida es:</p>
+<ul>
+<li>En la carpeta raiz del blog hexo.io:</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">$ hexo new nombre_post
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><em>Se debe de tener en cuenta no incluir espacios en el nombre, para ello utilizar nombre_post y automaticamente lo transforma en nombre-post</em></p>
+<p>Una vez ejecutado <code>hexo new nombre_post</code> se crea un archivo <code>nombre_post.md</code> en la carpeta <code>/source/_post/</code></p>
+<p>Podemos ver la nueva entrada en blanco lanzando el server: <code>hexo server</code> e ir modificando el archivo <code>nombre_post.md</code> de nuestra nueva entrada.</p>
+<p>En mi caso utilizo <a href="https://atom.io/" target="_blank" rel="noopener">atom.io</a> con el plugin <a href="https://atom.io/packages/markdown-preview" target="_blank" rel="noopener">markdown_preview</a> que permite ver en tiempo real como va quedando el markdown de nuestra entrada.</p>
+<p>Cuando ya tenemos nuestra entrada terminada, simplemente generar y desplegar en nuestro bloq:<br> <code>hexo generate --deploy</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2016/03/13/write-new-post/" data-id="ck04gtzd90053skmep4y8shtt" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2016/03/13/write-new-post/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-io/">Hexo.io</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+ 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/React/">React</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/Retropie/">Retropie</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/File-compress/">File compress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retropie/">Retropie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 20px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 12.5px;">Cordova/Phonegap</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/File-compress/" style="font-size: 10px;">File compress</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 15px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Raspberry-Pi/" style="font-size: 10px;">Raspberry Pi</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Retropie/" style="font-size: 10px;">Retropie</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 17.5px;">Ubuntu</a>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/14/fileCompress/">Summary File Compress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/04/react/">React summary</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/angular2-routes/">Angular router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/angular2-services-http/">HTTP angular</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/angular2-services/">Servicios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+       <!-- twitter start -->
+         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/luisangonzalez" data-widget-id="552546295706308611">Tweets por el @luisangonzalez.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+
+      <!-- ads fin -->
+  <!-- ads start -->
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar_A -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5032084266728683"
+     data-ad-slot="6464840855"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    <!-- ads fin -->
+
+</aside>
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Luisangonzalez  - Política de <a href="http://blog.luisangonzalez.es/cookies.html">cookies.</a>  <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script src="js/cookiechoices.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      cookieChoices.showCookieConsentBar('Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies',
+        'Entendido', 'Más información', 'http://blog.luisangonzalez.es/cookies.html');
+    });
+  </script>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Blog</a>
+  
+    <a href="https://luisangonzalez.es" class="mobile-nav-link">Personal Page</a>
+  
+    <a href="/CV_LuisanGonzalez.pdf" class="mobile-nav-link">Curriculum Vitae</a>
+  
+    <a href="https://quizy.luisangonzalez.es" class="mobile-nav-link">Quizy App</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'luisangonzalez';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

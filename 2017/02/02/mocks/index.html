@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Modelos y uso de mocks | LuisanGonzalez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="El siguiente post es continuación del resumen de Angular 2 Modelos en angular 2Básicamente los modelos en angular 2 son clases como por ejemplo: export class Carpart {   id: number;   name: string;">
+<meta name="keywords" content="Angular 2,TypeScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Modelos y uso de mocks">
+<meta property="og:url" content="https://blog.luisangonzalez.es/2017/02/02/mocks/index.html">
+<meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:description" content="El siguiente post es continuación del resumen de Angular 2 Modelos en angular 2Básicamente los modelos en angular 2 son clases como por ejemplo: export class Carpart {   id: number;   name: string;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-03T23:28:18.019Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Modelos y uso de mocks">
+<meta name="twitter:description" content="El siguiente post es continuación del resumen de Angular 2 Modelos en angular 2Básicamente los modelos en angular 2 son clases como por ejemplo: export class Carpart {   id: number;   name: string;">
+<meta name="twitter:creator" content="@Luisangonzlez">
+<link rel="publisher" href="106076558377478950000">
+  
+    <link rel="alternative" href="/atom.xml" title="LuisanGonzalez" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/luisangonzalez.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58250004-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script type="text/javascript" src="js/cookiechoices.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LuisanGonzalez</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Developer Bitácora</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Blog</a>
+        
+          <a class="main-nav-link" href="https://luisangonzalez.es">Personal Page</a>
+        
+          <a class="main-nav-link" href="/CV_LuisanGonzalez.pdf">Curriculum Vitae</a>
+        
+          <a class="main-nav-link" href="https://quizy.luisangonzalez.es">Quizy App</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	<a id="nav-github-link" class="nav-icon" href="https://github.com/Luisangonzalez" target="_blank"></a>
+	<a id="nav-linkedin-link" class="nav-icon" href="http://www.linkedin.com/pub/luis-antonio-gonz%C3%A1lez-mart%C3%ADn/62/355/724" target="_blank"></a>
+	<a id="nav-twitter-link" class="nav-icon" href="https://twitter.com/luisangonzalez" target="_blank"></a>
+	<a id="nav-googleplus-link" class="nav-icon" href="https://plus.google.com/u/0/106076558377478942230" target="_blank"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.luisangonzalez.es"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-mocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/02/mocks/" class="article-date">
+  <time datetime="2017-02-02T19:12:39.000Z" itemprop="datePublished">Feb 2 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Modelos y uso de mocks
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<h3 id="Modelos-en-angular-2"><a href="#Modelos-en-angular-2" class="headerlink" title="Modelos en angular 2"></a>Modelos en angular 2</h3><p>Básicamente los modelos en angular 2 son clases como por ejemplo:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Carpart</span> <span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  description<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  inStock<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  price<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta forma en la clase de nuestro componente podemos crear arrays de la clase Cardpart, importando la clase.</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+    <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token number">4.99</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token operator">...</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Uso-de-mocks-en-angular-2"><a href="#Uso-de-mocks-en-angular-2" class="headerlink" title="Uso de mocks en angular 2"></a>Uso de mocks en angular 2</h3><p>Una de las formas posibles para comenzar a desarrollar nuestra aplicación sin disponer aún los datos que nos va a suministrar la API es mediante <em>Mocking</em> (mockear datos).<br>Una forma simple es creando nuestro array de datos JSON o de clases que vayamos a utilizar y asignarlo a las propiedades de los componentes que nos sea necesario.</p>
+<p>Como por ejemplo:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> CARPARTS<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+  <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+  <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token number">4.99</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Y ahora en nuestro componente mediante la función <code>ngOnInit()</code> damos el valor a la propiedad correspondiente, en este ejemplo a la propiedad <code>cardParts</code> se le asigna el valor <code>CARDPARTS</code> el cual es el array de cardparts que hemos importado.</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CARPARTS <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./mocks'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">;</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>carParts <span class="token operator">=</span> CARPARTS<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta forma podemos comenzar a desarrollar nuestra app con datos de prueba <em>mocks</em> ;).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/02/mocks/" data-id="ck04gtzcj0021skmeq0xre4bw" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/02/mocks/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/02/Angular2-dataBinging/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Property Binding - Binding de propiedades y clases CSS (One-way binding)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/31/angular2-code-organize/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Organización de código</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+ 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/React/">React</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/Retropie/">Retropie</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/File-compress/">File compress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retropie/">Retropie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 20px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 12.5px;">Cordova/Phonegap</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/File-compress/" style="font-size: 10px;">File compress</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 15px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Raspberry-Pi/" style="font-size: 10px;">Raspberry Pi</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Retropie/" style="font-size: 10px;">Retropie</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 17.5px;">Ubuntu</a>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/14/fileCompress/">Summary File Compress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/04/react/">React summary</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/angular2-routes/">Angular router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/angular2-services-http/">HTTP angular</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/angular2-services/">Servicios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+       <!-- twitter start -->
+         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/luisangonzalez" data-widget-id="552546295706308611">Tweets por el @luisangonzalez.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+
+      <!-- ads fin -->
+  <!-- ads start -->
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar_A -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5032084266728683"
+     data-ad-slot="6464840855"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    <!-- ads fin -->
+
+</aside>
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Luisangonzalez  - Política de <a href="http://blog.luisangonzalez.es/cookies.html">cookies.</a>  <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script src="js/cookiechoices.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      cookieChoices.showCookieConsentBar('Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies',
+        'Entendido', 'Más información', 'http://blog.luisangonzalez.es/cookies.html');
+    });
+  </script>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Blog</a>
+  
+    <a href="https://luisangonzalez.es" class="mobile-nav-link">Personal Page</a>
+  
+    <a href="/CV_LuisanGonzalez.pdf" class="mobile-nav-link">Curriculum Vitae</a>
+  
+    <a href="https://quizy.luisangonzalez.es" class="mobile-nav-link">Quizy App</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'luisangonzalez';
+  
+  var disqus_url = 'https://blog.luisangonzalez.es/2017/02/02/mocks/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

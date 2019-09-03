@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Category: Angular 2 | LuisanGonzalez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LuisanGonzalez">
+<meta property="og:url" content="https://blog.luisangonzalez.es/categories/Frontend/Angular-2/index.html">
+<meta property="og:site_name" content="LuisanGonzalez">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LuisanGonzalez">
+<meta name="twitter:creator" content="@Luisangonzlez">
+<link rel="publisher" href="106076558377478950000">
+  
+    <link rel="alternative" href="/atom.xml" title="LuisanGonzalez" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/luisangonzalez.ico">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-58250004-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  <script type="text/javascript" src="js/cookiechoices.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LuisanGonzalez</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Developer Bitácora</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Blog</a>
+        
+          <a class="main-nav-link" href="https://luisangonzalez.es">Personal Page</a>
+        
+          <a class="main-nav-link" href="/CV_LuisanGonzalez.pdf">Curriculum Vitae</a>
+        
+          <a class="main-nav-link" href="https://quizy.luisangonzalez.es">Quizy App</a>
+        
+      </nav>
+      <nav id="sub-nav">
+	<a id="nav-github-link" class="nav-icon" href="https://github.com/Luisangonzalez" target="_blank"></a>
+	<a id="nav-linkedin-link" class="nav-icon" href="http://www.linkedin.com/pub/luis-antonio-gonz%C3%A1lez-mart%C3%ADn/62/355/724" target="_blank"></a>
+	<a id="nav-twitter-link" class="nav-icon" href="https://twitter.com/luisangonzalez" target="_blank"></a>
+	<a id="nav-googleplus-link" class="nav-icon" href="https://plus.google.com/u/0/106076558377478942230" target="_blank"></a>
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.luisangonzalez.es"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-angular2-routes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/11/angular2-routes/" class="article-date">
+  <time datetime="2017-06-11T19:13:42.000Z" itemprop="datePublished">Jun 11 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/11/angular2-routes/">Angular router</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>Hay varias formas de hacer un router en angular, una de ellas es la siguiente utilizando:</p>
+<ul>
+<li><a href="https://angular.io/docs/ts/latest/api/router/index/RouterModule-class.html" target="_blank" rel="noopener">RouterModule</a> y <a href="https://angular.io/docs/ts/latest/api/router/index/Routes-type-alias.html" target="_blank" rel="noopener">Routes</a> de <a href="https://angular.io/docs/ts/latest/api/#!?query=router" target="_blank" rel="noopener">@angular/router</a></li>
+</ul>
+<p>Para el ejemplo partimos de :</p>
+<ul>
+<li><p>Un componente cualqiera como puede ser login situdado en <code>/login/login.component</code> el cual exportamos:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> NgZone <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    selector<span class="token punctuation">:</span> <span class="token string">'my-login'</span><span class="token punctuation">,</span>
+    templateUrl<span class="token punctuation">:</span> <span class="token string">'login.component.html'</span><span class="token punctuation">,</span>
+    styleUrls<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'login.component.scss'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">LoginComponent</span> <span class="token punctuation">{</span>
+  <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>Creamos un modulo app-routing <code>app-routing.module.ts</code>, el cual importa:</p>
+<ul>
+<li>Los componentes que vamos a routear</li>
+<li>NgModule</li>
+<li>Routes y RouterModule</li>
+</ul>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Routes<span class="token punctuation">,</span> RouterModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> LoginComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./login/login.component'</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>En el modulo creamos un array de rutas del objeto Routes en el cual se indica el path y el componente a dicho path:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript">  <span class="token keyword">export</span> <span class="token keyword">const</span> routes<span class="token punctuation">:</span> Routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> LoginComponent <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'register'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> RegisterComponent <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>En @NgModule se importan las rutas para el routerModule y se exportan una vez añadidas las rutas:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript">  @<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    imports<span class="token punctuation">:</span> <span class="token punctuation">[</span> RouterModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    exports<span class="token punctuation">:</span> <span class="token punctuation">[</span> RouterModule <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p>Por último exportamos <code>AppRoutingModule</code> y además todos los componentes los cuales serán incluidos en AppModule para ser declarados, de esta forma no tenemos que importar uno a uno en AppModule, si no todos los componentes añadidos en el array de AppRoutingModule.</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppRoutingModule</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> routedComponents <span class="token operator">=</span> <span class="token punctuation">[</span> LoginComponent<span class="token punctuation">,</span> RegisterComponent <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>En definitiva AppRoutingModule sería por ejemplo:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Routes<span class="token punctuation">,</span> RouterModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/router'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> LoginComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./login/login.component'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> routes<span class="token punctuation">:</span> Routes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> LoginComponent <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> path<span class="token punctuation">:</span> <span class="token string">'register'</span><span class="token punctuation">,</span> component<span class="token punctuation">:</span> RegisterComponent <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span> RouterModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>routes<span class="token punctuation">)</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  exports<span class="token punctuation">:</span> <span class="token punctuation">[</span> RouterModule <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppRoutingModule</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> routedComponents <span class="token operator">=</span> <span class="token punctuation">[</span> LoginComponent<span class="token punctuation">,</span> RegisterComponent <span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Y en app.module se importa <code>import { AppRoutingModule, routedComponents } from &#39;./app-routing.module&#39;;</code> para añadir a <code>imports</code> AppRoutingModule y declarar en <code>declarations</code> routedComponents.</p>
+<p><code>app.module.ts</code>:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span>  <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HttpModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/http'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app.component'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppRoutingModule<span class="token punctuation">,</span> routedComponents <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app-routing.module'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AuthModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./shared/auth.module'</span><span class="token punctuation">;</span>
+
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        BrowserModule<span class="token punctuation">,</span>
+        AppRoutingModule<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Important add AppRoutingModule</span>
+        HttpModule
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        AppComponent<span class="token punctuation">,</span>
+        routedComponents <span class="token comment" spellcheck="true">// All components in AppRoutingModule</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span>AppComponent<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/06/11/angular2-routes/" data-id="ck04gtzc5000vskmef06mwcrd" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/06/11/angular2-routes/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-services-http" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/10/angular2-services-http/" class="article-date">
+  <time datetime="2017-06-10T18:00:48.000Z" itemprop="datePublished">Jun 10 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/10/angular2-services-http/">HTTP angular</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>En lo posts anteriores:</p>
+<ul>
+<li><a href="/2017/02/08/angular2-services/">Servicios</a></li>
+<li><a href="/2017/02/02/mocks/">Modelo de datos y mocks</a></li>
+</ul>
+<p>Cargábamos los datos localmente desde fichero.</p>
+<p>Con el <a href="https://angular.io/docs/ts/latest/tutorial/toh-pt6.html" target="_blank" rel="noopener">servicio http de angular</a> obtendremos los datos a través internet.</p>
+<p>Con HTTP podemos hacer peticiones GET, POST, PUT, DELETE las cuales las podemos hacer de dos formas distintas:</p>
+<ul>
+<li>Mediante observables, como por ejemplo el método login:</li>
+</ul>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Http <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/http'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'rxjs/add/operator/map'</span><span class="token punctuation">;</span>
+
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AuthService</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> backendUrl <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span>BACKEND_URI<span class="token punctuation">;</span>
+
+
+    <span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> http<span class="token punctuation">:</span> Http<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+
+    <span class="token function">login</span><span class="token punctuation">(</span>credentials<span class="token punctuation">:</span> Credentials<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// console.log('cre', credentials);</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>http<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>backendUrl <span class="token operator">+</span> <span class="token string">'/login'</span><span class="token punctuation">,</span> credentials<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+            <span class="token comment" spellcheck="true">// We're assuming the response will be an object</span>
+            <span class="token comment" spellcheck="true">// with the JWT on an id_token key</span>
+            <span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'jwtToken'</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span>jwtToken<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Como se observa importamos la librería <code>@angular/http</code> y la instanciamos en el constructor.<br>Tambíen necesitamos importar <code>rxjs/add/operator/map</code> para map en el observable.</p>
+<ul>
+<li>Con Promesas</li>
+</ul>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>heroService<span class="token punctuation">.</span><span class="token function">getHeroes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>
+                      heroes <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">this</span><span class="token punctuation">.</span>heroes <span class="token operator">=</span> heroes<span class="token punctuation">,</span>
+                      error <span class="token operator">=</span><span class="token operator">></span>  <span class="token keyword">this</span><span class="token punctuation">.</span>errorMessage <span class="token operator">=</span> <span class="token operator">&lt;</span><span class="token keyword">any</span><span class="token operator">></span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>Se ha de tener en cuenta que en nuestro modulo tenemos que añadir <code>http</code> como provider en ambos casos.</em></p>
+<p>Para más info <a href="https://angular.io/docs/ts/latest/guide/server-communication.html" target="_blank" rel="noopener">Http client angular</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/06/10/angular2-services-http/" data-id="ck04gtzc6000zskme07zv42wx" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/06/10/angular2-services-http/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-services" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/08/angular2-services/" class="article-date">
+  <time datetime="2017-02-08T20:10:53.000Z" itemprop="datePublished">Feb 8 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/08/angular2-services/">Servicios</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>En el post anterior <a href="/2017/02/02/mocks/">Modelo de datos y mocks</a> cargábamos datos mocks importando directamente el archivo, esta <strong>no</strong> es la mejor forma debido a:</p>
+<ul>
+<li>Necesitamos importar el archivo en cualquier archivo que necesite acceso a los datos.</li>
+<li>No es sencillo cambiar el flujo de trabajo entre los datos reales y los mockeados.</li>
+<li>La carga de datos la realizan mejor las clases de services.</li>
+</ul>
+<h5 id="Los-servicios-son-utilizados-para-organizar-y-compartir-codigo-a-traves-de-toda-la-app-suelen-organizarse"><a href="#Los-servicios-son-utilizados-para-organizar-y-compartir-codigo-a-traves-de-toda-la-app-suelen-organizarse" class="headerlink" title="Los servicios son utilizados para organizar y compartir código a través de toda la app, suelen organizarse:"></a>Los servicios son utilizados para organizar y compartir código a través de toda la app, suelen organizarse:</h5><p> <code>example.component.ts</code>  (Pide datos al servicio) -&gt;<br> <code>example.service.ts</code> (accede a los datos para pasarselos al componente) -&gt; <code>mocks.ts</code></p>
+<p>Como por ejemplo:</p>
+<ul>
+<li>example.service.ts<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> CARPARTS <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./mocks'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">RacingDataService</span> <span class="token punctuation">{</span>
+  <span class="token function">getCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> CARPARTS<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>example.component.ts</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> RacingDataService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./racing-data.service'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> racingDataService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RacingDataService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>carParts <span class="token operator">=</span> racingDataService<span class="token punctuation">.</span><span class="token function">getCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta formar tenemos los datos desacoplados, no tenemos que importar los datos cuando nos sea necesario, solo el servicio y este es el que nos devuelve los datos, de esta forma si tenemos que cambiar la fuente de datos solo lo cambiamos en un solo lugar.</p>
+</li>
+</ul>
+<h5 id="Los-servicios-en-Angular-2-pueden-y-es-conveniente-usar-el-patron-de-inyeccion-de-dependencias"><a href="#Los-servicios-en-Angular-2-pueden-y-es-conveniente-usar-el-patron-de-inyeccion-de-dependencias" class="headerlink" title="Los servicios en Angular 2 pueden y es conveniente usar el patrón de inyección de dependencias"></a>Los servicios en Angular 2 pueden y es conveniente usar el patrón de <a href="https://en.wikipedia.org/wiki/Dependency_injection" target="_blank" rel="noopener">inyección de dependencias</a></h5><p>El inyector de dependencias se encarga de crear y enviar los datos que le pidamos:</p>
+<blockquote>
+<p>Sabe si es necesario instanciar los datos para enviarlos o enviar los ya instanciados.</p>
+</blockquote>
+<p> Los pasos para hacer inyectable a un servicio son los siguientes:</p>
+<ol>
+<li>Añadir el decorator <code>@inyectable</code> al servicio.</li>
+<li>Indicar nuestro servicio inyectable en <code>providers</code> de <code>@NgModule</code>.</li>
+<li>Inyectar la dependencía en el componente que sea necesario.</li>
+<li>Utilizar el servicio en el componente en <code>ngOnInit()</code>.</li>
+</ol>
+<p>Por ejemplo:</p>
+<ul>
+<li>1.Añadir el decorator <code>@inyectable</code> al servicio.</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> CARPARTS <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./mocks'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Injectable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Injectable</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">RacingDataService</span> <span class="token punctuation">{</span>
+  <span class="token function">getCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> CARPARTS<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>2.Indicar nuestro servicio inyectable en <code>providers</code> de <code>@NgModule</code>.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RacingDataService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./racing-data.service'</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span><span class="token punctuation">,</span>
+ imports<span class="token punctuation">:</span> <span class="token punctuation">[</span> BrowserModule<span class="token punctuation">,</span> FormsModule <span class="token punctuation">]</span>
+ bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span> <span class="token punctuation">,</span>
+ <span class="token comment" spellcheck="true">// En providers indicamos todos nuestros servicios inyectables</span>
+ providers<span class="token punctuation">:</span> <span class="token punctuation">[</span> RacingDataService <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>3y4 Inyectar la dependencía en el componente que sea necesario y utilizar el servicio en el componente en <code>ngOnInit()</code>.</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RacingDataService <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./racing-data.service'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+
+carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Inyectar la dependencia en el componente</span>
+<span class="token function">constructor</span><span class="token punctuation">(</span><span class="token keyword">private</span> racingDataService<span class="token punctuation">:</span> RacingDataService<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Utilizarla</span>
+<span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>carParts <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>racingDataService<span class="token punctuation">.</span><span class="token function">getCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<p>De esta forma conseguimos que nuestro servicio:</p>
+<ul>
+<li>Sea desacoplado</li>
+<li>Escalable porque nuestras dependencias están ligadas a las clases</li>
+<li>Testeable porque es sencillo mockear</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/08/angular2-services/" data-id="ck04gtzc70013skmefuowkonb" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/08/angular2-services/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-two-way-binding" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/07/angular2-two-way-binding/" class="article-date">
+  <time datetime="2017-02-07T20:29:02.000Z" itemprop="datePublished">Feb 7 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/angular2-two-way-binding/">Two-way Binding</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>En los posts anteriores hemos visto:</p>
+<ul>
+<li>El <a href="/2017/02/02/Angular2-dataBinging/">Binding de propiedades:</a></li>
+</ul>
+<blockquote>
+<p>JavaScript to HMTL</p>
+</blockquote>
+<ul>
+<li>Y <a href="/2017/02/05/angular2-event-binding/">Event Binding:</a></li>
+</ul>
+<blockquote>
+<p>HTML to JavaScript</p>
+</blockquote>
+<p>Two-way Binding es la unión de ambos para tener una comunicación bidireccional, es posible hacerlo de dos formas:</p>
+<ul>
+<li><p>Utilizando los dos Bindings:</p>
+<p>En este ejemplo en el mismo input se muestra la cantidad (Binding de propiedades) y se añade la cantidad (Binding de eventos):</p>
+</li>
+</ul>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">[value]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carPart.quantity<span class="token punctuation">"</span></span> <span class="token attr-name">(input)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carPart.quantity <span class="token punctuation">=</span> $event.target.value<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>Utilizando la síntasis <code>[ () ]</code> (Banana in the box)</li>
+</ul>
+<p>Para ello en la clase del componente se importa <code>@angular/forms</code>:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token operator">...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> FormsModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/forms'</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span> BrowserModule <span class="token punctuation">,</span> FormsModule <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  providers<span class="token punctuation">:</span> <span class="token punctuation">[</span> RacingDataService <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Y en el input se utiliza la síntasis <code>[ () ]</code>:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>carPart.quantity<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>De esta forma es mucho más clara y precisa.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/07/angular2-two-way-binding/" data-id="ck04gtzc90016skmemcm40nel" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/07/angular2-two-way-binding/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-event-binding" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/angular2-event-binding/" class="article-date">
+  <time datetime="2017-02-05T21:52:14.000Z" itemprop="datePublished">Feb 5 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/05/angular2-event-binding/">Event Binding - Binding de eventos (One-Way Binding)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>En el <a href="/2017/02/02/Angular2-dataBinging/">post anterior se explicaba el (Binding de propiedades)</a> el cual consistía en la comunicación de las propiedades de las clases de los componentes (TypeScript o JavaScript) al DOM, es decir:</p>
+<blockquote>
+<p>JavaScript to HMTL</p>
+</blockquote>
+<p>En el caso de Event Binding, es lo contrario:</p>
+<blockquote>
+<p>HTML to JavaScript</p>
+</blockquote>
+<p>Por ejemplo añadimos una función en nuestro componente:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function">upQuantity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"You Called upQuantity"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Y este es llamado desde HTML, por ejemplo al hacer click:</p>
+<pre class="line-numbers language-html"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>upQuantity( carPart )<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span>Click to alert<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Además del click tenemos los siguientes eventos:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">(mouseover)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>call()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">(blur)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>call()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">(focus)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>call()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">(keydown)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>call()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">(submit)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>call()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Como es de esperar es posible coger información desde el elemento HTML para luego utilizarla en nuestra clase JS, por ejemplo vamos a mostrar un alert de cada letra que el usuario introduce en un input:</p>
+<ul>
+<li>Código HTML:</li>
+</ul>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">(keydown)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showKey($event)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>TypeScript o JavaScript</li>
+</ul>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  <span class="token operator">...</span>
+  <span class="token function">showKey</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>keyCode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>En el siguiente post tratara de Two-way Binging, es decir comuncación bidireccional entre el DOM y Js.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/05/angular2-event-binding/" data-id="ck04gtzc2000nskme3cwkuq0g" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/05/angular2-event-binding/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Angular2-dataBinging" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/02/Angular2-dataBinging/" class="article-date">
+  <time datetime="2017-02-02T20:25:08.000Z" itemprop="datePublished">Feb 2 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/02/Angular2-dataBinging/">Property Binding - Binding de propiedades y clases CSS (One-way binding)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>El <em>Binding</em> de propiedades significa mostrar las propiedades de nuesto componente en el DOM de la web y que cambie dinamícamente según cambía la propiedad, <em>One-way binding</em> es debido a que la comunicación es desde los modelos de los componentes de nuestra app al DOM no del DOM a la aplicación.</p>
+<p>Con <code>[ ]</code> decimos a Angular 2 que esa propiedad del DOM va unida a una propiedad de nuestro modelo como por ejemplo:</p>
+<ul>
+<li><code>&lt;img [ src ] =&quot; carPart.image &quot;&gt;</code></li>
+<li><code>&lt;div [ hidden ] =&quot;!user.isAdmin&quot; &gt;secret&lt;/div&gt;</code></li>
+<li><code>&lt;button [ disabled ] =&quot;isDisabled&quot; &gt;Purchase&lt;/button&gt;</code></li>
+<li><code>&lt;img [ alt ] =&quot;image.description&quot;&gt;</code></li>
+</ul>
+<h3 id="Binding-Class-CSS"><a href="#Binding-Class-CSS" class="headerlink" title="Binding Class (CSS)"></a>Binding Class (CSS)</h3><p>También es posible hacer binding de una clase CSS dependiendo del modelo.</p>
+<p>Por ejemplo la clase CSS</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.featured</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#57595D</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Es posible añadirla dependiendo del modelo, en este caso de ejemplo <code>cardPart.featured</code> devuelve <code>true</code> o <code>false</code> y si es true se añade la clase <code>.featured</code> al elemento, está es la única síntasis posible:</p>
+<blockquote>
+<p><code>&lt;div [class.featured]=&quot;carPart.featured&quot; &gt;</code></p>
+</blockquote>
+<p>Hay que tener en cuenta, que de esta forma cada elemento tiene su scope, el código generado sería el siguiente:</p>
+<p><code>&lt;div _ngcontent-opf-2 &gt;</code></p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.featured</span><span class="token attribute">[_ngcontent-opf-2]</span> </span><span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#57595D</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>En definitiva:</p>
+<ul>
+<li>El binding de propiedades permite hacer binding entre las propiedades del componente y el DOM.</li>
+<li>Cualquier actualización del valor de la propiedad actualizara el DOM, pero no viceversa, una actualización del DOM no actualiza el modelo (One-way binding).</li>
+<li>El binding de clases CSS nos permite especificar estilos a un elemento del DOM si la propiedad del componente es <code>true</code>, tienen su propio scope del estilo que es dado.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/02/Angular2-dataBinging/" data-id="ck04gtzbt0008skme3ualn36d" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/02/Angular2-dataBinging/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/02/mocks/" class="article-date">
+  <time datetime="2017-02-02T19:12:39.000Z" itemprop="datePublished">Feb 2 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/02/mocks/">Modelos y uso de mocks</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<h3 id="Modelos-en-angular-2"><a href="#Modelos-en-angular-2" class="headerlink" title="Modelos en angular 2"></a>Modelos en angular 2</h3><p>Básicamente los modelos en angular 2 son clases como por ejemplo:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Carpart</span> <span class="token punctuation">{</span>
+  id<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  name<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  description<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  inStock<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  price<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta forma en la clase de nuestro componente podemos crear arrays de la clase Cardpart, importando la clase.</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+    <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+    <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+    <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token number">4.99</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+<span class="token operator">...</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Uso-de-mocks-en-angular-2"><a href="#Uso-de-mocks-en-angular-2" class="headerlink" title="Uso de mocks en angular 2"></a>Uso de mocks en angular 2</h3><p>Una de las formas posibles para comenzar a desarrollar nuestra aplicación sin disponer aún los datos que nos va a suministrar la API es mediante <em>Mocking</em> (mockear datos).<br>Una forma simple es creando nuestro array de datos JSON o de clases que vayamos a utilizar y asignarlo a las propiedades de los componentes que nos sea necesario.</p>
+<p>Como por ejemplo:</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> CARPARTS<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+  <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+  <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+  <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token string">"price"</span><span class="token punctuation">:</span> <span class="token number">4.99</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Y ahora en nuestro componente mediante la función <code>ngOnInit()</code> damos el valor a la propiedad correspondiente, en este ejemplo a la propiedad <code>cardParts</code> se le asigna el valor <code>CARDPARTS</code> el cual es el array de cardparts que hemos importado.</p>
+<pre class="line-numbers language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CarPart <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./car-part'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CARPARTS <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./mocks'</span><span class="token punctuation">;</span>
+<span class="token operator">...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CarPartsComponent</span> <span class="token punctuation">{</span>
+  carParts<span class="token punctuation">:</span> CarPart<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">;</span>
+
+  <span class="token function">ngOnInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>carParts <span class="token operator">=</span> CARPARTS<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta forma podemos comenzar a desarrollar nuestra app con datos de prueba <em>mocks</em> ;).</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/02/02/mocks/" data-id="ck04gtzcj0021skmeq0xre4bw" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/02/02/mocks/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-code-organize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/31/angular2-code-organize/" class="article-date">
+  <time datetime="2017-01-31T21:46:02.000Z" itemprop="datePublished">Jan 31 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/31/angular2-code-organize/">Organización de código</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<h3 id="Organizacion-de-los-componentes-en-Angular-2"><a href="#Organizacion-de-los-componentes-en-Angular-2" class="headerlink" title="Organización de los componentes en Angular 2"></a>Organización de los componentes en Angular 2</h3><p>Como vulgarmente se dice:</p>
+<blockquote>
+<p> divide o vencéras</p>
+</blockquote>
+<p>Partiendo del siguiente ejemplo en el que tenemos AppComponent en <code>app/main.ts</code>:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule<span class="token punctuation">,</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> platformBrowserDynamic <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser-dynamic'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1> {{title}} &lt;/h1>
+    &lt;h2>{{carPart.name}}&lt;h2>
+    &lt;p>{{carPart.description}}&lt;p>
+    &lt;p>{{carPart.inStock}} in Stock&lt;p>`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+    title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+    carPart <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+        <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+        <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+@NgModule <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token function">platformBrowserDynamic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">bootstrapModule</span><span class="token punctuation">(</span>AppModule<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Movemos toda la parte del componente <code>AppComponent</code> a un fichero aparte como por ejemplo <code>app.component.ts</code>:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// Importante, exportar para utilizar el componente</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+  carParts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">totalCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Es importante, exportar para utilizar el componente <code>export class..</code> </strong></p>
+<p><strong>En conclusión ahora disponeos de dos archivos: </strong></p>
+<ul>
+<li><code>main.ts</code> Que importa el componente:</li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// Importante hacer el import</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./app.component'</span><span class="token punctuation">;</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span> BrowserModule <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>Y el propio componente en <code>app.component.ts</code></li>
+</ul>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+  carParts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">totalCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="Mover-el-codigo-HTML-CSS"><a href="#Mover-el-codigo-HTML-CSS" class="headerlink" title="Mover el código HTML CSS"></a>Mover el código HTML CSS</h5><p>Ahora procedemos a separar el código del template (html) y añadir los estilos,</p>
+<p>Como por ejemplo en el componente anterior:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  templateUrl<span class="token punctuation">:</span> <span class="token string">'app/app.component.html'</span><span class="token punctuation">,</span>
+  styleUrls<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'app/car-parts.component.css'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+  carParts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">totalCarParts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Como podemos observar el código HTML se encuentra en un archivo aparte <code>app.component.html</code> :</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>There is a example ;).<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>y el css en otro <code>app.component.css</code> :</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.description</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#444</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> small<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.price</span> </span><span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>De esta forma, nuestro componente se encuentra dividido en tres partes cada  una en un archivo:</p>
+<ul>
+<li>La lógica del componente en <code>app.component.ts</code> el cual se exporta para incluirlo en @module en main.ts.</li>
+<li>El template con el html  en <code>app. component.html</code></li>
+<li>Estilos del componente en <code>app.component.css</code></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/31/angular2-code-organize/" data-id="ck04gtzc1000jskmesr43miws" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/31/angular2-code-organize/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-directivas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/31/angular2-directivas/" class="article-date">
+  <time datetime="2017-01-31T19:48:17.000Z" itemprop="datePublished">Jan 31 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/31/angular2-directivas/">Angular 2 - Estructura de directivas, Pipes y Métodos</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Directivas"><a href="#Directivas" class="headerlink" title="Directivas"></a>Directivas</h3><p><em>El siguiente post es continuación del <strong><a href="/2017/01/30/angular2/">resumen de Angular 2</a></strong></em></p>
+<p>Una directiva de Angular es la forma de añadir comportamiento dinámico a HTML mediante la etiqueta o selector que creamos.</p>
+<p>Existen tres tipos diferentes de directivas:</p>
+<ul>
+<li>Component<ul>
+<li>Tiene un template, es el más común, lo hemos utilizado al <a href="/2017/01/30/angular2-primer-componente/">crear el primer componente</a></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/structural-directives.html" target="_blank" rel="noopener">Structural Directives</a><ul>
+<li>Por ejemplo bucles <code>*ngFor</code> o condicionales <code>*ngIF</code></li>
+</ul>
+</li>
+<li><a href="https://angular.io/docs/ts/latest/guide/attribute-directives.html" target="_blank" rel="noopener">Attribute Directives</a><ul>
+<li>Nos permite cambiar la apariencia o comportamiento de un componente.</li>
+</ul>
+</li>
+</ul>
+<p>Podemos verlas en el fragmento de código:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// El selector y templatte sería el primer tipo de directiva</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>
+    &lt;ul>
+      &lt;li *ngFor="let carPart of carParts">
+        &lt;h2>{{carPart.name}}&lt;h2>
+        &lt;p>{{carPart.description}}&lt;p>
+        &lt;p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock&lt;/p>
+        &lt;p *ngIf="carPart.inStock === 0">Out of Stock&lt;/p>
+      &lt;/li>
+    &lt;/ul>`</span></span>
+
+  <span class="token comment" spellcheck="true">// En el propio template observamos las directivas de estructura *ngFor y *ngIf</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+<span class="token operator">...</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Pipes-y-Metodos"><a href="#Pipes-y-Metodos" class="headerlink" title="Pipes y Métodos"></a>Pipes y Métodos</h3><p>Un <strong>pipe</strong> coge un dato de entrada y lo transforma a la salida deseada, como por ejemplo:</p>
+<ul>
+<li><p>Poner un texto en máyusculas:</p>
+<pre><code>{{carPart.name | uppercase }}
+</code></pre></li>
+<li><p>Añadir formato de moneda:</p>
+<pre><code>{{carPart.price | currency:'EUR'}}
+</code></pre></li>
+<li><p><a href="https://angular.io/docs/ts/latest/guide/pipes.html" target="_blank" rel="noopener">Y muchos más que encontramos en la documentación oficial</a></p>
+</li>
+</ul>
+<p><em>Métodos (Methods)</em> como podemos imaginar es añadir métodos en la clase de nuestro componente para luego ser utilizada:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">...</span>
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1>{{title}}&lt;/h1>`</span></span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+  <span class="token function">exampleMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/31/angular2-directivas/" data-id="ck04gtzc2000oskmeu57kklnf" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/31/angular2-directivas/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular2-primer-componente" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/30/angular2-primer-componente/" class="article-date">
+  <time datetime="2017-01-30T22:43:59.000Z" itemprop="datePublished">Jan 30 2017</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Frontend/">Frontend</a>►<a class="article-category-link" href="/categories/Frontend/Angular-2/">Angular 2</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/angular2-primer-componente/">Angular 2 - Primer componente Angular 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>El siguiente post es continuación del <a href="/2017/01/30/angular2/">resumen de Angular 2</a></p>
+<p>Para comenzar añadir en <code>index.html</code> el primer componente, llamado en este caso <code>&lt;my-app&gt;&lt;/my-app&gt;</code></p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- All the Angular 2 libraries needed --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-app</span><span class="token punctuation">></span></span>Loading App ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-app</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Para cargar Js hay varias opciones, una de ellas es utilizar la librería <a href="https://www.npmjs.com/package/systemjs" target="_blank" rel="noopener">SystemJS</a> que se utiliza en el curso de codeschool:</p>
+<p>El siguiente código añade el código de <code>app/main.ts</code>:</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- All the Angular 2 libraries needed --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    System<span class="token punctuation">.</span><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-app</span><span class="token punctuation">></span></span>Loading App ...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-app</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>También una buena opción es con <a href="https://webpack.github.io/" target="_blank" rel="noopener">webpack</a> como <a href="https://angular.io/docs/ts/latest/guide/webpack.html" target="_blank" rel="noopener">explican al detalle en la web oficial de angular.io</a>.</p>
+<p>En <code>app/main.ts</code> añadimos nuestro primer componente:</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> NgModule<span class="token punctuation">,</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//Las siguientes dependencias son para renderizar en el navegador</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BrowserModule <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> platformBrowserDynamic <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@angular/platform-browser-dynamic'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Our component decorator code goes here:</span>
+
+@<span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+<span class="token comment" spellcheck="true">//la etiqueta añadida anteriormente &lt;my-app>&lt;/my-app>     </span>
+  selector<span class="token punctuation">:</span> <span class="token string">'my-app'</span><span class="token punctuation">,</span>
+
+<span class="token comment" spellcheck="true">// El contendio que se carga en nuestro componente</span>
+  template<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`&lt;h1> {{title}} &lt;/h1>
+    &lt;h2>{{carPart.name}}&lt;h2>
+    &lt;p>{{carPart.description}}&lt;p>
+    &lt;p>{{carPart.inStock}} in Stock&lt;p>`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//Definimos las propiedades que usamos en el template con {{ }}</span>
+    title <span class="token operator">=</span> <span class="token string">'Ultra Racing'</span><span class="token punctuation">;</span>
+    carPart <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"id"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"Super Tires"</span><span class="token punctuation">,</span>
+        <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">"These tires are the very best"</span><span class="token punctuation">,</span>
+        <span class="token string">"inStock"</span><span class="token punctuation">:</span> <span class="token number">5</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+<span class="token comment" spellcheck="true">// El nuevo componente lo debemos declarar en el decorador @NgModucle</span>
+@NgModule <span class="token punctuation">(</span><span class="token punctuation">{</span>
+declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Bootrasp app (Arrancar la aplicación)</span>
+<span class="token function">platformBrowserDynamic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">bootstrapModule</span><span class="token punctuation">(</span>AppModule<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Tanto @Component como @NgModule son decorators, una feauture de typescript, explicado de forma breve digamos que “extiende” la funcionalidad o comportamiento de la clase a  un objeto:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Decorator_pattern" target="_blank" rel="noopener">Wikipedía</a></li>
+<li><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">TypeScript lang</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/" data-id="ck04gtzc4000tskmelxz6dka5" class="article-share-link">Share</a>
+      
+        <a href="https://blog.luisangonzalez.es/2017/01/30/angular2-primer-componente/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular-2/">Angular 2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/categories/Frontend/Angular-2/page/2/">2</a><a class="extend next" rel="next" href="/categories/Frontend/Angular-2/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+ 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/">Configuración de entorno</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Configuracion-de-entorno/Ohmyz-sh/">Ohmyz.sh</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova-Phonegap/">Cordova/Phonegap</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/">Frontend</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/Angular-2/">Angular 2</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Frontend/React/">React</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo-io/">Hexo.io</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Raspberry-Pi/Retropie/">Retropie</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/Ubuntu/">Ubuntu</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Synology/">Synology</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Angular-2/">Angular 2</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Arduino/">Arduino</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CCS3/">CCS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cordova-Phonegap/">Cordova/Phonegap</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/File-compress/">File compress</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flexbox/">Flexbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo-io/">Hexo.io</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NAS/">NAS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NFS/">NFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ohmyz-sh/">Ohmyz.sh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry-Pi/">Raspberry Pi</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Retropie/">Retropie</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sublime-Text/">Sublime Text</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synology/">Synology</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">7</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-2/" style="font-size: 20px;">Angular 2</a> <a href="/tags/Arduino/" style="font-size: 10px;">Arduino</a> <a href="/tags/CCS3/" style="font-size: 10px;">CCS3</a> <a href="/tags/Cordova-Phonegap/" style="font-size: 12.5px;">Cordova/Phonegap</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/File-compress/" style="font-size: 10px;">File compress</a> <a href="/tags/Flexbox/" style="font-size: 10px;">Flexbox</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo-io/" style="font-size: 15px;">Hexo.io</a> <a href="/tags/Linux/" style="font-size: 12.5px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/NAS/" style="font-size: 10px;">NAS</a> <a href="/tags/NFS/" style="font-size: 10px;">NFS</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Ohmyz-sh/" style="font-size: 10px;">Ohmyz.sh</a> <a href="/tags/Raspberry-Pi/" style="font-size: 10px;">Raspberry Pi</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Retropie/" style="font-size: 10px;">Retropie</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/Synology/" style="font-size: 10px;">Synology</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/Ubuntu/" style="font-size: 17.5px;">Ubuntu</a>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/14/fileCompress/">Summary File Compress</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/04/react/">React summary</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/11/angular2-routes/">Angular router</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/10/angular2-services-http/">HTTP angular</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/angular2-services/">Servicios</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+  
+       <!-- twitter start -->
+         <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/luisangonzalez" data-widget-id="552546295706308611">Tweets por el @luisangonzalez.</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+
+      <!-- ads fin -->
+  <!-- ads start -->
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar_A -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-5032084266728683"
+     data-ad-slot="6464840855"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+    <!-- ads fin -->
+
+</aside>
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Luisangonzalez  - Política de <a href="http://blog.luisangonzalez.es/cookies.html">cookies.</a>  <br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+  <script src="js/cookiechoices.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(event) {
+      cookieChoices.showCookieConsentBar('Las cookies nos permiten ofrecer nuestros servicios. Al utilizar nuestros servicios, aceptas el uso que hacemos de las cookies',
+        'Entendido', 'Más información', 'http://blog.luisangonzalez.es/cookies.html');
+    });
+  </script>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Blog</a>
+  
+    <a href="https://luisangonzalez.es" class="mobile-nav-link">Personal Page</a>
+  
+    <a href="/CV_LuisanGonzalez.pdf" class="mobile-nav-link">Curriculum Vitae</a>
+  
+    <a href="https://quizy.luisangonzalez.es" class="mobile-nav-link">Quizy App</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'luisangonzalez';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
