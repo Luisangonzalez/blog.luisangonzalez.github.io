@@ -167,3 +167,5 @@ Anular el bluetooth para utilizar uno usb: https://blog.evad.io/2018/01/11/disab
 En resumen, buscar el bluetooth con lsusb -v y añadir una recga en udev para que no lo use el sistema.
 
 SUBSYSTEM=="usb", ATTRS{idVendor}=="your-vendor-id-here", ATTRS{idProduct}=="your-product-id-here", ATTR{authorized}="0"
+
+OjO al añadir el idVendor e idProduct de no poner el prefijo hex 0x
